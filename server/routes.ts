@@ -173,9 +173,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         countryCode,
         level,
         currentQuestionIndex: 0,
+        score: 0,
+        correctAnswers: 0,
+        hintsUsed: 0,
+        hintsRemaining: 3, // Máximo 3 ayudas por sesión
         sessionData: {
-          score: 0,
-          correctAnswers: 0,
           startTime: new Date().toISOString(),
         },
       });
@@ -210,7 +212,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Check if answer is correct
       const isCorrect = answer.toLowerCase().trim() === question.correctAnswer.toLowerCase().trim();
-      const points = isCorrect ? question.points : 0;
+      const points = isCorrect ? 1 : 0; // Nuevo sistema: 1 punto por respuesta correcta
 
       // Update session data
       const currentData = session.sessionData as any || {};
@@ -315,15 +317,69 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Use hint - nueva funcionalidad para ayudas
+  app.post('/api/quiz/hint', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const { sessionId } = req.body;
+
+      const session = await storage.getActiveQuizSession(user.id);
+      if (!session || session.id !== sessionId) {
+        return res.status(404).json({ message: "Quiz session not found" });
+      }
+
+      const currentHints = session.hintsRemaining || 3;
+      if (currentHints <= 0) {
+        return res.status(400).json({ message: "No quedan ayudas disponibles" });
+      }
+
+      // Deduct hint cost (20 points) and reduce remaining hints
+      const currentData = session.sessionData as any || {};
+      const currentScore = currentData.score || 0;
+      const newScore = Math.max(0, currentScore - 20);
+      const newHintsRemaining = currentHints - 1;
+
+      const updatedData = {
+        ...currentData,
+        score: newScore,
+        hintsUsed: (currentData.hintsUsed || 0) + 1,
+      };
+
+      await storage.updateQuizSession(sessionId, {
+        hintsRemaining: newHintsRemaining,
+        sessionData: updatedData,
+      });
+
+      res.json({
+        success: true,
+        pointsDeducted: 20,
+        newScore,
+        hintsRemaining: newHintsRemaining,
+      });
+    } catch (error) {
+      console.error("Error using hint:", error);
+      res.status(500).json({ message: "Failed to use hint" });
+    }
+  });
+
   // Rankings API
   app.get('/api/rankings/:countryCode/:level', async (req, res) => {
     try {
       const { countryCode, level } = req.params;
+      const parsedLevel = parseInt(level);
       const limit = parseInt(req.query.limit as string) || 50;
+      
+      if (isNaN(parsedLevel) || parsedLevel < 1 || parsedLevel > 4) {
+        return res.status(400).json({ message: "Invalid level parameter" });
+      }
       
       const rankings = await storage.getRankingsByCountryAndLevel(
         countryCode, 
-        parseInt(level), 
+        parsedLevel, 
         limit
       );
       res.json(rankings);
@@ -336,9 +392,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/api/rankings/global/:level', async (req, res) => {
     try {
       const { level } = req.params;
+      const parsedLevel = parseInt(level);
       const limit = parseInt(req.query.limit as string) || 50;
       
-      const rankings = await storage.getGlobalRankingsByLevel(parseInt(level), limit);
+      if (isNaN(parsedLevel) || parsedLevel < 1 || parsedLevel > 4) {
+        return res.status(400).json({ message: "Invalid level parameter" });
+      }
+      
+      const rankings = await storage.getGlobalRankingsByLevel(parsedLevel, limit);
       res.json(rankings);
     } catch (error) {
       console.error("Error fetching global rankings:", error);

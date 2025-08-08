@@ -35,8 +35,10 @@ export function QuizInterface({
     isAnswering,
     startQuiz,
     answerQuestion,
+    useHint,
     hasMoreQuestions,
     isCompleted,
+    session,
   } = useQuiz(selectedCountry.code, selectedLevel);
 
   // Start quiz once when component mounts
@@ -132,6 +134,11 @@ export function QuizInterface({
             >
               🏆 {score} pts
             </div>
+            {session && (
+              <div className="text-sm font-semibold text-gray-600 dark:text-gray-400">
+                💡 {session.hintsRemaining || 0} ayudas
+              </div>
+            )}
           </div>
         </div>
 
@@ -149,10 +156,28 @@ export function QuizInterface({
               <h3 className="text-2xl font-bold mb-4">
                 {currentQuestion.question}
               </h3>
-              {showHint && currentQuestion.explanation && (
-                <div className="bg-white/20 rounded-xl p-4 text-sm">
-                  💡 {currentQuestion.explanation}
+              
+              {/* Description hint */}
+              {showHint && currentQuestion.description && (
+                <div className="bg-white/20 rounded-xl p-4 text-sm mb-4">
+                  💡 {currentQuestion.description}
                 </div>
+              )}
+
+              {/* Hint Button */}
+              {!showHint && session && (session.hintsRemaining || 0) > 0 && (
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  onClick={() => {
+                    useHint();
+                    setShowHint(true);
+                  }}
+                  className="mb-4 bg-white/20 hover:bg-white/30 text-white border-white/30"
+                >
+                  <Lightbulb className="h-4 w-4 mr-2" />
+                  Ayuda (-20 pts) • {session.hintsRemaining || 0} restantes
+                </Button>
               )}
             </div>
           </CardContent>

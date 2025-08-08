@@ -101,6 +101,30 @@ export function useQuiz(countryCode?: string, level?: number) {
     });
   }, [session, questions, currentQuestionIndex, answerQuestionMutation]);
 
+  // Use hint mutation
+  const useHintMutation = useMutation({
+    mutationFn: async (sessionId: number) => {
+      const response = await apiRequest('POST', '/api/quiz/hint', { sessionId });
+      return response.json();
+    },
+    onSuccess: (result) => {
+      setScore(result.newScore);
+      // Update session hints remaining
+      if (session) {
+        setSession(prev => prev ? {
+          ...prev,
+          hintsRemaining: result.hintsRemaining
+        } : null);
+      }
+    },
+  });
+
+  const useHint = useCallback(() => {
+    if (session && (session.hintsRemaining || 0) > 0 && !useHintMutation.isPending) {
+      useHintMutation.mutate(session.id);
+    }
+  }, [session, useHintMutation]);
+
   const resetQuiz = useCallback(() => {
     setSession(null);
     setCurrentQuestionIndex(0);
@@ -131,6 +155,7 @@ export function useQuiz(countryCode?: string, level?: number) {
     answerResult: answerQuestionMutation.data,
     startQuiz,
     answerQuestion,
+    useHint,
     resetQuiz,
     hasMoreQuestions: currentQuestionIndex < questions.length,
     totalQuestions: questions.length,

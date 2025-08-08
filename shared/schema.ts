@@ -55,8 +55,9 @@ export const questions = pgTable("questions", {
   question: text("question").notNull(),
   correctAnswer: text("correct_answer").notNull(),
   explanation: text("explanation").notNull(),
+  description: text("description"), // Breve descripción de ayuda para el usuario
   options: jsonb("options"), // For multiple choice questions
-  points: integer("points").default(100),
+  points: integer("points").default(1), // Cambiado a 1 punto por pregunta
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -83,6 +84,10 @@ export const quizSessions = pgTable("quiz_sessions", {
   countryCode: varchar("country_code", { length: 10 }).notNull(),
   level: integer("level").notNull(),
   currentQuestionIndex: integer("current_question_index").default(0),
+  score: integer("score").default(0),
+  correctAnswers: integer("correct_answers").default(0),
+  hintsUsed: integer("hints_used").default(0), // Número de ayudas usadas
+  hintsRemaining: integer("hints_remaining").default(3), // Ayudas restantes (máximo 3)
   sessionData: jsonb("session_data"), // Store current quiz state
   startedAt: timestamp("started_at").defaultNow(),
   completedAt: timestamp("completed_at"),
