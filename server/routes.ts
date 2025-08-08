@@ -1,24 +1,82 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, isAuthenticated } from "./replitAuth";
-import { insertQuestionSchema, insertCountrySchema } from "@shared/schema";
+import { insertQuestionSchema, insertCountrySchema, usernameSchema } from "@shared/schema";
 import { z } from "zod";
+import { nanoid } from "nanoid";
+
+// Extend session type
+declare module 'express-session' {
+  interface SessionData {
+    userId?: number;
+    sessionId?: string;
+  }
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Auth middleware
-  await setupAuth(app);
+  // Helper function to get current user from session
+  const getCurrentUser = async (req: any) => {
+    const sessionId = req.session?.sessionId;
+    const userId = req.session?.userId;
+    if (!sessionId || !userId) return null;
+    
+    const user = await storage.getUserById(userId);
+    if (!user || user.sessionId !== sessionId) return null;
+    
+    return user;
+  };
 
-  // Auth routes
-  app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
+  // User authentication routes (simplified)
+  app.post('/api/auth/register', async (req, res) => {
     try {
-      const userId = req.user.claims.sub;
-      const user = await storage.getUser(userId);
+      const { username } = req.body;
+      
+      // Validate username
+      const validatedUsername = usernameSchema.parse(username);
+      
+      // Check if username is available
+      const isAvailable = await storage.isUsernameAvailable(validatedUsername);
+      if (!isAvailable) {
+        return res.status(409).json({ message: "Este nombre de usuario ya está en uso" });
+      }
+      
+      // Create user
+      const sessionId = nanoid();
+      const user = await storage.createUser({
+        username: validatedUsername,
+        sessionId,
+      });
+      
+      // Set session
+      req.session.userId = user.id;
+      req.session.sessionId = sessionId;
+      
+      res.json({ user });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: error.errors[0].message });
+      }
+      console.error("Error registering user:", error);
+      res.status(500).json({ message: "Error al crear el usuario" });
+    }
+  });
+
+  app.get('/api/auth/user', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "No authenticated" });
+      }
       res.json(user);
     } catch (error) {
       console.error("Error fetching user:", error);
       res.status(500).json({ message: "Failed to fetch user" });
     }
+  });
+
+  app.post('/api/auth/logout', async (req: any, res) => {
+    req.session.destroy();
+    res.json({ message: "Logged out" });
   });
 
   // Countries API
@@ -61,11 +119,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // User Progress API
-  app.get('/api/progress/:countryCode', isAuthenticated, async (req: any, res) => {
+  app.get('/api/progress/:countryCode', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+      
       const { countryCode } = req.params;
-      const progress = await storage.getUserProgressByCountry(userId, countryCode);
+      const progress = await storage.getUserProgressByCountry(user.id, countryCode);
       res.json(progress);
     } catch (error) {
       console.error("Error fetching user progress:", error);
@@ -73,11 +135,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get('/api/progress/:countryCode/:level', isAuthenticated, async (req: any, res) => {
+  app.get('/api/progress/:countryCode/:level', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+      
       const { countryCode, level } = req.params;
-      const progress = await storage.getUserProgress(userId, countryCode, parseInt(level));
+      const progress = await storage.getUserProgress(user.id, countryCode, parseInt(level));
       res.json(progress);
     } catch (error) {
       console.error("Error fetching user progress:", error);
@@ -88,21 +154,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Quiz Session API
   app.post('/api/quiz/start', async (req: any, res) => {
     try {
-      // Handle both authenticated and guest users
-      const userId = req.user?.claims?.sub || null;
-      const { countryCode, level } = req.body;
-
-      // For authenticated users, check for existing active session
-      if (userId) {
-        const existingSession = await storage.getActiveQuizSession(userId);
-        if (existingSession) {
-          return res.json(existingSession);
-        }
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
       }
 
-      // Create new session (for both authenticated and guest users)
+      const { countryCode, level } = req.body;
+
+      // Check for existing active session
+      const existingSession = await storage.getActiveQuizSession(user.id);
+      if (existingSession) {
+        return res.json(existingSession);
+      }
+
+      // Create new session
       const session = await storage.createQuizSession({
-        userId, // null for guests
+        userId: user.id,
         countryCode,
         level,
         currentQuestionIndex: 0,
@@ -122,14 +189,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post('/api/quiz/answer', async (req: any, res) => {
     try {
-      const userId = req.user?.claims?.sub || null;
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
       const { sessionId, questionId, answer, timeSpent } = req.body;
 
-      // Get the session (for both authenticated and guest users)
-      const session = userId 
-        ? await storage.getActiveQuizSession(userId)
-        : await storage.getQuizSessionById(sessionId);
-      
+      // Get the session
+      const session = await storage.getActiveQuizSession(user.id);
       if (!session || session.id !== sessionId) {
         return res.status(404).json({ message: "Quiz session not found" });
       }
@@ -184,14 +252,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post('/api/quiz/complete', async (req: any, res) => {
     try {
-      const userId = req.user?.claims?.sub || null;
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
       const { sessionId } = req.body;
 
-      // Get the session (for both authenticated and guest users)
-      const session = userId 
-        ? await storage.getActiveQuizSession(userId)
-        : await storage.getQuizSessionById(sessionId);
-      
+      // Get the session
+      const session = await storage.getActiveQuizSession(user.id);
       if (!session || session.id !== sessionId) {
         return res.status(404).json({ message: "Quiz session not found" });
       }
@@ -199,27 +268,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Complete the session
       await storage.completeQuizSession(sessionId);
 
-      // Update user progress and score only for authenticated users
+      // Update user progress and score
       const sessionData = session.sessionData as any || {};
       const totalQuestions = (sessionData.answers || []).length;
       const correctAnswers = sessionData.correctAnswers || 0;
       const totalScore = sessionData.score || 0;
+      const accuracy = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
 
-      if (userId) {
-        await storage.upsertUserProgress({
-          userId,
-          countryCode: session.countryCode,
-          level: session.level,
-          questionsAnswered: totalQuestions,
-          correctAnswers,
-          totalScore,
-          isCompleted: true,
-          lastPlayedAt: new Date(),
-        });
+      await storage.upsertUserProgress({
+        userId: user.id,
+        countryCode: session.countryCode,
+        level: session.level,
+        questionsAnswered: totalQuestions,
+        correctAnswers,
+        totalScore,
+        isCompleted: true,
+        lastPlayedAt: new Date(),
+      });
 
-        // Update user total score
-        await storage.updateUserScore(userId, totalScore);
-      }
+      // Update user total score
+      await storage.updateUserScore(user.id, totalScore);
+
+      // Add to rankings
+      await storage.addRanking({
+        userId: user.id,
+        countryCode: session.countryCode,
+        level: session.level,
+        score: totalScore,
+        correctAnswers,
+        totalQuestions,
+        accuracy,
+      });
 
       res.json({
         session,
@@ -233,6 +312,53 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error completing quiz:", error);
       res.status(500).json({ message: "Failed to complete quiz" });
+    }
+  });
+
+  // Rankings API
+  app.get('/api/rankings/:countryCode/:level', async (req, res) => {
+    try {
+      const { countryCode, level } = req.params;
+      const limit = parseInt(req.query.limit as string) || 50;
+      
+      const rankings = await storage.getRankingsByCountryAndLevel(
+        countryCode, 
+        parseInt(level), 
+        limit
+      );
+      res.json(rankings);
+    } catch (error) {
+      console.error("Error fetching rankings:", error);
+      res.status(500).json({ message: "Failed to fetch rankings" });
+    }
+  });
+
+  app.get('/api/rankings/global/:level', async (req, res) => {
+    try {
+      const { level } = req.params;
+      const limit = parseInt(req.query.limit as string) || 50;
+      
+      const rankings = await storage.getGlobalRankingsByLevel(parseInt(level), limit);
+      res.json(rankings);
+    } catch (error) {
+      console.error("Error fetching global rankings:", error);
+      res.status(500).json({ message: "Failed to fetch global rankings" });
+    }
+  });
+
+  app.get('/api/rankings/user/:countryCode', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const { countryCode } = req.params;
+      const rankings = await storage.getUserRankingsByCountry(user.id, countryCode);
+      res.json(rankings);
+    } catch (error) {
+      console.error("Error fetching user rankings:", error);
+      res.status(500).json({ message: "Failed to fetch user rankings" });
     }
   });
 
@@ -258,7 +384,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       ];
 
       for (const country of countries) {
-        await storage.createCountry(country);
+        try {
+          await storage.createCountry(country);
+        } catch (e) {
+          // Ignore duplicate errors
+        }
       }
 
       res.json({ message: "Initialization completed" });

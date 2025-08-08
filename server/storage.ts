@@ -4,8 +4,9 @@ import {
   questions,
   userProgress,
   quizSessions,
+  rankings,
   type User,
-  type UpsertUser,
+  type InsertUser,
   type Country,
   type InsertCountry,
   type Question,
@@ -14,15 +15,20 @@ import {
   type InsertUserProgress,
   type QuizSession,
   type InsertQuizSession,
+  type Ranking,
+  type InsertRanking,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, desc, sql } from "drizzle-orm";
+import { eq, and, desc, sql, asc } from "drizzle-orm";
 
 export interface IStorage {
-  // User operations (mandatory for Replit Auth)
-  getUser(id: string): Promise<User | undefined>;
-  upsertUser(user: UpsertUser): Promise<User>;
-  updateUserScore(userId: string, additionalScore: number): Promise<void>;
+  // User operations (simplified for username system)
+  getUserByUsername(username: string): Promise<User | undefined>;
+  getUserById(id: number): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
+  updateUserSession(userId: number, sessionId: string): Promise<void>;
+  updateUserScore(userId: number, additionalScore: number): Promise<void>;
+  isUsernameAvailable(username: string): Promise<boolean>;
 
   // Country operations
   getAllCountries(): Promise<Country[]>;
@@ -35,48 +41,68 @@ export interface IStorage {
   createQuestion(question: InsertQuestion): Promise<Question>;
 
   // User progress operations
-  getUserProgress(userId: string, countryCode: string, level: number): Promise<UserProgress | undefined>;
-  getUserProgressByCountry(userId: string, countryCode: string): Promise<UserProgress[]>;
+  getUserProgress(userId: number, countryCode: string, level: number): Promise<UserProgress | undefined>;
+  getUserProgressByCountry(userId: number, countryCode: string): Promise<UserProgress[]>;
   upsertUserProgress(progress: InsertUserProgress): Promise<UserProgress>;
 
   // Quiz session operations
-  getActiveQuizSession(userId: string): Promise<QuizSession | undefined>;
+  getActiveQuizSession(userId: number): Promise<QuizSession | undefined>;
   getQuizSessionById(sessionId: number): Promise<QuizSession | undefined>;
   createQuizSession(session: InsertQuizSession): Promise<QuizSession>;
   updateQuizSession(sessionId: number, data: Partial<QuizSession>): Promise<QuizSession>;
   completeQuizSession(sessionId: number): Promise<void>;
+
+  // Ranking operations
+  addRanking(ranking: InsertRanking): Promise<Ranking>;
+  getRankingsByCountryAndLevel(countryCode: string, level: number, limit?: number): Promise<(Ranking & { username: string })[]>;
+  getGlobalRankingsByLevel(level: number, limit?: number): Promise<(Ranking & { username: string })[]>;
+  getUserRankingsByCountry(userId: number, countryCode: string): Promise<(Ranking & { username: string })[]>;
 }
 
 export class DatabaseStorage implements IStorage {
   // User operations
-  async getUser(id: string): Promise<User | undefined> {
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user;
+  }
+
+  async getUserById(id: number): Promise<User | undefined> {
     const [user] = await db.select().from(users).where(eq(users.id, id));
     return user;
   }
 
-  async upsertUser(userData: UpsertUser): Promise<User> {
+  async createUser(userData: InsertUser): Promise<User> {
     const [user] = await db
       .insert(users)
       .values(userData)
-      .onConflictDoUpdate({
-        target: users.id,
-        set: {
-          ...userData,
-          updatedAt: new Date(),
-        },
-      })
       .returning();
     return user;
   }
 
-  async updateUserScore(userId: string, additionalScore: number): Promise<void> {
+  async updateUserSession(userId: number, sessionId: string): Promise<void> {
+    await db
+      .update(users)
+      .set({
+        sessionId,
+        lastActiveAt: new Date(),
+      })
+      .where(eq(users.id, userId));
+  }
+
+  async updateUserScore(userId: number, additionalScore: number): Promise<void> {
     await db
       .update(users)
       .set({
         totalScore: sql`${users.totalScore} + ${additionalScore}`,
-        updatedAt: new Date(),
+        gamesPlayed: sql`${users.gamesPlayed} + 1`,
+        lastActiveAt: new Date(),
       })
       .where(eq(users.id, userId));
+  }
+
+  async isUsernameAvailable(username: string): Promise<boolean> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return !user;
   }
 
   // Country operations
@@ -119,7 +145,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   // User progress operations
-  async getUserProgress(userId: string, countryCode: string, level: number): Promise<UserProgress | undefined> {
+  async getUserProgress(userId: number, countryCode: string, level: number): Promise<UserProgress | undefined> {
     const [progress] = await db
       .select()
       .from(userProgress)
@@ -133,7 +159,7 @@ export class DatabaseStorage implements IStorage {
     return progress;
   }
 
-  async getUserProgressByCountry(userId: string, countryCode: string): Promise<UserProgress[]> {
+  async getUserProgressByCountry(userId: number, countryCode: string): Promise<UserProgress[]> {
     return await db
       .select()
       .from(userProgress)
@@ -162,7 +188,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   // Quiz session operations
-  async getActiveQuizSession(userId: string): Promise<QuizSession | undefined> {
+  async getActiveQuizSession(userId: number): Promise<QuizSession | undefined> {
     const [session] = await db
       .select()
       .from(quizSessions)
@@ -204,6 +230,84 @@ export class DatabaseStorage implements IStorage {
       .update(quizSessions)
       .set({ completedAt: new Date() })
       .where(eq(quizSessions.id, sessionId));
+  }
+
+  // Ranking operations
+  async addRanking(rankingData: InsertRanking): Promise<Ranking> {
+    const [ranking] = await db.insert(rankings).values(rankingData).returning();
+    return ranking;
+  }
+
+  async getRankingsByCountryAndLevel(countryCode: string, level: number, limit = 50): Promise<(Ranking & { username: string })[]> {
+    return await db
+      .select({
+        id: rankings.id,
+        userId: rankings.userId,
+        countryCode: rankings.countryCode,
+        level: rankings.level,
+        score: rankings.score,
+        correctAnswers: rankings.correctAnswers,
+        totalQuestions: rankings.totalQuestions,
+        accuracy: rankings.accuracy,
+        completedAt: rankings.completedAt,
+        username: users.username,
+      })
+      .from(rankings)
+      .innerJoin(users, eq(rankings.userId, users.id))
+      .where(
+        and(
+          eq(rankings.countryCode, countryCode),
+          eq(rankings.level, level)
+        )
+      )
+      .orderBy(desc(rankings.score), desc(rankings.accuracy))
+      .limit(limit);
+  }
+
+  async getGlobalRankingsByLevel(level: number, limit = 50): Promise<(Ranking & { username: string })[]> {
+    return await db
+      .select({
+        id: rankings.id,
+        userId: rankings.userId,
+        countryCode: rankings.countryCode,
+        level: rankings.level,
+        score: rankings.score,
+        correctAnswers: rankings.correctAnswers,
+        totalQuestions: rankings.totalQuestions,
+        accuracy: rankings.accuracy,
+        completedAt: rankings.completedAt,
+        username: users.username,
+      })
+      .from(rankings)
+      .innerJoin(users, eq(rankings.userId, users.id))
+      .where(eq(rankings.level, level))
+      .orderBy(desc(rankings.score), desc(rankings.accuracy))
+      .limit(limit);
+  }
+
+  async getUserRankingsByCountry(userId: number, countryCode: string): Promise<(Ranking & { username: string })[]> {
+    return await db
+      .select({
+        id: rankings.id,
+        userId: rankings.userId,
+        countryCode: rankings.countryCode,
+        level: rankings.level,
+        score: rankings.score,
+        correctAnswers: rankings.correctAnswers,
+        totalQuestions: rankings.totalQuestions,
+        accuracy: rankings.accuracy,
+        completedAt: rankings.completedAt,
+        username: users.username,
+      })
+      .from(rankings)
+      .innerJoin(users, eq(rankings.userId, users.id))
+      .where(
+        and(
+          eq(rankings.userId, userId),
+          eq(rankings.countryCode, countryCode)
+        )
+      )
+      .orderBy(desc(rankings.score), asc(rankings.level));
   }
 }
 

@@ -24,17 +24,15 @@ export const sessions = pgTable(
   (table) => [index("IDX_session_expire").on(table.expire)],
 );
 
-// User storage table.
+// User storage table (simplified for unique usernames)
 export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  email: varchar("email").unique(),
-  firstName: varchar("first_name"),
-  lastName: varchar("last_name"),
-  profileImageUrl: varchar("profile_image_url"),
+  id: serial("id").primaryKey(),
+  username: varchar("username", { length: 50 }).notNull().unique(),
   totalScore: integer("total_score").default(0),
-  currentStreak: integer("current_streak").default(0),
+  gamesPlayed: integer("games_played").default(0),
+  sessionId: varchar("session_id"), // To track current browser session
   createdAt: timestamp("created_at").defaultNow(),
-  updatedAt: timestamp("updated_at").defaultNow(),
+  lastActiveAt: timestamp("last_active_at").defaultNow(),
 });
 
 // Countries table
@@ -66,7 +64,7 @@ export const questions = pgTable("questions", {
 // User progress table
 export const userProgress = pgTable("user_progress", {
   id: serial("id").primaryKey(),
-  userId: varchar("user_id").notNull(),
+  userId: integer("user_id").notNull(),
   countryCode: varchar("country_code", { length: 10 }).notNull(),
   level: integer("level").notNull(),
   questionsAnswered: integer("questions_answered").default(0),
@@ -81,7 +79,7 @@ export const userProgress = pgTable("user_progress", {
 // Quiz sessions table
 export const quizSessions = pgTable("quiz_sessions", {
   id: serial("id").primaryKey(),
-  userId: varchar("user_id").notNull(),
+  userId: integer("user_id").notNull(),
   countryCode: varchar("country_code", { length: 10 }).notNull(),
   level: integer("level").notNull(),
   currentQuestionIndex: integer("current_question_index").default(0),
@@ -90,8 +88,21 @@ export const quizSessions = pgTable("quiz_sessions", {
   completedAt: timestamp("completed_at"),
 });
 
+// Rankings table for leaderboards
+export const rankings = pgTable("rankings", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").notNull(),
+  countryCode: varchar("country_code", { length: 10 }).notNull(),
+  level: integer("level").notNull(),
+  score: integer("score").notNull(),
+  correctAnswers: integer("correct_answers").notNull(),
+  totalQuestions: integer("total_questions").notNull(),
+  accuracy: integer("accuracy").notNull(), // percentage
+  completedAt: timestamp("completed_at").defaultNow(),
+});
+
 // Schema types
-export type UpsertUser = typeof users.$inferInsert;
+export type InsertUser = typeof users.$inferInsert;
 export type User = typeof users.$inferSelect;
 
 export type InsertCountry = typeof countries.$inferInsert;
@@ -106,7 +117,16 @@ export type UserProgress = typeof userProgress.$inferSelect;
 export type InsertQuizSession = typeof quizSessions.$inferInsert;
 export type QuizSession = typeof quizSessions.$inferSelect;
 
+export type InsertRanking = typeof rankings.$inferInsert;
+export type Ranking = typeof rankings.$inferSelect;
+
 // Zod schemas
+export const insertUserSchema = createInsertSchema(users).omit({
+  id: true,
+  createdAt: true,
+  lastActiveAt: true,
+});
+
 export const insertCountrySchema = createInsertSchema(countries).omit({
   id: true,
   createdAt: true,
@@ -128,3 +148,16 @@ export const insertQuizSessionSchema = createInsertSchema(quizSessions).omit({
   startedAt: true,
   completedAt: true,
 });
+
+export const insertRankingSchema = createInsertSchema(rankings).omit({
+  id: true,
+  completedAt: true,
+});
+
+// Username validation schema
+export const usernameSchema = z.string()
+  .min(3, "El nombre debe tener al menos 3 caracteres")
+  .max(50, "El nombre no puede tener más de 50 caracteres")
+  .regex(/^[a-zA-Z0-9_]+$/, "Solo letras, números y guiones bajos permitidos");
+
+export type UsernameInput = z.infer<typeof usernameSchema>;

@@ -7,21 +7,35 @@ import { AnswerFeedback } from '@/components/AnswerFeedback';
 import { QuizResults } from '@/components/QuizResults';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { BottomNavigation } from '@/components/BottomNavigation';
+import { Rankings } from '@/components/Rankings';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
+import { Button } from '@/components/ui/button';
+import { Trophy, User, LogOut } from 'lucide-react';
 import type { Country } from '@shared/schema';
+import { apiRequest } from '@/lib/queryClient';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results';
+type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings';
 
 export default function Home() {
-  const { user, isLoading, isAuthenticated } = useAuth();
+  const { user, isLoading } = useAuth();
   const [gameState, setGameState] = useState<GameState>('country-selection');
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
   const [currentAnswerResult, setCurrentAnswerResult] = useState<any>(null);
+  const queryClient = useQueryClient();
   
   const { setCountry } = useLocalization(selectedCountry?.code);
   const { answerResult, resetQuiz } = useQuiz(selectedCountry?.code, selectedLevel);
+
+  const logoutMutation = useMutation({
+    mutationFn: () => apiRequest('POST', '/api/auth/logout'),
+    onSuccess: () => {
+      queryClient.clear();
+      window.location.reload();
+    },
+  });
 
   const handleCountrySelect = (country: Country) => {
     setSelectedCountry(country);
@@ -71,28 +85,28 @@ export default function Home() {
     setGameState('quiz');
   };
 
+  const handleShowRankings = () => {
+    setGameState('rankings');
+  };
+
+  const handleBackToGame = () => {
+    if (selectedCountry) {
+      setGameState('level-selection');
+    } else {
+      setGameState('country-selection');
+    }
+  };
+
+  const handleLogout = () => {
+    logoutMutation.mutate();
+  };
+
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
-      </div>
-    );
-  }
-
-  // Show login option for better experience if not authenticated
-  if (!isAuthenticated && gameState === 'country-selection') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-        <DarkModeToggle />
-        
-        <div className="flex flex-col items-center justify-center min-h-screen px-4">
-          <div className="text-center mb-8">
-            <div className="bg-yellow-100 dark:bg-yellow-900 border border-yellow-400 text-yellow-800 dark:text-yellow-200 px-4 py-3 rounded-lg mb-6">
-              <p className="font-semibold">🎯 Jugando como invitado</p>
-              <p className="text-sm">Tu progreso no se guardará, asere. <a href="/api/login" className="underline hover:text-yellow-900 dark:hover:text-yellow-100">Inicia sesión</a> para guardar tu fula (puntuación).</p>
-            </div>
-          </div>
-          <CountrySelection onCountrySelect={handleCountrySelect} />
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        <div className="text-center space-y-4">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="text-muted-foreground">Cargando...</p>
         </div>
       </div>
     );
@@ -100,7 +114,42 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <DarkModeToggle />
+      {/* Top Navigation Bar */}
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3">
+        <div className="flex items-center justify-between max-w-4xl mx-auto">
+          <div className="flex items-center gap-3">
+            <h1 className="text-xl font-bold">¿De dónde eres?</h1>
+            {user && (
+              <div className="flex items-center gap-2 text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                <User className="w-4 h-4" />
+                {user.username}
+              </div>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              variant={gameState === 'rankings' ? 'default' : 'outline'}
+              size="sm"
+              onClick={handleShowRankings}
+              className="flex items-center gap-2"
+            >
+              <Trophy className="w-4 h-4" />
+              Rankings
+            </Button>
+            <DarkModeToggle />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleLogout}
+              disabled={logoutMutation.isPending}
+              className="flex items-center gap-2"
+            >
+              <LogOut className="w-4 h-4" />
+              Cambiar Usuario
+            </Button>
+          </div>
+        </div>
+      </div>
       
       {gameState === 'country-selection' && (
         <CountrySelection onCountrySelect={handleCountrySelect} />
@@ -145,6 +194,21 @@ export default function Home() {
           onRetryLevel={handleRetryLevel}
           onBackToLevels={handleBackToLevels}
         />
+      )}
+      
+      {gameState === 'rankings' && (
+        <div className="pt-6">
+          <div className="max-w-4xl mx-auto px-4 mb-4">
+            <Button
+              variant="outline"
+              onClick={handleBackToGame}
+              className="mb-4"
+            >
+              ← Volver al Juego
+            </Button>
+          </div>
+          <Rankings selectedCountryCode={selectedCountry?.code} />
+        </div>
       )}
       
       <BottomNavigation activeTab="play" />
