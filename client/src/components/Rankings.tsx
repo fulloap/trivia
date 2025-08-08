@@ -32,13 +32,33 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
   const { data: userRankings, isLoading: loadingUser } = useQuery<RankingWithUsername[]>({
     queryKey: ['/api/rankings/user', selectedCountryCode],
     enabled: !!user && !!selectedCountryCode && activeTab === 'user',
+    select: (data) => data?.filter(ranking => ranking.level === selectedLevel) || [],
   });
 
   const getRankIcon = (position: number) => {
-    if (position === 1) return <Trophy className="w-5 h-5 text-yellow-500" />;
-    if (position === 2) return <Medal className="w-5 h-5 text-gray-400" />;
-    if (position === 3) return <Award className="w-5 h-5 text-amber-600" />;
-    return <span className="w-5 h-5 flex items-center justify-center text-sm font-bold text-muted-foreground">#{position}</span>;
+    if (position === 1) return (
+      <div className="relative">
+        <Trophy className="w-7 h-7 text-yellow-500 drop-shadow-lg" />
+        <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+      </div>
+    );
+    if (position === 2) return (
+      <div className="relative">
+        <Medal className="w-7 h-7 text-gray-400 drop-shadow-md" />
+        <div className="absolute -top-1 -right-1 w-2 h-2 bg-gray-300 rounded-full"></div>
+      </div>
+    );
+    if (position === 3) return (
+      <div className="relative">
+        <Award className="w-7 h-7 text-amber-600 drop-shadow-md" />
+        <div className="absolute -top-1 -right-1 w-2 h-2 bg-amber-400 rounded-full"></div>
+      </div>
+    );
+    return (
+      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center border shadow-sm">
+        <span className="text-sm font-bold text-muted-foreground">#{position}</span>
+      </div>
+    );
   };
 
   const getLevelName = (level: number) => {
@@ -80,76 +100,133 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
 
     return (
       <div className="space-y-2">
-        {rankings.map((ranking, index) => (
-          <div 
-            key={ranking.id} 
-            className={`flex items-center gap-3 p-3 rounded-lg border transition-colors ${
-              user && ranking.username === user.username 
-                ? 'bg-primary/10 border-primary/20' 
-                : 'bg-card hover:bg-muted/50'
-            }`}
-          >
-            <div className="flex items-center justify-center w-8 h-8">
-              {getRankIcon(index + 1)}
+        {rankings.map((ranking, index) => {
+          const isCurrentUser = user && ranking.username === user.username;
+          const position = index + 1;
+          
+          return (
+            <div 
+              key={ranking.id} 
+              className={`relative flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.02] ${
+                isCurrentUser
+                  ? 'bg-gradient-to-r from-primary/10 to-primary/5 border-primary/30 shadow-lg ring-1 ring-primary/20' 
+                  : position <= 3
+                  ? 'bg-gradient-to-r from-muted/50 to-background border-border/50 shadow-md hover:shadow-lg'
+                  : 'bg-card hover:bg-muted/30 border-border/30 shadow-sm hover:shadow-md'
+              }`}
+            >
+              {/* Posición y icono */}
+              <div className="flex items-center justify-center w-12 h-12">
+                {getRankIcon(position)}
+              </div>
+              
+              {/* Información del usuario */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className={`font-semibold truncate text-lg ${
+                    isCurrentUser ? 'text-primary' : position <= 3 ? 'text-foreground' : 'text-foreground/90'
+                  }`}>
+                    {ranking.username}
+                  </span>
+                  {isCurrentUser && (
+                    <Badge variant="default" className="text-xs px-2 py-1 bg-primary text-primary-foreground">
+                      Tú
+                    </Badge>
+                  )}
+                  {position <= 3 && !isCurrentUser && (
+                    <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                  )}
+                </div>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    {ranking.correctAnswers}/{ranking.totalQuestions} correctas
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    {ranking.accuracy}% precisión
+                  </span>
+                  <span className="text-xs opacity-75">
+                    {ranking.completedAt ? new Date(ranking.completedAt).toLocaleDateString() : 'Sin fecha'}
+                  </span>
+                </div>
+              </div>
+              
+              {/* Puntuación */}
+              <div className="text-right">
+                <div className={`text-2xl font-bold ${
+                  isCurrentUser ? 'text-primary' : position <= 3 ? 'text-foreground' : 'text-muted-foreground'
+                }`}>
+                  {ranking.score.toLocaleString()}
+                </div>
+                <div className="text-xs text-muted-foreground font-medium">puntos</div>
+              </div>
+
+              {/* Efecto de brillo para top 3 */}
+              {position <= 3 && (
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
+              )}
             </div>
-            
-            <div className="flex-1 min-w-0">
-              <p className={`font-medium truncate ${
-                user && ranking.username === user.username ? 'text-primary' : ''
-              }`}>
-                {ranking.username}
-                {user && ranking.username === user.username && (
-                  <Badge variant="secondary" className="ml-2 text-xs">Tú</Badge>
-                )}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                {ranking.correctAnswers}/{ranking.totalQuestions} correctas • {ranking.accuracy}% precisión
-              </p>
-            </div>
-            
-            <div className="text-right">
-              <p className="font-bold text-primary">{ranking.score}</p>
-              <p className="text-xs text-muted-foreground">puntos</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };
 
   return (
     <div className="max-w-4xl mx-auto p-4 space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Trophy className="w-5 h-5" />
-            Rankings
+      <Card className="overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-primary via-primary/90 to-primary/80 text-primary-foreground">
+          <CardTitle className="flex items-center gap-3 text-xl">
+            <Trophy className="w-6 h-6" />
+            🏆 Rankings de Jugadores
           </CardTitle>
-          <CardDescription>
-            Compite con otros jugadores y mejora tu posición
+          <CardDescription className="text-primary-foreground/80">
+            Compite con otros jugadores y alcanza la cima del ranking
           </CardDescription>
         </CardHeader>
       </Card>
 
       {/* Level Selection */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">Seleccionar Nivel</CardTitle>
+      <Card className="overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-primary/5 to-primary/10">
+          <CardTitle className="text-lg flex items-center gap-2">
+            <Star className="w-5 h-5 text-primary" />
+            Seleccionar Nivel de Competencia
+          </CardTitle>
+          <CardDescription>
+            Compite en diferentes niveles de dificultad
+          </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="flex gap-2 flex-wrap">
-            {[1, 2, 3, 4].map((level) => (
-              <Button
-                key={level}
-                variant={selectedLevel === level ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedLevel(level)}
-                className="flex items-center gap-2"
-              >
-                <Star className="w-4 h-4" />
-                {getLevelName(level)}
-              </Button>
-            ))}
+        <CardContent className="pt-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[1, 2, 3, 4].map((level) => {
+              const isSelected = selectedLevel === level;
+              const levelInfo = {
+                1: { icon: "🌱", gradient: "from-green-100 to-green-50", border: "border-green-200", text: "text-green-700", name: "Principiante" },
+                2: { icon: "⚡", gradient: "from-blue-100 to-blue-50", border: "border-blue-200", text: "text-blue-700", name: "Intermedio" },
+                3: { icon: "🔥", gradient: "from-orange-100 to-orange-50", border: "border-orange-200", text: "text-orange-700", name: "Avanzado" },
+                4: { icon: "👑", gradient: "from-purple-100 to-purple-50", border: "border-purple-200", text: "text-purple-700", name: "Leyenda" }
+              };
+              
+              const info = levelInfo[level as keyof typeof levelInfo];
+              
+              return (
+                <Button
+                  key={level}
+                  variant={isSelected ? "default" : "outline"}
+                  onClick={() => setSelectedLevel(level)}
+                  className={`h-auto p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:scale-105 ${
+                    isSelected 
+                      ? 'bg-primary text-primary-foreground shadow-lg ring-2 ring-primary/20' 
+                      : `bg-gradient-to-br ${info.gradient} ${info.border} ${info.text} hover:shadow-md`
+                  }`}
+                >
+                  <span className="text-2xl">{info.icon}</span>
+                  <span className="text-sm font-semibold">{info.name}</span>
+                </Button>
+              );
+            })}
           </div>
         </CardContent>
       </Card>
@@ -176,17 +253,17 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
         </TabsList>
 
         <TabsContent value="global">
-          <Card>
-            <CardHeader>
+          <Card className="overflow-hidden">
+            <CardHeader className="bg-gradient-to-r from-blue-500/20 to-blue-600/10">
               <CardTitle className="flex items-center gap-2">
-                <Globe className="w-5 h-5" />
-                Ranking Global - {getLevelName(selectedLevel)}
+                <Globe className="w-5 h-5 text-blue-600" />
+                🌍 Ranking Global - {getLevelName(selectedLevel)}
               </CardTitle>
               <CardDescription>
-                Los mejores jugadores de todos los países
+                Los mejores jugadores de todos los países compitiendo juntos
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-6">
               {renderRankingList(globalRankings, loadingGlobal)}
             </CardContent>
           </Card>
@@ -194,17 +271,17 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
 
         {selectedCountryCode && (
           <TabsContent value="country">
-            <Card>
-              <CardHeader>
+            <Card className="overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-green-500/20 to-green-600/10">
                 <CardTitle className="flex items-center gap-2">
-                  <Flag className="w-5 h-5" />
-                  Ranking por País - {getLevelName(selectedLevel)}
+                  <Flag className="w-5 h-5 text-green-600" />
+                  🏆 Ranking por País - {getLevelName(selectedLevel)}
                 </CardTitle>
                 <CardDescription>
-                  Los mejores jugadores de este país
+                  Los mejores jugadores de tu país en este nivel
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-6">
                 {renderRankingList(countryRankings, loadingCountry)}
               </CardContent>
             </Card>
@@ -213,17 +290,17 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
 
         {user && selectedCountryCode && (
           <TabsContent value="user">
-            <Card>
-              <CardHeader>
+            <Card className="overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-secondary/20 to-secondary/10">
                 <CardTitle className="flex items-center gap-2">
-                  <Users className="w-5 h-5" />
+                  <Users className="w-5 h-5 text-secondary-foreground" />
                   Mis Juegos - {user.username}
                 </CardTitle>
                 <CardDescription>
-                  Tus mejores resultados en este país
+                  Tus mejores resultados en {getLevelName(selectedLevel)}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-6">
                 {renderRankingList(userRankings, loadingUser)}
               </CardContent>
             </Card>
