@@ -159,7 +159,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Update session
       await storage.updateQuizSession(sessionId, {
-        currentQuestionIndex: session.currentQuestionIndex + 1,
+        currentQuestionIndex: (session.currentQuestionIndex || 0) + 1,
         sessionData: updatedData,
       });
 

@@ -9,7 +9,7 @@ interface CountrySelectionProps {
 }
 
 export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
-  const { data: countries = [], isLoading } = useQuery({
+  const { data: countries = [], isLoading } = useQuery<Country[]>({
     queryKey: ['/api/countries'],
   });
 

@@ -16,7 +16,7 @@ import {
   type InsertQuizSession,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, desc } from "drizzle-orm";
+import { eq, and, desc, sql } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
@@ -168,7 +168,7 @@ export class DatabaseStorage implements IStorage {
       .where(
         and(
           eq(quizSessions.userId, userId),
-          eq(quizSessions.completedAt, null)
+          sql`${quizSessions.completedAt} IS NULL`
         )
       )
       .orderBy(desc(quizSessions.startedAt))

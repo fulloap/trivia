@@ -34,7 +34,7 @@ export function useQuiz(countryCode?: string, level?: number) {
   });
 
   // Fetch questions for the current country and level
-  const { data: questions = [], isLoading: loadingQuestions } = useQuery({
+  const { data: questions = [], isLoading: loadingQuestions } = useQuery<Question[]>({
     queryKey: ['/api/questions', countryCode, level],
     enabled: !!countryCode && !!level,
   });

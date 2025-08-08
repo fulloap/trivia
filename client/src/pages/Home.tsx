@@ -14,7 +14,7 @@ import type { Country } from '@shared/schema';
 type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results';
 
 export default function Home() {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, isAuthenticated } = useAuth();
   const [gameState, setGameState] = useState<GameState>('country-selection');
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
@@ -22,14 +22,6 @@ export default function Home() {
   
   const { setCountry } = useLocalization(selectedCountry?.code);
   const { answerResult, resetQuiz } = useQuiz(selectedCountry?.code, selectedLevel);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
-      </div>
-    );
-  }
 
   const handleCountrySelect = (country: Country) => {
     setSelectedCountry(country);
@@ -78,6 +70,33 @@ export default function Home() {
     resetQuiz();
     setGameState('quiz');
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  // Show login option for better experience if not authenticated
+  if (!isAuthenticated && gameState === 'country-selection') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+        <DarkModeToggle />
+        
+        <div className="flex flex-col items-center justify-center min-h-screen px-4">
+          <div className="text-center mb-8">
+            <div className="bg-yellow-100 dark:bg-yellow-900 border border-yellow-400 text-yellow-800 dark:text-yellow-200 px-4 py-3 rounded-lg mb-6">
+              <p className="font-semibold">🎯 Jugando como invitado</p>
+              <p className="text-sm">Tu progreso no se guardará. <a href="/api/login" className="underline hover:text-yellow-900 dark:hover:text-yellow-100">Inicia sesión</a> para guardar tu puntuación.</p>
+            </div>
+          </div>
+          <CountrySelection onCountrySelect={handleCountrySelect} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">

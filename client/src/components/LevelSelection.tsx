@@ -15,7 +15,7 @@ interface LevelSelectionProps {
 export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: LevelSelectionProps) {
   const { getText, currentLocalization } = useLocalization(selectedCountry.code);
   
-  const { data: userProgress = [] } = useQuery({
+  const { data: userProgress = [] } = useQuery<UserProgress[]>({
     queryKey: ['/api/progress', selectedCountry.code],
   });
 
@@ -103,7 +103,7 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
             const progress = getUserProgressForLevel(level.id);
             const isCompleted = progress?.isCompleted;
             const accuracy = progress?.questionsAnswered 
-              ? (progress.correctAnswers / progress.questionsAnswered) * 100 
+              ? ((progress.correctAnswers || 0) / progress.questionsAnswered) * 100 
               : 0;
 
             return (
@@ -162,7 +162,7 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
                 className="text-2xl font-bold mb-1"
                 style={{ color: selectedCountry.primaryColor }}
               >
-                🏆 {userProgress.reduce((sum: number, p: UserProgress) => sum + p.totalScore, 0)}
+                🏆 {userProgress.reduce((sum: number, p: UserProgress) => sum + (p.totalScore || 0), 0)}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400 font-inter">
                 Puntos
@@ -188,7 +188,7 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
                 className="text-2xl font-bold mb-1"
                 style={{ color: selectedCountry.primaryColor }}
               >
-                🔥 {Math.max(...userProgress.map((p: UserProgress) => p.correctAnswers), 0)}
+                🔥 {userProgress.length > 0 ? Math.max(...userProgress.map((p: UserProgress) => p.correctAnswers || 0)) : 0}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400 font-inter">
                 Mejor racha
