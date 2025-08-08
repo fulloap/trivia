@@ -1,0 +1,78 @@
+[
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba?",
+    "correctAnswer": "Amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": ["Amigo", "Hermano", "Primo", "Vecino"],
+    "points": 100
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "completar",
+    "question": "Completa la frase: '¡Qué ___, mi hermano!'",
+    "correctAnswer": "bola",
+    "explanation": "'¡Qué bola!' es un saludo muy común en Cuba, similar a '¿Qué tal?' o '¿Cómo estás?'",
+    "points": 100
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa estar 'duro' en Cuba?",
+    "correctAnswer": "Sin dinero",
+    "explanation": "En Cuba, estar 'duro' significa no tener dinero, estar en una situación económica difícil.",
+    "options": ["Sin dinero", "Muy fuerte", "Enojado", "Cansado"],
+    "points": 150
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "completar",
+    "question": "Si algo está 'brutal', significa que está ___",
+    "correctAnswer": "increíble",
+    "explanation": "'Brutal' en Cuba se usa para decir que algo está increíble, espectacular o muy bueno.",
+    "points": 150
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'paladar' en Cuba?",
+    "correctAnswer": "Restaurante privado",
+    "explanation": "Un 'paladar' es un restaurante privado en una casa particular, muy popular en Cuba.",
+    "options": ["Restaurante privado", "Tipo de comida", "Bar", "Mercado"],
+    "points": 200
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "completar",
+    "question": "Cuando algo está 'candela', está ___",
+    "correctAnswer": "buenísimo",
+    "explanation": "'Candela' en Cuba significa que algo está buenísimo, espectacular o muy bueno.",
+    "points": 200
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar en la lucha' en Cuba?",
+    "correctAnswer": "Buscarse la vida para sobrevivir",
+    "explanation": "'Estar en la lucha' significa estar buscándose la vida, trabajando duro para resolver problemas económicos.",
+    "options": ["Buscarse la vida para sobrevivir", "Estar peleando", "Estar estudiando", "Estar enfermo"],
+    "points": 300
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "completar",
+    "question": "Si alguien es un 'jinetero', es un ___",
+    "correctAnswer": "buscavidas",
+    "explanation": "Un 'jinetero' en Cuba es alguien que se busca la vida de diferentes maneras, especialmente relacionado con el turismo.",
+    "points": 300
+  }
+]

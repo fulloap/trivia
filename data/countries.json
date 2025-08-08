@@ -1,0 +1,16 @@
+[
+  {
+    "code": "cuba",
+    "name": "Cuba",
+    "flag": "🇨🇺",
+    "primaryColor": "#FF6B35",
+    "isActive": true
+  },
+  {
+    "code": "honduras",
+    "name": "Honduras",
+    "flag": "🇭🇳",
+    "primaryColor": "#1E88E5",
+    "isActive": true
+  }
+]

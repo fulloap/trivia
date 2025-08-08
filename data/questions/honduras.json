@@ -1,0 +1,78 @@
+[
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'maje' en Honduras?",
+    "correctAnswer": "Amigo",
+    "explanation": "'Maje' es una forma muy común en Honduras de decir 'amigo' o 'hermano'.",
+    "options": ["Amigo", "Primo", "Vecino", "Compañero"],
+    "points": 100
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "completar",
+    "question": "Completa la frase: '¡Qué ___, cipote!'",
+    "correctAnswer": "macizo",
+    "explanation": "'¡Qué macizo!' es una expresión hondureña para decir que algo está genial o increíble.",
+    "points": 100
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'cipote' en Honduras?",
+    "correctAnswer": "Niño o joven",
+    "explanation": "'Cipote' en Honduras se refiere a un niño o joven, también se usa como término cariñoso entre amigos.",
+    "options": ["Niño o joven", "Amigo", "Hermano", "Primo"],
+    "points": 150
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "completar",
+    "question": "Si algo está 'chivo', está ___",
+    "correctAnswer": "genial",
+    "explanation": "'Chivo' en Honduras significa que algo está genial, bueno o divertido.",
+    "points": 150
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar jodido' en Honduras?",
+    "correctAnswer": "Estar en problemas",
+    "explanation": "'Estar jodido' en Honduras significa estar en una situación difícil o tener problemas.",
+    "options": ["Estar en problemas", "Estar cansado", "Estar feliz", "Estar enfermo"],
+    "points": 200
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "completar",
+    "question": "Una 'baleada' es una ___",
+    "correctAnswer": "tortilla",
+    "explanation": "Una 'baleada' es una tortilla de harina rellena con frijoles y otros ingredientes, comida típica hondureña.",
+    "points": 200
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'andar de choto' en Honduras?",
+    "correctAnswer": "Andar sin hacer nada productivo",
+    "explanation": "'Andar de choto' significa andar sin hacer nada útil, perdiendo el tiempo.",
+    "options": ["Andar sin hacer nada productivo", "Andar corriendo", "Andar trabajando", "Andar estudiando"],
+    "points": 300
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "completar",
+    "question": "Si alguien está 'pilas', está ___",
+    "correctAnswer": "alerta",
+    "explanation": "'Estar pilas' en Honduras significa estar alerta, atento o listo para algo.",
+    "points": 300
+  }
+]
