@@ -2,7 +2,7 @@
 
 ## Overview
 
-A cultural quiz web application that adapts to different countries and regions, allowing users to test their knowledge of local slang, expressions, customs, and memes. The application currently supports Cuba (1,032 questions) and Honduras (36 questions) with visual flag representations. Users progress through four difficulty levels, from beginner to "legend mode," with country-specific localization that changes language, styling, and cultural references based on their selection. Features a comprehensive scoring system with 1 point per correct answer, help system with 20-point penalty and 3 maximum hints per session, real-time rankings by country and level, and complete progress tracking stored in PostgreSQL. All questions are multiple-choice format with no text input required from users.
+A cultural quiz web application that adapts to different countries and regions, allowing users to test their knowledge of local slang, expressions, customs, and memes. The application currently supports Cuba (1,032 questions) and Honduras (1,032 questions) with visual flag representations. Users progress through four difficulty levels, from beginner to "legend mode," with country-specific localization that changes language, styling, and cultural references based on their selection. Features a comprehensive scoring system with 1 point per correct answer, help system with 20-point penalty and 3 maximum hints per session, real-time rankings by country and level, and complete progress tracking stored in PostgreSQL. All questions are multiple-choice format with no text input required from users.
 
 ## User Preferences
 
@@ -39,7 +39,7 @@ Preferred communication style: Simple, everyday language.
   - `sessions`: Authentication session storage
 - **Question Data**: JSON files organized by country in the data/questions directory for content management
   - Cuba: 1,032 questions (222 level 1, 507 level 2, 224 level 3, 79 level 4)
-  - Honduras: 36 questions (12 level 1, 8 level 2, 7 level 3, 9 level 4)
+  - Honduras: 1,032 questions (222 level 1, 507 level 2, 224 level 3, 79 level 4)
 - **Migration System**: Drizzle Kit for database schema migrations and pushes
 - **Data Persistence**: All quiz progress, rankings, and user activity permanently stored in PostgreSQL
 
