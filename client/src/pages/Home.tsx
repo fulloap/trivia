@@ -89,7 +89,7 @@ export default function Home() {
           <div className="text-center mb-8">
             <div className="bg-yellow-100 dark:bg-yellow-900 border border-yellow-400 text-yellow-800 dark:text-yellow-200 px-4 py-3 rounded-lg mb-6">
               <p className="font-semibold">🎯 Jugando como invitado</p>
-              <p className="text-sm">Tu progreso no se guardará. <a href="/api/login" className="underline hover:text-yellow-900 dark:hover:text-yellow-100">Inicia sesión</a> para guardar tu puntuación.</p>
+              <p className="text-sm">Tu progreso no se guardará, asere. <a href="/api/login" className="underline hover:text-yellow-900 dark:hover:text-yellow-100">Inicia sesión</a> para guardar tu fula (puntuación).</p>
             </div>
           </div>
           <CountrySelection onCountrySelect={handleCountrySelect} />

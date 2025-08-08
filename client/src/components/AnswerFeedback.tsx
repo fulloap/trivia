@@ -20,7 +20,7 @@ export function AnswerFeedback({
   correctAnswer,
   onNext,
 }: AnswerFeedbackProps) {
-  const { getText } = useLocalization(selectedCountry.code);
+  const { getText, getRandomExpression } = useLocalization(selectedCountry.code);
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
@@ -29,7 +29,7 @@ export function AnswerFeedback({
           <div>
             <div className="text-8xl mb-6 animate-bounce">🎉</div>
             <h2 className="text-4xl font-black text-green-600 dark:text-green-400 mb-4">
-              {getText('feedback.correct') || '¡Excelente!'}
+              {getText('feedback.correct', true) || '¡Excelente!'}
             </h2>
             <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 rounded-2xl mb-6">
               <CardContent className="p-6">
@@ -46,7 +46,7 @@ export function AnswerFeedback({
           <div>
             <div className="text-8xl mb-6">😅</div>
             <h2 className="text-4xl font-black text-red-600 dark:text-red-400 mb-4">
-              {getText('feedback.incorrect') || '¡Casi!'}
+              {getText('feedback.incorrect', true) || '¡Casi!'}
             </h2>
             <Card className="bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 rounded-2xl mb-6">
               <CardContent className="p-6">
@@ -66,7 +66,7 @@ export function AnswerFeedback({
           className="w-full py-4 rounded-xl font-bold text-lg transition-colors text-white"
           style={{ backgroundColor: selectedCountry.primaryColor }}
         >
-          Siguiente pregunta 🚀
+{getText('quiz.nextButton') || 'Siguiente pregunta'} 🚀
         </Button>
       </div>
     </div>

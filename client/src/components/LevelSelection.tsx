@@ -13,7 +13,7 @@ interface LevelSelectionProps {
 }
 
 export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: LevelSelectionProps) {
-  const { getText, currentLocalization } = useLocalization(selectedCountry.code);
+  const { getText, getRandomExpression, currentLocalization } = useLocalization(selectedCountry.code);
   
   const { data: userProgress = [] } = useQuery<UserProgress[]>({
     queryKey: ['/api/progress', selectedCountry.code],
@@ -22,8 +22,8 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
   const levels = [
     {
       id: 1,
-      title: '🌱 Casi no soy de aquí',
-      description: 'Nivel principiante - Expresiones básicas',
+      title: `🌱 ${getText('levelSelection.level1') || 'Yuma Principiante'}`,
+      description: getText('levelSelection.level1Description') || 'Nivel principiante - Expresiones básicas',
       color: 'green',
       bgColor: 'bg-green-50 dark:bg-green-900/20',
       borderColor: 'border-green-200 dark:border-green-800',
@@ -33,8 +33,8 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
     },
     {
       id: 2,
-      title: `😎 ${getText('levelSelection.level2') || 'Soy de aquí'}`,
-      description: 'Nivel intermedio - Frases populares',
+      title: `😎 ${getText('levelSelection.level2') || 'Cubano de Barrio'}`,
+      description: getText('levelSelection.level2Description') || 'Nivel intermedio - Frases populares',
       color: 'blue',
       bgColor: 'bg-blue-50 dark:bg-blue-900/20',
       borderColor: 'border-blue-200 dark:border-blue-800',
@@ -44,8 +44,8 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
     },
     {
       id: 3,
-      title: `🔥 ${getText('levelSelection.level3') || 'Estoy duro'}`,
-      description: 'Nivel avanzado - Jerga y memes',
+      title: `🔥 ${getText('levelSelection.level3') || 'Asere de Ley'}`,
+      description: getText('levelSelection.level3Description') || 'Nivel avanzado - Jerga y memes',
       color: 'orange',
       bgColor: 'bg-orange-50 dark:bg-orange-900/20',
       borderColor: 'border-orange-200 dark:border-orange-800',
@@ -55,8 +55,8 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
     },
     {
       id: 4,
-      title: '👑 Modo leyenda',
-      description: 'Solo para locales de verdad',
+      title: `👑 ${getText('levelSelection.level4') || 'Modo Leyenda Cubana'}`,
+      description: getText('levelSelection.level4Description') || 'Solo para locales de verdad',
       color: 'purple',
       bgColor: 'bg-purple-50 dark:bg-purple-900/20',
       borderColor: 'border-purple-200 dark:border-purple-800',
