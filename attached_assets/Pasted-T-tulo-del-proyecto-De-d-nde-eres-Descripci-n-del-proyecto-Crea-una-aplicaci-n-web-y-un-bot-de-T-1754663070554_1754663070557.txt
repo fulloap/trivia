@@ -1,0 +1,136 @@
+Título del proyecto: ¿De dónde eres?
+Descripción del proyecto:
+Crea una aplicación web y un bot de Telegram sincronizados que permitan a los usuarios jugar a un quiz de frases, palabras, costumbres y memes de su país o región, adivinando expresiones culturales locales. El sistema debe ser escalable por países mediante archivos .json independientes, y la interfaz debe adaptarse al argot de cada país seleccionado.
+
+🧩 FUNCIONALIDADES PRINCIPALES
+✅ Selección de país o región
+Pantalla de inicio donde el usuario elige su país o región.
+
+Al seleccionar un país, toda la app se adapta a su argot, lenguaje local, expresiones y estilo visual:
+
+Botones, textos, mensajes, feedback, animaciones y emojis cambian según el país.
+
+Ejemplo: Si elige Cuba, los textos usarán “asere”, “pinga”, “ñooo”, etc.
+
+Si elige Honduras, se verá “cipote”, “¡qué macizo!”, “maje”, etc.
+
+✅ Países disponibles al inicio:
+Cuba
+
+Honduras
+(Se agregarán más: México, España, Venezuela, Colombia, Dominicana, etc.)
+
+🗂 ESTRUCTURA ESCALABLE POR ARCHIVOS JSON
+Cada país/región tiene un archivo JSON propio cargado dinámicamente:
+
+json
+Copiar
+Editar
+{
+  "id": 1,
+  "pais": "Nombre del país",
+  "nivel": 1,
+  "tipo": "completar",
+  "pregunta": "Texto local",
+  "respuesta": "respuesta correcta",
+  "explicacion": "Breve explicación cultural",
+  "opciones": ["si aplica"]
+}
+El sistema debe permitir subir nuevos archivos JSON fácilmente por backend o carpeta.
+
+🎮 MECÁNICA DEL JUEGO
+Cuatro niveles de dificultad por país:
+
+Casi no soy de aquí
+
+Soy de aquí, asere / maje / pana
+
+Estoy duro, pinga / macizo / cabrón
+
+Modo leyenda (solo para locales de verdad)
+
+Tipos de preguntas:
+
+Palabras incompletas
+
+Preguntas de opción múltiple
+
+Frases virales y memes
+
+Verdadero/falso
+
+Humor visual o de audio (opcional en Telegram)
+
+Reto diario por país
+
+Puntos acumulables
+
+Ranking global y por país
+
+👥 SISTEMA DE USUARIOS
+Registro opcional para guardar progreso
+
+Métodos de acceso:
+
+Google
+
+Correo + contraseña
+
+Telegram (login automático al interactuar con el bot)
+
+Si no se registra, puede jugar pero sin guardar progreso
+
+🌐 SINCRONIZACIÓN CON TELEGRAM
+Todo lo que se puede hacer en la web, también se puede hacer desde el bot:
+
+Jugar niveles
+
+Reto diario
+
+Ver ranking
+
+Cambiar país
+
+Consultar puntuación
+
+El progreso se sincroniza automáticamente
+
+Se usa el telegram_id para identificar al usuario sin login adicional
+
+🔄 ESCALABILIDAD Y LOCALIZACIÓN
+Soporte para múltiples países, regiones o provincias
+
+Al subir un nuevo JSON, se agrega automáticamente a la app
+
+Todo el contenido se adapta automáticamente al país seleccionado (textos, memes, animaciones)
+
+Soporte multilingüe (empezar con español e inglés)
+
+Código modular y actualizable sin alterar la base del juego
+
+🎨 DISEÑO Y EXPERIENCIA
+Interfaz atractiva, divertida y moderna
+
+Animaciones graciosas, efectos visuales y emojis locales
+
+Estilo responsive (optimizado para móviles)
+
+Modo claro y oscuro
+
+Cada país puede tener colores y elementos visuales distintivos
+
+🛡️ SEGURIDAD Y ACCESO
+Login con reCAPTCHA v2 Invisible (ideal para conexiones lentas como en Cuba)
+
+No usar Firebase Auth ni Supabase Auth (por restricciones de acceso)
+
+Control de SPAM y abuso en Telegram
+
+🚀 OBJETIVO
+Crear un juego viral, educativo y divertido
+
+Fomentar la identidad cultural y el orgullo local
+
+Escalable a nivel mundial, comenzando por países de habla hispana
+
+Adaptado a usuarios con mala conexión (modo Telegram completo)
