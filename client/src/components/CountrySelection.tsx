@@ -58,7 +58,11 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
           >
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="text-6xl mb-4">{country.flag}</div>
+                <div className="text-6xl mb-4">
+                  {country.code === 'cuba' ? '🇨🇺' : 
+                   country.code === 'honduras' ? '🇭🇳' : 
+                   country.flag}
+                </div>
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                   {country.name}
                 </h3>
