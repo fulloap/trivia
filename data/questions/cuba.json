@@ -78,5 +78,245 @@
     "explanation": "Un 'jinetero' en Cuba es alguien que se busca la vida de diferentes maneras, especialmente relacionado con el turismo.",
     "options": ["buscavidas", "jinete", "turista", "trabajador"],
     "points": 300
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'chévere' en Cuba?",
+    "correctAnswer": "Genial, bueno",
+    "explanation": "'Chévere' es una expresión muy común en Cuba para decir que algo está bien o es genial.",
+    "options": ["Genial, bueno", "Malo", "Caro", "Difícil"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "Si alguien dice '¡Oye!', ¿qué está haciendo?",
+    "correctAnswer": "Llamando tu atención",
+    "explanation": "'¡Oye!' es una forma muy cubana de llamar la atención de alguien o saludar.",
+    "options": ["Llamando tu atención", "Cantando", "Gritando enojado", "Pidiendo dinero"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la guagua' en Cuba?",
+    "correctAnswer": "El autobús",
+    "explanation": "En Cuba, 'guagua' es la palabra para autobús o transporte público.",
+    "options": ["El autobús", "Un bebé", "Una comida", "Un baile"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jeva' en Cuba?",
+    "correctAnswer": "Novia o chica",
+    "explanation": "'Jeva' es una forma cubana de referirse a la novia o a una chica joven.",
+    "options": ["Novia o chica", "Hermana", "Amiga", "Madre"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "Si algo está 'de pinga', está ___",
+    "correctAnswer": "increíble",
+    "explanation": "'De pinga' es una expresión cubana para decir que algo está increíble o muy bueno.",
+    "options": ["increíble", "feo", "roto", "caro"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'socio' en Cuba?",
+    "correctAnswer": "Amigo",
+    "explanation": "'Socio' es otra forma cubana de decir amigo o compañero.",
+    "options": ["Amigo", "Jefe", "Hermano", "Primo"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar en China'?",
+    "correctAnswer": "Estar confundido",
+    "explanation": "'Estar en China' significa estar confundido o perdido mentalmente.",
+    "options": ["Estar confundido", "Estar en Asia", "Estar comiendo", "Estar estudiando"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'el flow' en Cuba?",
+    "correctAnswer": "El estilo o la actitud",
+    "explanation": "'Flow' se refiere al estilo personal, la actitud o el carisma de alguien.",
+    "options": ["El estilo o la actitud", "Una bebida", "Un baile", "Una comida"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar en candela'?",
+    "correctAnswer": "Estar en problemas",
+    "explanation": "'Estar en candela' significa estar en una situación problemática o difícil.",
+    "options": ["Estar en problemas", "Estar feliz", "Estar cocinando", "Estar bailando"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es una 'fiesta de quince'?",
+    "correctAnswer": "Celebración de los 15 años de una chica",
+    "explanation": "La 'fiesta de quince' es una tradición cubana para celebrar cuando una chica cumple 15 años.",
+    "options": ["Celebración de los 15 años de una chica", "Una boda", "Un bautizo", "Una graduación"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "Si algo está 'jevi', está ___",
+    "correctAnswer": "genial",
+    "explanation": "'Jevi' es otra forma cubana de decir que algo está genial o muy bueno.",
+    "options": ["genial", "malo", "viejo", "sucio"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar volao'?",
+    "correctAnswer": "Estar muy ocupado",
+    "explanation": "'Estar volao' significa estar muy ocupado o corriendo de un lado a otro.",
+    "options": ["Estar muy ocupado", "Estar volando", "Estar borracho", "Estar enfermo"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'hacer la lucha'?",
+    "correctAnswer": "Trabajar para ganarse la vida",
+    "explanation": "'Hacer la lucha' significa trabajar duro para ganarse la vida y resolver problemas económicos.",
+    "options": ["Trabajar para ganarse la vida", "Pelear", "Estudiar", "Descansar"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar templao'?",
+    "correctAnswer": "Estar enamorado",
+    "explanation": "'Estar templao' significa estar muy enamorado de alguien.",
+    "options": ["Estar enamorado", "Estar enojado", "Estar cansado", "Estar enfermo"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'el solar'?",
+    "correctAnswer": "Edificio de apartamentos compartidos",
+    "explanation": "'El solar' es un tipo de vivienda cubana donde varias familias comparten un edificio.",
+    "options": ["Edificio de apartamentos compartidos", "Un parque", "Una escuela", "Un hospital"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "Si alguien 'está montao en el cohete', está ___",
+    "correctAnswer": "muy exitoso",
+    "explanation": "'Estar montao en el cohete' significa estar en una buena racha o muy exitoso.",
+    "options": ["muy exitoso", "confundido", "enfermo", "perdido"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'hacer botella'?",
+    "correctAnswer": "Pedir un aventón",
+    "explanation": "'Hacer botella' significa pedir que te lleven en carro, hacer auto-stop.",
+    "options": ["Pedir un aventón", "Hacer una fiesta", "Cocinar", "Estudiar"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la yuma'?",
+    "correctAnswer": "Estados Unidos",
+    "explanation": "'La yuma' es como los cubanos se refieren coloquialmente a Estados Unidos.",
+    "options": ["Estados Unidos", "España", "México", "Brasil"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar en fuego'?",
+    "correctAnswer": "Estar muy bien en algo",
+    "explanation": "'Estar en fuego' significa estar haciendo algo muy bien, estar en racha.",
+    "options": ["Estar muy bien en algo", "Estar quemándose", "Estar enojado", "Estar enfermo"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar al garete'?",
+    "correctAnswer": "Estar sin rumbo o perdido",
+    "explanation": "'Estar al garete' significa estar sin dirección, perdido o en una situación incierta.",
+    "options": ["Estar sin rumbo o perdido", "Estar feliz", "Estar trabajando", "Estar estudiando"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'meter la pata'?",
+    "correctAnswer": "Cometer un error",
+    "explanation": "'Meter la pata' significa cometer un error o hacer algo mal.",
+    "options": ["Cometer un error", "Bailar bien", "Caminar rápido", "Cocinar"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "Si algo está 'de madre', está ___",
+    "correctAnswer": "extraordinario",
+    "explanation": "'De madre' es una expresión cubana para decir que algo está extraordinario o impresionante.",
+    "options": ["extraordinario", "malo", "normal", "viejo"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coger lucha'?",
+    "correctAnswer": "Empezar a trabajar duro",
+    "explanation": "'Coger lucha' significa empezar a trabajar duro para resolver problemas económicos.",
+    "options": ["Empezar a trabajar duro", "Pelear", "Estudiar", "Descansar"],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'estar en la brega'?",
+    "correctAnswer": "Estar trabajando muy duro",
+    "explanation": "'Estar en la brega' significa estar en el trabajo duro, luchando por salir adelante.",
+    "options": ["Estar trabajando muy duro", "Estar de vacaciones", "Estar enfermo", "Estar estudiando"],
+    "points": 1
   }
 ]

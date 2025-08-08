@@ -78,5 +78,185 @@
     "explanation": "'Estar pilas' en Honduras significa estar alerta, atento o listo para algo.",
     "options": ["alerta", "cansado", "triste", "ocupado"],
     "points": 300
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'pisto' en Honduras?",
+    "correctAnswer": "Dinero",
+    "explanation": "'Pisto' es la forma hondureña de decir dinero o plata.",
+    "options": ["Dinero", "Comida", "Bebida", "Fiesta"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "Si algo está 'tuani', está ___",
+    "correctAnswer": "bueno",
+    "explanation": "'Tuani' es una expresión hondureña para decir que algo está bueno o genial.",
+    "options": ["bueno", "malo", "feo", "caro"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es una 'pulpería' en Honduras?",
+    "correctAnswer": "Tienda pequeña",
+    "explanation": "Una 'pulpería' es una tienda pequeña de barrio donde venden de todo un poco.",
+    "options": ["Tienda pequeña", "Restaurante", "Bar", "Escuela"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jarana' en Honduras?",
+    "correctAnswer": "Fiesta",
+    "explanation": "'Jarana' es la forma hondureña de decir fiesta o celebración.",
+    "options": ["Fiesta", "Pelea", "Trabajo", "Comida"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "Si alguien está 'prendido', está ___",
+    "correctAnswer": "emocionado",
+    "explanation": "'Estar prendido' significa estar emocionado, animado o con energía.",
+    "options": ["emocionado", "enojado", "triste", "cansado"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'cheque' en Honduras?",
+    "correctAnswer": "Amigo",
+    "explanation": "'Cheque' es otra forma hondureña de decir amigo o compañero.",
+    "options": ["Amigo", "Dinero", "Hermano", "Vecino"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'birria' en Honduras?",
+    "correctAnswer": "Cerveza",
+    "explanation": "'Birria' es la forma hondureña de decir cerveza.",
+    "options": ["Cerveza", "Comida", "Dinero", "Fiesta"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es estar 'quebrado' en Honduras?",
+    "correctAnswer": "Sin dinero",
+    "explanation": "'Estar quebrado' significa no tener dinero, estar en bancarrota.",
+    "options": ["Sin dinero", "Enfermo", "Roto", "Cansado"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "Si algo está 'vergas', está ___",
+    "correctAnswer": "increíble",
+    "explanation": "'Vergas' es una expresión hondureña para decir que algo está increíble o impresionante.",
+    "options": ["increíble", "malo", "roto", "viejo"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es una 'chela' en Honduras?",
+    "correctAnswer": "Cerveza",
+    "explanation": "'Chela' es otra forma hondureña de decir cerveza.",
+    "options": ["Cerveza", "Comida", "Chica", "Casa"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'hacer vaca'?",
+    "correctAnswer": "Juntar dinero entre varios",
+    "explanation": "'Hacer vaca' significa que varias personas juntan dinero para comprar algo entre todos.",
+    "options": ["Juntar dinero entre varios", "Trabajar", "Estudiar", "Cocinar"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar pelón'?",
+    "correctAnswer": "Estar sin dinero",
+    "explanation": "'Estar pelón' significa no tener dinero, estar en una mala situación económica.",
+    "options": ["Estar sin dinero", "Estar calvo", "Estar enfermo", "Estar solo"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'clavo' en Honduras?",
+    "correctAnswer": "Un problema",
+    "explanation": "Un 'clavo' es un problema o una situación difícil de resolver.",
+    "options": ["Un problema", "Una herramienta", "Un amigo", "Una fiesta"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "Si alguien está 'mamado', está ___",
+    "correctAnswer": "borracho",
+    "explanation": "'Estar mamado' significa estar borracho o ebrio.",
+    "options": ["borracho", "cansado", "enojado", "feliz"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'meter mano'?",
+    "correctAnswer": "Trabajar duro",
+    "explanation": "'Meter mano' significa trabajar duro en algo o poner mucho esfuerzo.",
+    "options": ["Trabajar duro", "Tocar", "Robar", "Ayudar"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "Si algo está 'de pelos', está ___",
+    "correctAnswer": "perfecto",
+    "explanation": "'De pelos' significa que algo está perfecto, excelente o muy bien hecho.",
+    "options": ["perfecto", "feo", "roto", "sucio"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'estar en la papa'?",
+    "correctAnswer": "Estar en una buena situación",
+    "explanation": "'Estar en la papa' significa estar en una buena situación económica o de vida.",
+    "options": ["Estar en una buena situación", "Estar cocinando", "Estar confundido", "Estar trabajando"],
+    "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'hacer el oso'?",
+    "correctAnswer": "Hacer el ridículo",
+    "explanation": "'Hacer el oso' significa hacer el ridículo o quedar en vergüenza.",
+    "options": ["Hacer el ridículo", "Trabajar", "Dormir", "Estudiar"],
+    "points": 1
   }
 ]
