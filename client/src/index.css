@@ -142,3 +142,13 @@
 .honduras-theme {
   background: linear-gradient(135deg, var(--honduras-color) 0%, #3F51B5 100%);
 }
+
+/* Emoji flag support */
+.flag-emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji', sans-serif;
+  font-feature-settings: "liga" on, "kern" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-emoji: emoji;
+}
