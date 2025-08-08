@@ -32,7 +32,7 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
 
   const getCountryPhrase = (countryCode: string) => {
     const phrases: Record<string, string> = {
-      cuba: '"¡Echa pa\'lante, mi pana!"',
+      cuba: '"¡Dale que tú puedes, acere!"',
       honduras: '"¡Qué macizo, cipote!"',
     };
     return phrases[countryCode] || '"¡Vamos a jugar!"';
