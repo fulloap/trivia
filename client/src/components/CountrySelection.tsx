@@ -58,18 +58,20 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
           >
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="text-4xl mb-4 font-bold">
-                  {country.code === 'cuba' && (
-                    <div className="w-20 h-12 mx-auto bg-gradient-to-r from-blue-500 via-white to-red-500 rounded border-2 border-gray-300 flex items-center justify-center">
-                      <span className="text-xs text-gray-800">CUBA</span>
-                    </div>
-                  )}
-                  {country.code === 'honduras' && (
-                    <div className="w-20 h-12 mx-auto bg-gradient-to-b from-blue-500 via-white to-blue-500 rounded border-2 border-gray-300 flex items-center justify-center">
-                      <span className="text-xs text-gray-800">HND</span>
-                    </div>
-                  )}
-                  {!['cuba', 'honduras'].includes(country.code) && <span>🌎</span>}
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src={`https://flagcdn.com/96x72/${country.code === 'cuba' ? 'cu' : country.code === 'honduras' ? 'hn' : 'world'}.png`}
+                    srcSet={`https://flagcdn.com/192x144/${country.code === 'cuba' ? 'cu' : country.code === 'honduras' ? 'hn' : 'world'}.png 2x`}
+                    width="96"
+                    height="72"
+                    alt={`Bandera de ${country.name}`}
+                    className="rounded-lg shadow-md border border-gray-200 dark:border-gray-600 hover:scale-105 transition-transform duration-200"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.log('Error loading flag, trying fallback');
+                      e.currentTarget.src = country.flag || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA5NiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9IjcyIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI0MCIgZmlsbD0iIzM3NDE1MSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmRlcmE8L3RleHQ+Cjwvc3ZnPgo=';
+                    }}
+                  />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                   {country.name}

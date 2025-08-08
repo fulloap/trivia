@@ -40,7 +40,7 @@ export const countries = pgTable("countries", {
   id: serial("id").primaryKey(),
   code: varchar("code", { length: 10 }).notNull().unique(),
   name: varchar("name", { length: 100 }).notNull(),
-  flag: varchar("flag", { length: 10 }).notNull(),
+  flag: varchar("flag", { length: 255 }).notNull(),
   primaryColor: varchar("primary_color", { length: 20 }).notNull(),
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),
