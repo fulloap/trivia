@@ -76,7 +76,17 @@ export function LevelSelection({ selectedCountry, onLevelSelect, onBack }: Level
         {/* Country Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center bg-white dark:bg-gray-800 rounded-2xl px-6 py-3 shadow-lg mb-4">
-            <span className="text-3xl mr-3">{selectedCountry.flag}</span>
+            <img 
+              src={`https://flagcdn.com/48x36/${selectedCountry.code === 'cuba' ? 'cu' : selectedCountry.code === 'honduras' ? 'hn' : 'world'}.png`}
+              srcSet={`https://flagcdn.com/96x72/${selectedCountry.code === 'cuba' ? 'cu' : selectedCountry.code === 'honduras' ? 'hn' : 'world'}.png 2x`}
+              width="48"
+              height="36"
+              alt={`Bandera de ${selectedCountry.name}`}
+              className="rounded shadow-sm mr-3"
+              onError={(e) => {
+                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCA0OCAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjM2IiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI0IiB5PSIyMCIgZmlsbD0iIzM3NDE1MSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QmFuZGVyYTwvdGV4dD4KPC9zdmc+Cg==';
+              }}
+            />
             <span className="text-xl font-bold text-gray-800 dark:text-white">
               {selectedCountry.name}
             </span>

@@ -68,8 +68,8 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
                     className="rounded-lg shadow-md border border-gray-200 dark:border-gray-600 hover:scale-105 transition-transform duration-200"
                     loading="lazy"
                     onError={(e) => {
-                      console.log('Error loading flag, trying fallback');
-                      e.currentTarget.src = country.flag || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA5NiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9IjcyIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI0MCIgZmlsbD0iIzM3NDE1MSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmRlcmE8L3RleHQ+Cjwvc3ZnPgo=';
+                      console.log('Error loading flag, trying fallback SVG');
+                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA5NiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9IjcyIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI0MCIgZmlsbD0iIzM3NDE1MSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhbmRlcmE8L3RleHQ+Cjwvc3ZnPgo=';
                     }}
                   />
                 </div>
