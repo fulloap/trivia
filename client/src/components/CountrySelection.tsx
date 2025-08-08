@@ -58,9 +58,17 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
           >
             <CardContent className="p-8">
               <div className="text-center">
-                <div className="text-6xl mb-4 flag-emoji">
-                  {country.code === 'cuba' && <span>🇨🇺</span>}
-                  {country.code === 'honduras' && <span>🇭🇳</span>}
+                <div className="text-4xl mb-4 font-bold">
+                  {country.code === 'cuba' && (
+                    <div className="w-20 h-12 mx-auto bg-gradient-to-r from-blue-500 via-white to-red-500 rounded border-2 border-gray-300 flex items-center justify-center">
+                      <span className="text-xs text-gray-800">CUBA</span>
+                    </div>
+                  )}
+                  {country.code === 'honduras' && (
+                    <div className="w-20 h-12 mx-auto bg-gradient-to-b from-blue-500 via-white to-blue-500 rounded border-2 border-gray-300 flex items-center justify-center">
+                      <span className="text-xs text-gray-800">HND</span>
+                    </div>
+                  )}
                   {!['cuba', 'honduras'].includes(country.code) && <span>🌎</span>}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
