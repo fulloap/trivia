@@ -12,10 +12,11 @@
   {
     "countryCode": "honduras",
     "level": 1,
-    "type": "completar",
+    "type": "multiple",
     "question": "Completa la frase: '¡Qué ___, cipote!'",
     "correctAnswer": "macizo",
     "explanation": "'¡Qué macizo!' es una expresión hondureña para decir que algo está genial o increíble.",
+    "options": ["macizo", "bueno", "tal", "loco"],
     "points": 100
   },
   {
@@ -31,10 +32,11 @@
   {
     "countryCode": "honduras",
     "level": 2,
-    "type": "completar",
+    "type": "multiple",
     "question": "Si algo está 'chivo', está ___",
     "correctAnswer": "genial",
     "explanation": "'Chivo' en Honduras significa que algo está genial, bueno o divertido.",
+    "options": ["genial", "malo", "caro", "roto"],
     "points": 150
   },
   {
@@ -50,10 +52,11 @@
   {
     "countryCode": "honduras",
     "level": 3,
-    "type": "completar",
+    "type": "multiple",
     "question": "Una 'baleada' es una ___",
     "correctAnswer": "tortilla",
     "explanation": "Una 'baleada' es una tortilla de harina rellena con frijoles y otros ingredientes, comida típica hondureña.",
+    "options": ["tortilla", "sopa", "bebida", "postre"],
     "points": 200
   },
   {
@@ -69,10 +72,11 @@
   {
     "countryCode": "honduras",
     "level": 4,
-    "type": "completar",
+    "type": "multiple",
     "question": "Si alguien está 'pilas', está ___",
     "correctAnswer": "alerta",
     "explanation": "'Estar pilas' en Honduras significa estar alerta, atento o listo para algo.",
+    "options": ["alerta", "cansado", "triste", "ocupado"],
     "points": 300
   }
 ]

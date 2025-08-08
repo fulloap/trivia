@@ -12,10 +12,11 @@
   {
     "countryCode": "cuba",
     "level": 1,
-    "type": "completar",
+    "type": "multiple",
     "question": "Completa la frase: '¡Qué ___, mi hermano!'",
     "correctAnswer": "bola",
     "explanation": "'¡Qué bola!' es un saludo muy común en Cuba, similar a '¿Qué tal?' o '¿Cómo estás?'",
+    "options": ["bola", "tal", "clase", "nota"],
     "points": 100
   },
   {
@@ -31,10 +32,11 @@
   {
     "countryCode": "cuba",
     "level": 2,
-    "type": "completar",
+    "type": "multiple",
     "question": "Si algo está 'brutal', significa que está ___",
     "correctAnswer": "increíble",
     "explanation": "'Brutal' en Cuba se usa para decir que algo está increíble, espectacular o muy bueno.",
+    "options": ["increíble", "terrible", "difícil", "roto"],
     "points": 150
   },
   {
@@ -50,9 +52,10 @@
   {
     "countryCode": "cuba",
     "level": 3,
-    "type": "completar",
+    "type": "multiple",
     "question": "Cuando algo está 'candela', está ___",
     "correctAnswer": "buenísimo",
+    "options": ["buenísimo", "caliente", "peligroso", "caro"],
     "explanation": "'Candela' en Cuba significa que algo está buenísimo, espectacular o muy bueno.",
     "points": 200
   },
@@ -69,10 +72,11 @@
   {
     "countryCode": "cuba",
     "level": 4,
-    "type": "completar",
+    "type": "multiple",
     "question": "Si alguien es un 'jinetero', es un ___",
     "correctAnswer": "buscavidas",
     "explanation": "Un 'jinetero' en Cuba es alguien que se busca la vida de diferentes maneras, especialmente relacionado con el turismo.",
+    "options": ["buscavidas", "jinete", "turista", "trabajador"],
     "points": 300
   }
 ]
