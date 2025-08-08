@@ -265,7 +265,8 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getGlobalRankingsByLevel(level: number, limit = 50): Promise<(Ranking & { username: string })[]> {
-    return await db
+    console.log('Storage getGlobalRankingsByLevel called with level:', level);
+    const result = await db
       .select({
         id: rankings.id,
         userId: rankings.userId,
@@ -283,6 +284,9 @@ export class DatabaseStorage implements IStorage {
       .where(eq(rankings.level, level))
       .orderBy(desc(rankings.score), desc(rankings.accuracy))
       .limit(limit);
+    
+    console.log('Storage getGlobalRankingsByLevel returning:', result.length, 'records');
+    return result;
   }
 
   async getUserRankingsByCountry(userId: number, countryCode: string): Promise<(Ranking & { username: string })[]> {

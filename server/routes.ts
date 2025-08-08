@@ -366,7 +366,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Rankings API
+  // Rankings API - Order matters! Specific routes first
+  app.get('/api/rankings/global/:level', async (req, res) => {
+    try {
+      const { level } = req.params;
+      const parsedLevel = parseInt(level);
+      const limit = parseInt(req.query.limit as string) || 50;
+      
+      console.log('Global rankings request - level:', parsedLevel, 'limit:', limit);
+      
+      if (isNaN(parsedLevel) || parsedLevel < 1 || parsedLevel > 4) {
+        return res.status(400).json({ message: "Invalid level parameter" });
+      }
+      
+      const rankings = await storage.getGlobalRankingsByLevel(parsedLevel, limit);
+      console.log('Global rankings result:', rankings.length, 'records');
+      console.log('First few records:', rankings.slice(0, 2));
+      res.json(rankings);
+    } catch (error) {
+      console.error("Error fetching global rankings:", error);
+      res.status(500).json({ message: "Failed to fetch global rankings" });
+    }
+  });
+
   app.get('/api/rankings/:countryCode/:level', async (req, res) => {
     try {
       const { countryCode, level } = req.params;
@@ -389,24 +411,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get('/api/rankings/global/:level', async (req, res) => {
-    try {
-      const { level } = req.params;
-      const parsedLevel = parseInt(level);
-      const limit = parseInt(req.query.limit as string) || 50;
-      
-      if (isNaN(parsedLevel) || parsedLevel < 1 || parsedLevel > 4) {
-        return res.status(400).json({ message: "Invalid level parameter" });
-      }
-      
-      const rankings = await storage.getGlobalRankingsByLevel(parsedLevel, limit);
-      res.json(rankings);
-    } catch (error) {
-      console.error("Error fetching global rankings:", error);
-      res.status(500).json({ message: "Failed to fetch global rankings" });
-    }
-  });
-
   app.get('/api/rankings/user/:countryCode', async (req: any, res) => {
     try {
       const user = await getCurrentUser(req);
@@ -415,11 +419,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const { countryCode } = req.params;
+      console.log('User rankings request - userId:', user.id, 'countryCode:', countryCode);
+      
       const rankings = await storage.getUserRankingsByCountry(user.id, countryCode);
+      console.log('User rankings result:', rankings.length, 'records');
       res.json(rankings);
     } catch (error) {
       console.error("Error fetching user rankings:", error);
       res.status(500).json({ message: "Failed to fetch user rankings" });
+    }
+  });
+
+  // Test rankings (debug endpoint)
+  app.post('/api/admin/test-rankings', async (req, res) => {
+    try {
+      const { level } = req.body;
+      console.log('Testing rankings for level:', level);
+      
+      // Test direct SQL query
+      const result = await storage.getGlobalRankingsByLevel(level || 1);
+      console.log('Result from storage:', result);
+      
+      res.json({
+        level: level || 1,
+        results: result,
+        count: result.length
+      });
+    } catch (error) {
+      console.error("Error testing rankings:", error);
+      res.status(500).json({ message: "Failed to test rankings", error: error instanceof Error ? error.message : String(error) });
     }
   });
 

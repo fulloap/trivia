@@ -20,17 +20,17 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
   const [activeTab, setActiveTab] = useState(selectedCountryCode ? 'country' : 'global');
 
   const { data: countryRankings, isLoading: loadingCountry } = useQuery<RankingWithUsername[]>({
-    queryKey: ['/api/rankings', selectedCountryCode, selectedLevel],
+    queryKey: [`/api/rankings/${selectedCountryCode}/${selectedLevel}`],
     enabled: !!selectedCountryCode && activeTab === 'country',
   });
 
   const { data: globalRankings, isLoading: loadingGlobal } = useQuery<RankingWithUsername[]>({
-    queryKey: ['/api/rankings/global', selectedLevel],
+    queryKey: [`/api/rankings/global/${selectedLevel}`],
     enabled: activeTab === 'global',
   });
 
   const { data: userRankings, isLoading: loadingUser } = useQuery<RankingWithUsername[]>({
-    queryKey: ['/api/rankings/user', selectedCountryCode],
+    queryKey: [`/api/rankings/user/${selectedCountryCode}`],
     enabled: !!user && !!selectedCountryCode && activeTab === 'user',
     select: (data) => data?.filter(ranking => ranking.level === selectedLevel) || [],
   });
