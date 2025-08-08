@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Trophy, Medal, Award, Users, Globe, Flag, Star } from 'lucide-react';
 import { type Ranking } from '@shared/schema';
 import { useAuth } from '@/hooks/useAuth';
@@ -19,9 +20,16 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
   const [selectedLevel, setSelectedLevel] = useState(1);
   const [activeTab, setActiveTab] = useState(selectedCountryCode ? 'country' : 'global');
 
+  // Get countries for country selector
+  const { data: countries } = useQuery<any[]>({
+    queryKey: ['/api/countries'],
+  });
+
+  const [selectedCountryForRanking, setSelectedCountryForRanking] = useState(selectedCountryCode || 'cuba');
+
   const { data: countryRankings, isLoading: loadingCountry } = useQuery<RankingWithUsername[]>({
-    queryKey: [`/api/rankings/${selectedCountryCode}/${selectedLevel}`],
-    enabled: !!selectedCountryCode && activeTab === 'country',
+    queryKey: [`/api/rankings/${selectedCountryForRanking}/${selectedLevel}`],
+    enabled: activeTab === 'country',
   });
 
   const { data: globalRankings, isLoading: loadingGlobal } = useQuery<RankingWithUsername[]>({
@@ -30,8 +38,8 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
   });
 
   const { data: userRankings, isLoading: loadingUser } = useQuery<RankingWithUsername[]>({
-    queryKey: [`/api/rankings/user/${selectedCountryCode}`],
-    enabled: !!user && !!selectedCountryCode && activeTab === 'user',
+    queryKey: [`/api/rankings/user/${selectedCountryForRanking}`],
+    enabled: !!user && activeTab === 'user',
     select: (data) => data?.filter(ranking => ranking.level === selectedLevel) || [],
   });
 
@@ -238,29 +246,61 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
             <Globe className="w-4 h-4" />
             Global
           </TabsTrigger>
-          {selectedCountryCode && (
-            <TabsTrigger value="country" className="flex items-center gap-2">
-              <Flag className="w-4 h-4" />
-              Por País
-            </TabsTrigger>
-          )}
-          {user && selectedCountryCode && (
+          <TabsTrigger value="country" className="flex items-center gap-2">
+            <Flag className="w-4 h-4" />
+            Por País
+          </TabsTrigger>
+          {user && (
             <TabsTrigger value="user" className="flex items-center gap-2">
               <Users className="w-4 h-4" />
-              Mis Juegos
+              Mis Rankings
             </TabsTrigger>
           )}
         </TabsList>
 
-        <TabsContent value="global">
-          <Card className="overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-blue-500/20 to-blue-600/10">
-              <CardTitle className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-blue-600" />
+        {/* Country selector for country rankings */}
+        {activeTab === 'country' && (
+          <div className="mt-4 mb-6">
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Flag className="w-5 h-5 text-primary" />
+                  Seleccionar País
+                </CardTitle>
+                <CardDescription>
+                  Ve los mejores jugadores de cada país
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Select value={selectedCountryForRanking} onValueChange={setSelectedCountryForRanking}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Selecciona un país" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {countries && countries.map((country: any) => (
+                      <SelectItem key={country.code} value={country.code}>
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">{country.flag}</span>
+                          <span>{country.name}</span>
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        <TabsContent value="global" className="space-y-4">
+          <Card>
+            <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+              <CardTitle className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
+                <Globe className="w-5 h-5" />
                 🌍 Ranking Global - {getLevelName(selectedLevel)}
               </CardTitle>
-              <CardDescription>
-                Los mejores jugadores de todos los países compitiendo juntos
+              <CardDescription className="text-blue-600 dark:text-blue-300">
+                Los mejores jugadores de todos los países
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
@@ -269,35 +309,33 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
           </Card>
         </TabsContent>
 
-        {selectedCountryCode && (
-          <TabsContent value="country">
-            <Card className="overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-green-500/20 to-green-600/10">
-                <CardTitle className="flex items-center gap-2">
-                  <Flag className="w-5 h-5 text-green-600" />
-                  🏆 Ranking por País - {getLevelName(selectedLevel)}
-                </CardTitle>
-                <CardDescription>
-                  Los mejores jugadores de tu país en este nivel
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-6">
-                {renderRankingList(countryRankings, loadingCountry)}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        )}
+        <TabsContent value="country" className="space-y-4">
+          <Card>
+            <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
+              <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
+                <Flag className="w-5 h-5" />
+                {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.flag} Rankings de {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.name} - {getLevelName(selectedLevel)}
+              </CardTitle>
+              <CardDescription className="text-green-600 dark:text-green-300">
+                Los mejores jugadores de este país
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-6">
+              {renderRankingList(countryRankings, loadingCountry)}
+            </CardContent>
+          </Card>
+        </TabsContent>
 
-        {user && selectedCountryCode && (
-          <TabsContent value="user">
-            <Card className="overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-secondary/20 to-secondary/10">
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-secondary-foreground" />
-                  Mis Juegos - {user.username}
+        {user && (
+          <TabsContent value="user" className="space-y-4">
+            <Card>
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20">
+                <CardTitle className="flex items-center gap-2 text-purple-800 dark:text-purple-200">
+                  <Users className="w-5 h-5" />
+                  📊 Mis Rankings - {getLevelName(selectedLevel)}
                 </CardTitle>
-                <CardDescription>
-                  Tus mejores resultados en {getLevelName(selectedLevel)}
+                <CardDescription className="text-purple-600 dark:text-purple-300">
+                  Tu historial de puntuaciones en {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.name}
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
