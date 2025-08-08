@@ -86,20 +86,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Quiz Session API
-  app.post('/api/quiz/start', isAuthenticated, async (req: any, res) => {
+  app.post('/api/quiz/start', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      // Handle both authenticated and guest users
+      const userId = req.user?.claims?.sub || null;
       const { countryCode, level } = req.body;
 
-      // Check for existing active session
-      const existingSession = await storage.getActiveQuizSession(userId);
-      if (existingSession) {
-        return res.json(existingSession);
+      // For authenticated users, check for existing active session
+      if (userId) {
+        const existingSession = await storage.getActiveQuizSession(userId);
+        if (existingSession) {
+          return res.json(existingSession);
+        }
       }
 
-      // Create new session
+      // Create new session (for both authenticated and guest users)
       const session = await storage.createQuizSession({
-        userId,
+        userId, // null for guests
         countryCode,
         level,
         currentQuestionIndex: 0,
@@ -117,13 +120,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/quiz/answer', isAuthenticated, async (req: any, res) => {
+  app.post('/api/quiz/answer', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user?.claims?.sub || null;
       const { sessionId, questionId, answer, timeSpent } = req.body;
 
-      // Get the session
-      const session = await storage.getActiveQuizSession(userId);
+      // Get the session (for both authenticated and guest users)
+      const session = userId 
+        ? await storage.getActiveQuizSession(userId)
+        : await storage.getQuizSessionById(sessionId);
+      
       if (!session || session.id !== sessionId) {
         return res.status(404).json({ message: "Quiz session not found" });
       }
@@ -176,13 +182,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/quiz/complete', isAuthenticated, async (req: any, res) => {
+  app.post('/api/quiz/complete', async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user?.claims?.sub || null;
       const { sessionId } = req.body;
 
-      // Get the session
-      const session = await storage.getActiveQuizSession(userId);
+      // Get the session (for both authenticated and guest users)
+      const session = userId 
+        ? await storage.getActiveQuizSession(userId)
+        : await storage.getQuizSessionById(sessionId);
+      
       if (!session || session.id !== sessionId) {
         return res.status(404).json({ message: "Quiz session not found" });
       }
@@ -190,25 +199,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Complete the session
       await storage.completeQuizSession(sessionId);
 
-      // Update user progress
+      // Update user progress and score only for authenticated users
       const sessionData = session.sessionData as any || {};
       const totalQuestions = (sessionData.answers || []).length;
       const correctAnswers = sessionData.correctAnswers || 0;
       const totalScore = sessionData.score || 0;
 
-      await storage.upsertUserProgress({
-        userId,
-        countryCode: session.countryCode,
-        level: session.level,
-        questionsAnswered: totalQuestions,
-        correctAnswers,
-        totalScore,
-        isCompleted: true,
-        lastPlayedAt: new Date(),
-      });
+      if (userId) {
+        await storage.upsertUserProgress({
+          userId,
+          countryCode: session.countryCode,
+          level: session.level,
+          questionsAnswered: totalQuestions,
+          correctAnswers,
+          totalScore,
+          isCompleted: true,
+          lastPlayedAt: new Date(),
+        });
 
-      // Update user total score
-      await storage.updateUserScore(userId, totalScore);
+        // Update user total score
+        await storage.updateUserScore(userId, totalScore);
+      }
 
       res.json({
         session,

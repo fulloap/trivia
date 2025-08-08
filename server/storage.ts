@@ -41,6 +41,7 @@ export interface IStorage {
 
   // Quiz session operations
   getActiveQuizSession(userId: string): Promise<QuizSession | undefined>;
+  getQuizSessionById(sessionId: number): Promise<QuizSession | undefined>;
   createQuizSession(session: InsertQuizSession): Promise<QuizSession>;
   updateQuizSession(sessionId: number, data: Partial<QuizSession>): Promise<QuizSession>;
   completeQuizSession(sessionId: number): Promise<void>;
@@ -173,6 +174,14 @@ export class DatabaseStorage implements IStorage {
       )
       .orderBy(desc(quizSessions.startedAt))
       .limit(1);
+    return session;
+  }
+
+  async getQuizSessionById(sessionId: number): Promise<QuizSession | undefined> {
+    const [session] = await db
+      .select()
+      .from(quizSessions)
+      .where(eq(quizSessions.id, sessionId));
     return session;
   }
 
