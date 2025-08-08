@@ -6,7 +6,12 @@
     "question": "¿Qué significa 'maje' en Honduras?",
     "correctAnswer": "Amigo",
     "explanation": "'Maje' es una forma muy común en Honduras de decir 'amigo' o 'hermano'.",
-    "options": ["Amigo", "Primo", "Vecino", "Compañero"],
+    "options": [
+      "Amigo",
+      "Primo",
+      "Vecino",
+      "Compañero"
+    ],
     "points": 100
   },
   {
@@ -16,7 +21,12 @@
     "question": "Completa la frase: '¡Qué ___, cipote!'",
     "correctAnswer": "macizo",
     "explanation": "'¡Qué macizo!' es una expresión hondureña para decir que algo está genial o increíble.",
-    "options": ["macizo", "bueno", "tal", "loco"],
+    "options": [
+      "macizo",
+      "bueno",
+      "tal",
+      "loco"
+    ],
     "points": 100
   },
   {
@@ -26,7 +36,12 @@
     "question": "¿Qué es un 'cipote' en Honduras?",
     "correctAnswer": "Niño o joven",
     "explanation": "'Cipote' en Honduras se refiere a un niño o joven, también se usa como término cariñoso entre amigos.",
-    "options": ["Niño o joven", "Amigo", "Hermano", "Primo"],
+    "options": [
+      "Niño o joven",
+      "Amigo",
+      "Hermano",
+      "Primo"
+    ],
     "points": 150
   },
   {
@@ -36,7 +51,12 @@
     "question": "Si algo está 'chivo', está ___",
     "correctAnswer": "genial",
     "explanation": "'Chivo' en Honduras significa que algo está genial, bueno o divertido.",
-    "options": ["genial", "malo", "caro", "roto"],
+    "options": [
+      "genial",
+      "malo",
+      "caro",
+      "roto"
+    ],
     "points": 150
   },
   {
@@ -46,7 +66,12 @@
     "question": "¿Qué significa 'estar jodido' en Honduras?",
     "correctAnswer": "Estar en problemas",
     "explanation": "'Estar jodido' en Honduras significa estar en una situación difícil o tener problemas.",
-    "options": ["Estar en problemas", "Estar cansado", "Estar feliz", "Estar enfermo"],
+    "options": [
+      "Estar en problemas",
+      "Estar cansado",
+      "Estar feliz",
+      "Estar enfermo"
+    ],
     "points": 200
   },
   {
@@ -56,7 +81,12 @@
     "question": "Una 'baleada' es una ___",
     "correctAnswer": "tortilla",
     "explanation": "Una 'baleada' es una tortilla de harina rellena con frijoles y otros ingredientes, comida típica hondureña.",
-    "options": ["tortilla", "sopa", "bebida", "postre"],
+    "options": [
+      "tortilla",
+      "sopa",
+      "bebida",
+      "postre"
+    ],
     "points": 200
   },
   {
@@ -66,7 +96,12 @@
     "question": "¿Qué es 'andar de choto' en Honduras?",
     "correctAnswer": "Andar sin hacer nada productivo",
     "explanation": "'Andar de choto' significa andar sin hacer nada útil, perdiendo el tiempo.",
-    "options": ["Andar sin hacer nada productivo", "Andar corriendo", "Andar trabajando", "Andar estudiando"],
+    "options": [
+      "Andar sin hacer nada productivo",
+      "Andar corriendo",
+      "Andar trabajando",
+      "Andar estudiando"
+    ],
     "points": 300
   },
   {
@@ -76,7 +111,12 @@
     "question": "Si alguien está 'pilas', está ___",
     "correctAnswer": "alerta",
     "explanation": "'Estar pilas' en Honduras significa estar alerta, atento o listo para algo.",
-    "options": ["alerta", "cansado", "triste", "ocupado"],
+    "options": [
+      "alerta",
+      "cansado",
+      "triste",
+      "ocupado"
+    ],
     "points": 300
   },
   {
@@ -86,7 +126,12 @@
     "question": "¿Qué significa 'pisto' en Honduras?",
     "correctAnswer": "Dinero",
     "explanation": "'Pisto' es la forma hondureña de decir dinero o plata.",
-    "options": ["Dinero", "Comida", "Bebida", "Fiesta"],
+    "options": [
+      "Dinero",
+      "Comida",
+      "Bebida",
+      "Fiesta"
+    ],
     "points": 1
   },
   {
@@ -96,7 +141,12 @@
     "question": "Si algo está 'tuani', está ___",
     "correctAnswer": "bueno",
     "explanation": "'Tuani' es una expresión hondureña para decir que algo está bueno o genial.",
-    "options": ["bueno", "malo", "feo", "caro"],
+    "options": [
+      "bueno",
+      "malo",
+      "feo",
+      "caro"
+    ],
     "points": 1
   },
   {
@@ -106,7 +156,12 @@
     "question": "¿Qué es una 'pulpería' en Honduras?",
     "correctAnswer": "Tienda pequeña",
     "explanation": "Una 'pulpería' es una tienda pequeña de barrio donde venden de todo un poco.",
-    "options": ["Tienda pequeña", "Restaurante", "Bar", "Escuela"],
+    "options": [
+      "Tienda pequeña",
+      "Restaurante",
+      "Bar",
+      "Escuela"
+    ],
     "points": 1
   },
   {
@@ -116,7 +171,12 @@
     "question": "¿Qué significa 'jarana' en Honduras?",
     "correctAnswer": "Fiesta",
     "explanation": "'Jarana' es la forma hondureña de decir fiesta o celebración.",
-    "options": ["Fiesta", "Pelea", "Trabajo", "Comida"],
+    "options": [
+      "Fiesta",
+      "Pelea",
+      "Trabajo",
+      "Comida"
+    ],
     "points": 1
   },
   {
@@ -126,7 +186,12 @@
     "question": "Si alguien está 'prendido', está ___",
     "correctAnswer": "emocionado",
     "explanation": "'Estar prendido' significa estar emocionado, animado o con energía.",
-    "options": ["emocionado", "enojado", "triste", "cansado"],
+    "options": [
+      "emocionado",
+      "enojado",
+      "triste",
+      "cansado"
+    ],
     "points": 1
   },
   {
@@ -136,7 +201,12 @@
     "question": "¿Qué es un 'cheque' en Honduras?",
     "correctAnswer": "Amigo",
     "explanation": "'Cheque' es otra forma hondureña de decir amigo o compañero.",
-    "options": ["Amigo", "Dinero", "Hermano", "Vecino"],
+    "options": [
+      "Amigo",
+      "Dinero",
+      "Hermano",
+      "Vecino"
+    ],
     "points": 1
   },
   {
@@ -146,7 +216,12 @@
     "question": "¿Qué significa 'birria' en Honduras?",
     "correctAnswer": "Cerveza",
     "explanation": "'Birria' es la forma hondureña de decir cerveza.",
-    "options": ["Cerveza", "Comida", "Dinero", "Fiesta"],
+    "options": [
+      "Cerveza",
+      "Comida",
+      "Dinero",
+      "Fiesta"
+    ],
     "points": 1
   },
   {
@@ -156,7 +231,12 @@
     "question": "¿Qué es estar 'quebrado' en Honduras?",
     "correctAnswer": "Sin dinero",
     "explanation": "'Estar quebrado' significa no tener dinero, estar en bancarrota.",
-    "options": ["Sin dinero", "Enfermo", "Roto", "Cansado"],
+    "options": [
+      "Sin dinero",
+      "Enfermo",
+      "Roto",
+      "Cansado"
+    ],
     "points": 1
   },
   {
@@ -166,7 +246,12 @@
     "question": "Si algo está 'vergas', está ___",
     "correctAnswer": "increíble",
     "explanation": "'Vergas' es una expresión hondureña para decir que algo está increíble o impresionante.",
-    "options": ["increíble", "malo", "roto", "viejo"],
+    "options": [
+      "increíble",
+      "malo",
+      "roto",
+      "viejo"
+    ],
     "points": 1
   },
   {
@@ -176,7 +261,12 @@
     "question": "¿Qué es una 'chela' en Honduras?",
     "correctAnswer": "Cerveza",
     "explanation": "'Chela' es otra forma hondureña de decir cerveza.",
-    "options": ["Cerveza", "Comida", "Chica", "Casa"],
+    "options": [
+      "Cerveza",
+      "Comida",
+      "Chica",
+      "Casa"
+    ],
     "points": 1
   },
   {
@@ -186,7 +276,12 @@
     "question": "¿Qué es 'hacer vaca'?",
     "correctAnswer": "Juntar dinero entre varios",
     "explanation": "'Hacer vaca' significa que varias personas juntan dinero para comprar algo entre todos.",
-    "options": ["Juntar dinero entre varios", "Trabajar", "Estudiar", "Cocinar"],
+    "options": [
+      "Juntar dinero entre varios",
+      "Trabajar",
+      "Estudiar",
+      "Cocinar"
+    ],
     "points": 1
   },
   {
@@ -196,7 +291,12 @@
     "question": "¿Qué significa 'estar pelón'?",
     "correctAnswer": "Estar sin dinero",
     "explanation": "'Estar pelón' significa no tener dinero, estar en una mala situación económica.",
-    "options": ["Estar sin dinero", "Estar calvo", "Estar enfermo", "Estar solo"],
+    "options": [
+      "Estar sin dinero",
+      "Estar calvo",
+      "Estar enfermo",
+      "Estar solo"
+    ],
     "points": 1
   },
   {
@@ -206,7 +306,12 @@
     "question": "¿Qué es un 'clavo' en Honduras?",
     "correctAnswer": "Un problema",
     "explanation": "Un 'clavo' es un problema o una situación difícil de resolver.",
-    "options": ["Un problema", "Una herramienta", "Un amigo", "Una fiesta"],
+    "options": [
+      "Un problema",
+      "Una herramienta",
+      "Un amigo",
+      "Una fiesta"
+    ],
     "points": 1
   },
   {
@@ -216,7 +321,12 @@
     "question": "Si alguien está 'mamado', está ___",
     "correctAnswer": "borracho",
     "explanation": "'Estar mamado' significa estar borracho o ebrio.",
-    "options": ["borracho", "cansado", "enojado", "feliz"],
+    "options": [
+      "borracho",
+      "cansado",
+      "enojado",
+      "feliz"
+    ],
     "points": 1
   },
   {
@@ -226,7 +336,12 @@
     "question": "¿Qué es 'meter mano'?",
     "correctAnswer": "Trabajar duro",
     "explanation": "'Meter mano' significa trabajar duro en algo o poner mucho esfuerzo.",
-    "options": ["Trabajar duro", "Tocar", "Robar", "Ayudar"],
+    "options": [
+      "Trabajar duro",
+      "Tocar",
+      "Robar",
+      "Ayudar"
+    ],
     "points": 1
   },
   {
@@ -236,7 +351,12 @@
     "question": "Si algo está 'de pelos', está ___",
     "correctAnswer": "perfecto",
     "explanation": "'De pelos' significa que algo está perfecto, excelente o muy bien hecho.",
-    "options": ["perfecto", "feo", "roto", "sucio"],
+    "options": [
+      "perfecto",
+      "feo",
+      "roto",
+      "sucio"
+    ],
     "points": 1
   },
   {
@@ -246,7 +366,12 @@
     "question": "¿Qué significa 'estar en la papa'?",
     "correctAnswer": "Estar en una buena situación",
     "explanation": "'Estar en la papa' significa estar en una buena situación económica o de vida.",
-    "options": ["Estar en una buena situación", "Estar cocinando", "Estar confundido", "Estar trabajando"],
+    "options": [
+      "Estar en una buena situación",
+      "Estar cocinando",
+      "Estar confundido",
+      "Estar trabajando"
+    ],
     "points": 1
   },
   {
@@ -256,7 +381,161 @@
     "question": "¿Qué es 'hacer el oso'?",
     "correctAnswer": "Hacer el ridículo",
     "explanation": "'Hacer el oso' significa hacer el ridículo o quedar en vergüenza.",
-    "options": ["Hacer el ridículo", "Trabajar", "Dormir", "Estudiar"],
+    "options": [
+      "Hacer el ridículo",
+      "Trabajar",
+      "Dormir",
+      "Estudiar"
+    ],
     "points": 1
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se le dice al autobús en Honduras?",
+    "correctAnswer": "rapidito",
+    "explanation": "En Honduras, el transporte público más común se llama 'rapidito'.",
+    "points": 11,
+    "options": [
+      "trabajo",
+      "rapidito",
+      "rico",
+      "fiesta"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'cipote' en Honduras?",
+    "correctAnswer": "niño",
+    "explanation": "'Cipote' es una palabra muy usada para referirse a los niños.",
+    "points": 11,
+    "options": [
+      "niño",
+      "libre",
+      "feliz",
+      "comida"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es una 'baleada'?",
+    "correctAnswer": "Plato típico",
+    "explanation": "La baleada es un plato tradicional hondureño con frijoles, queso y tortilla de harina.",
+    "points": 21,
+    "options": [
+      "Plato típico",
+      "Disparo",
+      "Baile"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jodido pero contento'?",
+    "correctAnswer": "feliz a pesar de los problemas",
+    "explanation": "Frase popular hondureña que refleja el espíritu optimista ante las dificultades.",
+    "points": 21,
+    "options": [
+      "persona",
+      "nuevo",
+      "objeto",
+      "feliz a pesar de los problemas"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué plato típico lleva carne, arroz, frijoles y plátano?",
+    "correctAnswer": "plato típico hondureño",
+    "explanation": "El plato típico hondureño incluye arroz, frijoles, carne, plátano y ensalada.",
+    "points": 31,
+    "options": [
+      "grande",
+      "lugar",
+      "persona",
+      "plato típico hondureño"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué quiere decir 'se lo llevó la chingada'?",
+    "correctAnswer": "se metió en problemas",
+    "explanation": "Frase popular en Centroamérica que indica que alguien está en un gran problema.",
+    "points": 31,
+    "options": [
+      "se metió en problemas",
+      "dinero",
+      "familia",
+      "enojado"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Quién es 'El Puma' en los memes hondureños?",
+    "correctAnswer": "personaje viral por gritar desde la cárcel",
+    "explanation": "El 'Puma' es famoso por un video donde grita en la cárcel diciendo frases virales como '¡Qué rico!'",
+    "points": 41,
+    "options": [
+      "casa",
+      "bueno",
+      "bonito",
+      "personaje viral por gritar desde la cárcel"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué frase viral dice '¿Querés que te lo repita en inglés?'",
+    "correctAnswer": "meme de regaño viral",
+    "explanation": "Frase usada en memes cuando alguien no entiende algo obvio, muy popular en redes hondureñas.",
+    "points": 41,
+    "options": [
+      "escuela",
+      "bonito",
+      "feliz",
+      "meme de regaño viral"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'está como la chacha con tenis'?",
+    "correctAnswer": "fuera de lugar",
+    "explanation": "Frase cómica hondureña que indica que alguien no encaja en una situación.",
+    "points": 41,
+    "options": [
+      "grande",
+      "fiesta",
+      "fuera de lugar",
+      "mercado"
+    ]
+  },
+  {
+    "countryCode": "honduras",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'bicho' en Honduras?",
+    "correctAnswer": "niño",
+    "explanation": "'Bicho' es una forma común de referirse a un niño en Honduras.",
+    "points": 11,
+    "options": [
+      "niño",
+      "cansado",
+      "lugar",
+      "triste"
+    ]
   }
 ]

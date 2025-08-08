@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "pais": "Honduras",
+    "nivel": 1,
+    "tipo": "completar",
+    "pregunta": "¿Cómo se le dice al autobús en Honduras?",
+    "respuesta": "rapidito",
+    "explicacion": "En Honduras, el transporte público más común se llama 'rapidito'."
+  },
+  {
+    "id": 2,
+    "pais": "Honduras",
+    "nivel": 1,
+    "tipo": "completar",
+    "pregunta": "¿Qué significa 'cipote' en Honduras?",
+    "respuesta": "niño",
+    "explicacion": "'Cipote' es una palabra muy usada para referirse a los niños."
+  },
+  {
+    "id": 3,
+    "pais": "Honduras",
+    "nivel": 2,
+    "tipo": "opcion_multiple",
+    "pregunta": "¿Qué es una 'baleada'?",
+    "opciones": [
+      "Plato típico",
+      "Disparo",
+      "Baile"
+    ],
+    "respuesta": "Plato típico",
+    "explicacion": "La baleada es un plato tradicional hondureño con frijoles, queso y tortilla de harina."
+  },
+  {
+    "id": 4,
+    "pais": "Honduras",
+    "nivel": 2,
+    "tipo": "completar",
+    "pregunta": "¿Qué significa 'jodido pero contento'?",
+    "respuesta": "feliz a pesar de los problemas",
+    "explicacion": "Frase popular hondureña que refleja el espíritu optimista ante las dificultades."
+  },
+  {
+    "id": 5,
+    "pais": "Honduras",
+    "nivel": 3,
+    "tipo": "completar",
+    "pregunta": "¿Qué plato típico lleva carne, arroz, frijoles y plátano?",
+    "respuesta": "plato típico hondureño",
+    "explicacion": "El plato típico hondureño incluye arroz, frijoles, carne, plátano y ensalada."
+  },
+  {
+    "id": 6,
+    "pais": "Honduras",
+    "nivel": 3,
+    "tipo": "completar",
+    "pregunta": "¿Qué quiere decir 'se lo llevó la chingada'?",
+    "respuesta": "se metió en problemas",
+    "explicacion": "Frase popular en Centroamérica que indica que alguien está en un gran problema."
+  },
+  {
+    "id": 7,
+    "pais": "Honduras",
+    "nivel": 4,
+    "tipo": "completar",
+    "pregunta": "¿Quién es 'El Puma' en los memes hondureños?",
+    "respuesta": "personaje viral por gritar desde la cárcel",
+    "explicacion": "El 'Puma' es famoso por un video donde grita en la cárcel diciendo frases virales como '¡Qué rico!'"
+  },
+  {
+    "id": 8,
+    "pais": "Honduras",
+    "nivel": 4,
+    "tipo": "completar",
+    "pregunta": "¿Qué frase viral dice '¿Querés que te lo repita en inglés?'",
+    "respuesta": "meme de regaño viral",
+    "explicacion": "Frase usada en memes cuando alguien no entiende algo obvio, muy popular en redes hondureñas."
+  },
+  {
+    "id": 9,
+    "pais": "Honduras",
+    "nivel": 4,
+    "tipo": "completar",
+    "pregunta": "¿Qué significa 'está como la chacha con tenis'?",
+    "respuesta": "fuera de lugar",
+    "explicacion": "Frase cómica hondureña que indica que alguien no encaja en una situación."
+  },
+  {
+    "id": 10,
+    "pais": "Honduras",
+    "nivel": 1,
+    "tipo": "completar",
+    "pregunta": "¿Qué es un 'bicho' en Honduras?",
+    "respuesta": "niño",
+    "explicacion": "'Bicho' es una forma común de referirse a un niño en Honduras."
+  }
+]
