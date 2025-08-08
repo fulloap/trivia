@@ -2,7 +2,7 @@
 
 ## Overview
 
-A cultural quiz web application that adapts to different countries and regions, allowing users to test their knowledge of local slang, expressions, customs, and memes. The application currently supports Cuba and Honduras, with plans to expand to more Spanish-speaking countries. Users progress through four difficulty levels, from beginner to "legend mode," with country-specific localization that changes language, styling, and cultural references based on their selection.
+A cultural quiz web application that adapts to different countries and regions, allowing users to test their knowledge of local slang, expressions, customs, and memes. The application currently supports Cuba and Honduras with visual flag representations, with plans to expand to more Spanish-speaking countries. Users progress through four difficulty levels, from beginner to "legend mode," with country-specific localization that changes language, styling, and cultural references based on their selection. Features a comprehensive scoring system with 1 point per correct answer, help system with 20-point penalty and 3 maximum hints per session, real-time rankings by country and level, and complete progress tracking stored in PostgreSQL.
 
 ## User Preferences
 
@@ -28,10 +28,18 @@ Preferred communication style: Simple, everyday language.
 - **Storage Pattern**: Repository pattern with dedicated storage interface for data access abstraction
 
 ### Data Storage Solutions
-- **Primary Database**: PostgreSQL with Neon serverless connection
-- **Schema Design**: Separate tables for users, countries, questions, user progress, quiz sessions, and session storage
-- **Question Data**: JSON files organized by country in the data/questions directory for easy content management
+- **Primary Database**: PostgreSQL with Neon serverless connection for persistent data storage
+- **Schema Design**: Complete relational schema with tables for:
+  - `users`: User authentication and total scores
+  - `countries`: Country configurations with flags and themes
+  - `questions`: Quiz questions with descriptions and difficulty levels
+  - `user_progress`: Individual progress tracking by country and level
+  - `quiz_sessions`: Active and completed quiz sessions with detailed data
+  - `rankings`: Leaderboards by country, level, and global rankings
+  - `sessions`: Authentication session storage
+- **Question Data**: JSON files organized by country in the data/questions directory for content management
 - **Migration System**: Drizzle Kit for database schema migrations and pushes
+- **Data Persistence**: All quiz progress, rankings, and user activity permanently stored in PostgreSQL
 
 ### Authentication and Authorization
 - **Provider**: Replit Auth with OIDC flow
