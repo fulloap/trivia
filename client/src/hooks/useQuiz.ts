@@ -1,17 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import type { Question, QuizSession } from '@shared/schema';
-
-interface QuizState {
-  session: QuizSession | null;
-  questions: Question[];
-  currentQuestionIndex: number;
-  currentQuestion: Question | null;
-  score: number;
-  correctAnswers: number;
-  isCompleted: boolean;
-}
 
 interface AnswerResult {
   isCorrect: boolean;
@@ -23,15 +13,11 @@ interface AnswerResult {
 
 export function useQuiz(countryCode?: string, level?: number) {
   const queryClient = useQueryClient();
-  const [quizState, setQuizState] = useState<QuizState>({
-    session: null,
-    questions: [],
-    currentQuestionIndex: 0,
-    currentQuestion: null,
-    score: 0,
-    correctAnswers: 0,
-    isCompleted: false,
-  });
+  const [session, setSession] = useState<QuizSession | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   // Fetch questions for the current country and level
   const { data: questions = [], isLoading: loadingQuestions } = useQuery<Question[]>({
@@ -45,15 +31,15 @@ export function useQuiz(countryCode?: string, level?: number) {
       const response = await apiRequest('POST', '/api/quiz/start', { countryCode, level });
       return response.json();
     },
-    onSuccess: (session) => {
-      setQuizState(prev => ({
-        ...prev,
-        session,
-        currentQuestionIndex: session.currentQuestionIndex || 0,
-        score: session.sessionData?.score || 0,
-        correctAnswers: session.sessionData?.correctAnswers || 0,
-        isCompleted: false,
-      }));
+    onSuccess: (newSession) => {
+      setSession(newSession);
+      setCurrentQuestionIndex(newSession.currentQuestionIndex || 0);
+      setScore(newSession.sessionData?.score || 0);
+      setCorrectAnswers(newSession.sessionData?.correctAnswers || 0);
+      setIsCompleted(false);
+    },
+    onError: (error) => {
+      console.error('Error starting quiz:', error);
     },
   });
 
@@ -79,12 +65,9 @@ export function useQuiz(countryCode?: string, level?: number) {
       return response.json();
     },
     onSuccess: (result: AnswerResult) => {
-      setQuizState(prev => ({
-        ...prev,
-        currentQuestionIndex: prev.currentQuestionIndex + 1,
-        score: result.totalScore,
-        correctAnswers: prev.correctAnswers + (result.isCorrect ? 1 : 0),
-      }));
+      setCurrentQuestionIndex(prev => prev + 1);
+      setScore(result.totalScore);
+      setCorrectAnswers(prev => prev + (result.isCorrect ? 1 : 0));
     },
   });
 
@@ -95,68 +78,62 @@ export function useQuiz(countryCode?: string, level?: number) {
       return response.json();
     },
     onSuccess: () => {
-      setQuizState(prev => ({
-        ...prev,
-        isCompleted: true,
-      }));
-      // Invalidate progress queries
+      setIsCompleted(true);
       queryClient.invalidateQueries({ queryKey: ['/api/progress'] });
     },
   });
 
-  // Update current question when questions or index changes
-  useEffect(() => {
-    if (questions.length > 0 && quizState.currentQuestionIndex < questions.length) {
-      setQuizState(prev => ({
-        ...prev,
-        questions,
-        currentQuestion: questions[prev.currentQuestionIndex],
-      }));
-    } else if (questions.length > 0 && quizState.currentQuestionIndex >= questions.length) {
-      // Quiz is complete
-      if (quizState.session && !quizState.isCompleted) {
-        completeQuizMutation.mutate(quizState.session.id);
-      }
+  const startQuiz = useCallback((countryCode: string, level: number) => {
+    if (!startQuizMutation.isPending) {
+      startQuizMutation.mutate({ countryCode, level });
     }
-  }, [questions, quizState.currentQuestionIndex, quizState.session, quizState.isCompleted]);
+  }, [startQuizMutation]);
 
-  const startQuiz = (countryCode: string, level: number) => {
-    startQuizMutation.mutate({ countryCode, level });
-  };
-
-  const answerQuestion = (answer: string, timeSpent: number = 0) => {
-    if (!quizState.session || !quizState.currentQuestion) return;
+  const answerQuestion = useCallback((answer: string, timeSpent: number = 0) => {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (!session || !currentQuestion || answerQuestionMutation.isPending) return;
     
     answerQuestionMutation.mutate({
-      sessionId: quizState.session.id,
-      questionId: quizState.currentQuestion.id,
+      sessionId: session.id,
+      questionId: currentQuestion.id,
       answer,
       timeSpent,
     });
-  };
+  }, [session, questions, currentQuestionIndex, answerQuestionMutation]);
 
-  const resetQuiz = () => {
-    setQuizState({
-      session: null,
-      questions: [],
-      currentQuestionIndex: 0,
-      currentQuestion: null,
-      score: 0,
-      correctAnswers: 0,
-      isCompleted: false,
-    });
-  };
+  const resetQuiz = useCallback(() => {
+    setSession(null);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setCorrectAnswers(0);
+    setIsCompleted(false);
+  }, []);
+
+  // Check if quiz should be completed
+  if (questions.length > 0 && currentQuestionIndex >= questions.length && session && !isCompleted && !completeQuizMutation.isPending) {
+    completeQuizMutation.mutate(session.id);
+  }
+
+  const currentQuestion = questions.length > 0 && currentQuestionIndex < questions.length 
+    ? questions[currentQuestionIndex] 
+    : null;
 
   return {
-    ...quizState,
+    session,
+    questions,
+    currentQuestion,
+    currentQuestionIndex,
+    score,
+    correctAnswers,
+    isCompleted,
     isLoading: loadingQuestions || startQuizMutation.isPending,
     isAnswering: answerQuestionMutation.isPending,
     answerResult: answerQuestionMutation.data,
     startQuiz,
     answerQuestion,
     resetQuiz,
-    hasMoreQuestions: quizState.currentQuestionIndex < questions.length,
+    hasMoreQuestions: currentQuestionIndex < questions.length,
     totalQuestions: questions.length,
-    progress: questions.length > 0 ? (quizState.currentQuestionIndex / questions.length) * 100 : 0,
+    progress: questions.length > 0 ? (currentQuestionIndex / questions.length) * 100 : 0,
   };
 }

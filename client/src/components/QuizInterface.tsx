@@ -23,6 +23,7 @@ export function QuizInterface({
   const [selectedAnswer, setSelectedAnswer] = useState<string>('');
   const [questionStartTime, setQuestionStartTime] = useState<number>(Date.now());
   const [showHint, setShowHint] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const {
     currentQuestion,
@@ -35,13 +36,28 @@ export function QuizInterface({
     startQuiz,
     answerQuestion,
     hasMoreQuestions,
+    isCompleted,
   } = useQuiz(selectedCountry.code, selectedLevel);
 
+  // Start quiz once when component mounts
   useEffect(() => {
-    if (!isLoading) {
+    if (!hasStarted && !isLoading) {
+      setHasStarted(true);
       startQuiz(selectedCountry.code, selectedLevel);
     }
-  }, [selectedCountry.code, selectedLevel, isLoading]);
+  }, [hasStarted, isLoading]);
+
+  // Reset when country or level changes
+  useEffect(() => {
+    setHasStarted(false);
+  }, [selectedCountry.code, selectedLevel]);
+
+  // Check if quiz is completed
+  useEffect(() => {
+    if (isCompleted) {
+      onComplete();
+    }
+  }, [isCompleted, onComplete]);
 
   useEffect(() => {
     // Reset state when question changes
