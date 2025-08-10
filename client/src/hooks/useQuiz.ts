@@ -103,8 +103,8 @@ export function useQuiz(countryCode?: string, level?: number) {
 
   // Use hint mutation
   const useHintMutation = useMutation({
-    mutationFn: async (sessionId: number) => {
-      const response = await apiRequest('POST', '/api/quiz/hint', { sessionId });
+    mutationFn: async ({ sessionId, questionId }: { sessionId: number; questionId: number }) => {
+      const response = await apiRequest('POST', '/api/quiz/hint', { sessionId, questionId });
       return response.json();
     },
     onSuccess: (result) => {
@@ -119,9 +119,9 @@ export function useQuiz(countryCode?: string, level?: number) {
     },
   });
 
-  const useHint = useCallback(() => {
+  const useHint = useCallback((questionId: number) => {
     if (session && (session.hintsRemaining || 0) > 0 && !useHintMutation.isPending) {
-      useHintMutation.mutate(session.id);
+      useHintMutation.mutate({ sessionId: session.id, questionId });
     }
   }, [session, useHintMutation]);
 
@@ -153,6 +153,8 @@ export function useQuiz(countryCode?: string, level?: number) {
     isLoading: loadingQuestions || startQuizMutation.isPending,
     isAnswering: answerQuestionMutation.isPending,
     answerResult: answerQuestionMutation.data,
+    hintResult: useHintMutation.data,
+    isUsingHint: useHintMutation.isPending,
     startQuiz,
     answerQuestion,
     useHint,

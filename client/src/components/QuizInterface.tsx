@@ -39,6 +39,8 @@ export function QuizInterface({
     hasMoreQuestions,
     isCompleted,
     session,
+    hintResult,
+    isUsingHint,
   } = useQuiz(selectedCountry.code, selectedLevel);
 
   // Start quiz once when component mounts
@@ -67,6 +69,13 @@ export function QuizInterface({
     setQuestionStartTime(Date.now());
     setShowHint(false);
   }, [currentQuestionIndex]);
+
+  // Show hint when result arrives
+  useEffect(() => {
+    if (hintResult) {
+      setShowHint(true);
+    }
+  }, [hintResult]);
 
   const handleAnswerSelect = (answer: string) => {
     if (isAnswering) return;
@@ -158,25 +167,26 @@ export function QuizInterface({
               </h3>
               
               {/* Description hint */}
-              {showHint && currentQuestion.description && (
+              {(showHint || hintResult) && (
                 <div className="bg-white/20 rounded-xl p-4 text-sm mb-4">
-                  💡 {currentQuestion.description}
+                  💡 {hintResult?.hint || currentQuestion.description || 'Pista disponible'}
                 </div>
               )}
 
               {/* Hint Button */}
-              {!showHint && session && (session.hintsRemaining || 0) > 0 && (
+              {!showHint && session && (session.hintsRemaining || 0) > 0 && currentQuestion && (
                 <Button
                   variant="secondary"
                   size="sm"
                   onClick={() => {
-                    useHint();
+                    useHint(currentQuestion.id);
                     setShowHint(true);
                   }}
                   className="mb-4 bg-white/20 hover:bg-white/30 text-white border-white/30"
+                  disabled={isUsingHint}
                 >
                   <Lightbulb className="h-4 w-4 mr-2" />
-                  Ayuda (-20 pts) • {session.hintsRemaining || 0} restantes
+                  {isUsingHint ? 'Obteniendo ayuda...' : `Ayuda (-20 pts) • ${session.hintsRemaining || 0} restantes`}
                 </Button>
               )}
             </div>

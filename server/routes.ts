@@ -325,7 +325,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(401).json({ message: "Usuario no autenticado" });
       }
 
-      const { sessionId } = req.body;
+      const { sessionId, questionId } = req.body;
 
       const session = await storage.getActiveQuizSession(user.id);
       if (!session || session.id !== sessionId) {
@@ -335,6 +335,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const currentHints = session.hintsRemaining || 3;
       if (currentHints <= 0) {
         return res.status(400).json({ message: "No quedan ayudas disponibles" });
+      }
+
+      // Get the current question to provide the hint/description
+      const question = await storage.getQuestionById(questionId);
+      if (!question) {
+        return res.status(404).json({ message: "Question not found" });
       }
 
       // Deduct hint cost (20 points) and reduce remaining hints
@@ -359,6 +365,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         pointsDeducted: 20,
         newScore,
         hintsRemaining: newHintsRemaining,
+        hint: question.description, // Esta es la pista/descripción que se muestra al usuario
       });
     } catch (error) {
       console.error("Error using hint:", error);
