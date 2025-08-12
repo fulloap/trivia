@@ -88,28 +88,28 @@ export function UserProfile() {
           <CardContent className="p-4 text-center">
             <Users className="w-8 h-8 mx-auto mb-2 text-purple-500" />
             <div className="text-2xl font-bold">{stats?.referralsCount || 0}</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Referidos</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Amigos</div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Información de Referidos */}
+      {/* Información de Invitar Amigos */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Gift className="w-5 h-5" />
-            Sistema de Referidos
+            Invitar Amigos
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex justify-between items-center">
-            <span className="text-sm">Tu código:</span>
-            <Badge variant="outline" className="font-mono">
-              {referralInfo?.referralCode || 'Generando...'}
-            </Badge>
+          <div>
+            <span className="text-sm block mb-2">Tu enlace de invitación:</span>
+            <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded border text-xs font-mono break-all">
+              {referralInfo?.referralLink || 'Generando enlace...'}
+            </div>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-sm">Referidos activos:</span>
+            <span className="text-sm">Amigos invitados:</span>
             <span className="font-semibold">{stats?.referralsCount || 0}</span>
           </div>
           <div className="flex justify-between items-center">
