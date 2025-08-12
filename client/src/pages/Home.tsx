@@ -32,7 +32,7 @@ export default function Home() {
   const { answerResult, resetQuiz } = useQuiz(selectedCountry?.code, selectedLevel);
 
   const logoutMutation = useMutation({
-    mutationFn: () => apiRequest('POST', '/api/auth/logout'),
+    mutationFn: () => apiRequest('/api/auth/logout', 'POST'),
     onSuccess: () => {
       queryClient.clear();
       window.location.reload();
