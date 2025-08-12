@@ -261,17 +261,7 @@ export function QuizInterface({
           </div>
         )}
 
-        {/* Help Button */}
-        <div className="text-center">
-          <Button
-            variant="outline"
-            onClick={() => setShowHint(!showHint)}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white border-yellow-500 px-6 py-3 font-semibold"
-          >
-            <Lightbulb className="mr-2 h-4 w-4" />
-            {showHint ? 'Ocultar ayuda' : 'Ayuda (50 pts)'}
-          </Button>
-        </div>
+
       </div>
     </div>
   );
