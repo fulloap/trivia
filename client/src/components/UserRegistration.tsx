@@ -1,140 +1,213 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, User, Gamepad2 } from 'lucide-react';
-import { usernameSchema } from '@shared/schema';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { apiRequest } from '@/lib/queryClient';
+import { useToast } from '@/hooks/use-toast';
 
-export function UserRegistration() {
-  const [username, setUsername] = useState('');
-  const [error, setError] = useState('');
-  const [referralCode, setReferralCode] = useState('');
+interface UserRegistrationProps {
+  onSuccess: () => void;
+}
+
+export function UserRegistration({ onSuccess }: UserRegistrationProps) {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const { toast } = useToast();
   const queryClient = useQueryClient();
 
-  // Check for referral code in URL
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const refCode = urlParams.get('ref');
-    if (refCode) {
-      setReferralCode(refCode);
-    }
-  }, []);
-
-  const registerMutation = useMutation({
-    mutationFn: async (username: string) => {
-      const response = await apiRequest('POST', '/api/auth/register', { 
-        username,
-        referralCode: referralCode || undefined
-      });
-      return response.json();
+  const authMutation = useMutation({
+    mutationFn: async (data: { username: string; email?: string; password: string; isLogin: boolean }) => {
+      if (data.isLogin) {
+        return await apiRequest('/api/auth/login', {
+          method: 'POST',
+          body: JSON.stringify({
+            username: data.username,
+            password: data.password
+          })
+        });
+      } else {
+        return await apiRequest('/api/auth/register', {
+          method: 'POST',
+          body: JSON.stringify({
+            username: data.username,
+            email: data.email,
+            password: data.password
+          })
+        });
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
+      toast({
+        title: isLogin ? "¡Bienvenido!" : "¡Cuenta creada!",
+        description: isLogin ? "Has iniciado sesión correctamente" : "Tu cuenta ha sido creada exitosamente",
+      });
+      onSuccess();
     },
     onError: (error: any) => {
-      const errorMessage = error.message?.includes('409:') 
-        ? 'Este nombre de usuario ya está en uso' 
-        : error.message || 'Error al crear el usuario';
-      setError(errorMessage);
-    },
+      toast({
+        title: "Error",
+        description: error.message || "Ha ocurrido un error",
+        variant: "destructive"
+      });
+    }
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-
-    try {
-      const validatedUsername = usernameSchema.parse(username);
-      registerMutation.mutate(validatedUsername);
-    } catch (error: any) {
-      if (error.errors) {
-        setError(error.errors[0].message);
-      } else {
-        setError('Nombre de usuario inválido');
-      }
+    
+    if (!isLogin && formData.password !== formData.confirmPassword) {
+      toast({
+        title: "Error",
+        description: "Las contraseñas no coinciden",
+        variant: "destructive"
+      });
+      return;
     }
+
+    if (!isLogin && formData.password.length < 6) {
+      toast({
+        title: "Error",
+        description: "La contraseña debe tener al menos 6 caracteres",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    authMutation.mutate({
+      username: formData.username,
+      email: formData.email,
+      password: formData.password,
+      isLogin
+    });
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/10 via-background to-secondary/10 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md">
-        <CardHeader className="space-y-4 text-center">
-          <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-            <Gamepad2 className="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <CardTitle className="text-2xl font-bold">¡Bienvenido al Quiz!</CardTitle>
-            <CardDescription className="mt-2">
-              Elige un nombre único para comenzar a jugar y competir en los rankings
-              {referralCode && (
-                <div className="mt-2 p-2 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                  <p className="text-sm text-green-700 dark:text-green-300">
-                    🎉 ¡Te han invitado a jugar! Cuando respondas 3 preguntas correctas, tu amigo recibirá una ayuda gratis.
-                  </p>
-                </div>
-              )}
-            </CardDescription>
-          </div>
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl font-bold">
+            {isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}
+          </CardTitle>
+          <p className="text-gray-600 dark:text-gray-400">
+            {isLogin ? 'Ingresa a tu cuenta' : 'Únete a ¿De dónde eres?'}
+          </p>
         </CardHeader>
-
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="username" className="text-sm font-medium flex items-center gap-2">
-                <User className="w-4 h-4" />
-                Nombre de usuario
-              </label>
+            <div>
+              <Label htmlFor="username">Usuario</Label>
               <Input
                 id="username"
                 type="text"
-                placeholder="Tu nombre único..."
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="text-center"
-                disabled={registerMutation.isPending}
+                value={formData.username}
+                onChange={(e) => handleInputChange('username', e.target.value)}
+                placeholder="Tu nombre de usuario"
+                required
               />
-              <p className="text-xs text-muted-foreground text-center">
-                Solo letras, números y guiones bajos (3-50 caracteres)
-              </p>
             </div>
 
-            {error && (
-              <Alert variant="destructive">
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
+            {!isLogin && (
+              <div>
+                <Label htmlFor="email">Correo Electrónico</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+            )}
+
+            <div>
+              <Label htmlFor="password">Contraseña</Label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  value={formData.password}
+                  onChange={(e) => handleInputChange('password', e.target.value)}
+                  placeholder="Tu contraseña"
+                  required
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </div>
+
+            {!isLogin && (
+              <div>
+                <Label htmlFor="confirmPassword">Confirmar Contraseña</Label>
+                <div className="relative">
+                  <Input
+                    id="confirmPassword"
+                    type={showConfirmPassword ? 'text' : 'password'}
+                    value={formData.confirmPassword}
+                    onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
+                    placeholder="Confirma tu contraseña"
+                    required
+                  />
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  >
+                    {showConfirmPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
+              </div>
             )}
 
             <Button 
               type="submit" 
               className="w-full" 
-              size="lg"
-              disabled={registerMutation.isPending || !username.trim()}
+              disabled={authMutation.isPending}
             >
-              {registerMutation.isPending ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Creando usuario...
-                </>
-              ) : (
-                <>
-                  <Gamepad2 className="w-4 h-4 mr-2" />
-                  ¡Comenzar a Jugar!
-                </>
-              )}
+              {authMutation.isPending ? 'Procesando...' : (isLogin ? 'Iniciar Sesión' : 'Crear Cuenta')}
             </Button>
           </form>
 
-          <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-semibold text-sm mb-2">¿Qué puedes hacer?</h4>
-            <ul className="text-xs space-y-1 text-muted-foreground">
-              <li>• Jugar quizzes culturales de diferentes países</li>
-              <li>• Competir en rankings por país y globales</li>
-              <li>• Acumular puntos y mejorar tu posición</li>
-              <li>• ¡Tu nombre será único y nadie más lo podrá usar!</li>
-            </ul>
+          <div className="mt-4 text-center">
+            <button
+              type="button"
+              onClick={() => setIsLogin(!isLogin)}
+              className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              {isLogin ? '¿No tienes cuenta? Crear una' : '¿Ya tienes cuenta? Iniciar sesión'}
+            </button>
           </div>
         </CardContent>
       </Card>

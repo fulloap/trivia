@@ -28,6 +28,8 @@ export const sessions = pgTable(
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   username: varchar("username", { length: 50 }).notNull().unique(),
+  email: varchar("email", { length: 255 }).unique(),
+  password: varchar("password", { length: 255 }),
   totalScore: integer("total_score").default(0),
   gamesPlayed: integer("games_played").default(0),
   sessionId: varchar("session_id"), // To track current browser session

@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertQuestionSchema, insertCountrySchema, usernameSchema } from "@shared/schema";
 import { z } from "zod";
 import { nanoid } from "nanoid";
+import bcrypt from "bcryptjs";
 
 // Extend session type
 declare module 'express-session' {
@@ -29,22 +30,53 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // User authentication routes (simplified)
   app.post('/api/auth/register', async (req, res) => {
     try {
-      const { username } = req.body;
+      const { username, email, password } = req.body;
+      
+      if (!username || !email || !password) {
+        return res.status(400).json({ message: "Usuario, email y contraseña son requeridos" });
+      }
+
+      if (password.length < 6) {
+        return res.status(400).json({ message: "La contraseña debe tener al menos 6 caracteres" });
+      }
       
       // Validate username
       const validatedUsername = usernameSchema.parse(username);
       
-      // Check if username is available
-      const isAvailable = await storage.isUsernameAvailable(validatedUsername);
-      if (!isAvailable) {
+      // Check if username or email are available
+      const isUsernameAvailable = await storage.isUsernameAvailable(validatedUsername);
+      if (!isUsernameAvailable) {
         return res.status(409).json({ message: "Este nombre de usuario ya está en uso" });
+      }
+
+      const isEmailAvailable = await storage.isEmailAvailable(email);
+      if (!isEmailAvailable) {
+        return res.status(409).json({ message: "Este correo electrónico ya está en uso" });
+      }
+
+      // Hash password
+      const hashedPassword = await bcrypt.hash(password, 12);
+
+      // Check for referral code
+      const referralCode = req.query.ref as string;
+      let referredBy: number | undefined;
+      
+      if (referralCode) {
+        const referrer = await storage.getUserByReferralCode(referralCode);
+        if (referrer) {
+          referredBy = referrer.id;
+        }
       }
       
       // Create user
       const sessionId = nanoid();
       const user = await storage.createUser({
         username: validatedUsername,
+        email,
+        password: hashedPassword,
         sessionId,
+        referralCode: 'REF' + nanoid(6).toUpperCase(),
+        referredBy
       });
       
       // Set session
@@ -58,6 +90,41 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       console.error("Error registering user:", error);
       res.status(500).json({ message: "Error al crear el usuario" });
+    }
+  });
+
+  app.post('/api/auth/login', async (req, res) => {
+    try {
+      const { username, password } = req.body;
+      
+      if (!username || !password) {
+        return res.status(400).json({ message: "Usuario y contraseña son requeridos" });
+      }
+
+      // Get user by username
+      const user = await storage.getUserByUsername(username);
+      if (!user || !user.password) {
+        return res.status(401).json({ message: "Credenciales inválidas" });
+      }
+
+      // Verify password
+      const isValidPassword = await bcrypt.compare(password, user.password);
+      if (!isValidPassword) {
+        return res.status(401).json({ message: "Credenciales inválidas" });
+      }
+
+      // Update session
+      const sessionId = nanoid();
+      await storage.updateUserSession(user.id, sessionId);
+
+      // Set session
+      req.session.userId = user.id;
+      req.session.sessionId = sessionId;
+
+      res.json({ user });
+    } catch (error) {
+      console.error("Error logging in:", error);
+      res.status(500).json({ message: "Error interno del servidor" });
     }
   });
 
@@ -77,6 +144,71 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post('/api/auth/logout', async (req: any, res) => {
     req.session.destroy();
     res.json({ message: "Logged out" });
+  });
+
+  // Profile update endpoints
+  app.post('/api/auth/update-email', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const { email } = req.body;
+      if (!email) {
+        return res.status(400).json({ message: "El correo electrónico es requerido" });
+      }
+
+      // Check if email is available
+      const isEmailAvailable = await storage.isEmailAvailable(email);
+      if (!isEmailAvailable) {
+        return res.status(409).json({ message: "Este correo electrónico ya está en uso" });
+      }
+
+      await storage.updateUserEmail(user.id, email);
+      
+      res.json({ message: "Correo actualizado exitosamente" });
+    } catch (error) {
+      console.error("Error updating email:", error);
+      res.status(500).json({ message: "Error al actualizar el correo" });
+    }
+  });
+
+  app.post('/api/auth/update-password', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const { currentPassword, newPassword } = req.body;
+      if (!currentPassword || !newPassword) {
+        return res.status(400).json({ message: "Contraseña actual y nueva son requeridas" });
+      }
+
+      if (newPassword.length < 6) {
+        return res.status(400).json({ message: "La nueva contraseña debe tener al menos 6 caracteres" });
+      }
+
+      // Verify current password
+      if (!user.password) {
+        return res.status(400).json({ message: "Usuario no tiene contraseña configurada" });
+      }
+
+      const isValidPassword = await bcrypt.compare(currentPassword, user.password);
+      if (!isValidPassword) {
+        return res.status(401).json({ message: "La contraseña actual es incorrecta" });
+      }
+
+      // Hash new password
+      const hashedNewPassword = await bcrypt.hash(newPassword, 12);
+      await storage.updateUserPassword(user.id, hashedNewPassword);
+      
+      res.json({ message: "Contraseña actualizada exitosamente" });
+    } catch (error) {
+      console.error("Error updating password:", error);
+      res.status(500).json({ message: "Error al actualizar la contraseña" });
+    }
   });
 
   // Countries API

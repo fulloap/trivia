@@ -114,6 +114,10 @@ export default function Home() {
     );
   }
 
+  if (!user) {
+    return <UserRegistration onSuccess={() => window.location.reload()} />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 pb-20">
       {/* Top Navigation Bar */}

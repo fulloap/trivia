@@ -370,6 +370,28 @@ export class DatabaseStorage implements IStorage {
     const referrals = await db.select().from(users).where(eq(users.referredBy, userId));
     return referrals.length;
   }
+
+  async isEmailAvailable(email: string): Promise<boolean> {
+    const [user] = await db.select().from(users).where(eq(users.email, email));
+    return !user;
+  }
+
+  async updateUserSession(userId: number, sessionId: string): Promise<void> {
+    await db.update(users).set({ sessionId }).where(eq(users.id, userId));
+  }
+
+  async getUserByReferralCode(referralCode: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.referralCode, referralCode));
+    return user;
+  }
+
+  async updateUserEmail(userId: number, email: string): Promise<void> {
+    await db.update(users).set({ email }).where(eq(users.id, userId));
+  }
+
+  async updateUserPassword(userId: number, password: string): Promise<void> {
+    await db.update(users).set({ password }).where(eq(users.id, userId));
+  }
 }
 
 export const storage = new DatabaseStorage();

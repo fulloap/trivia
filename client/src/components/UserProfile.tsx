@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useAuth } from '@/hooks/useAuth';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Gift, Star, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Trophy, Gift, Star, Users, Settings } from 'lucide-react';
+import { ProfileSettings } from './ProfileSettings';
 
 interface UserStats {
   totalScore: number;
@@ -15,6 +18,7 @@ interface UserStats {
 
 export function UserProfile() {
   const { user } = useAuth();
+  const [showSettings, setShowSettings] = useState(false);
   
   const { data: stats, isLoading } = useQuery<UserStats>({
     queryKey: ['/api/user/stats'],
@@ -43,6 +47,24 @@ export function UserProfile() {
     );
   }
 
+  if (showSettings) {
+    return (
+      <div className="space-y-4">
+        <Button
+          variant="outline"
+          onClick={() => setShowSettings(false)}
+          className="flex items-center gap-2"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Volver al Perfil
+        </Button>
+        <ProfileSettings />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* Información del Usuario */}
@@ -55,6 +77,15 @@ export function UserProfile() {
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Jugador de trivia cultural
           </p>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowSettings(true)}
+            className="flex items-center gap-2 mt-2"
+          >
+            <Settings className="w-4 h-4" />
+            Configurar Cuenta
+          </Button>
         </CardHeader>
       </Card>
 
