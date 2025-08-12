@@ -8,6 +8,7 @@ import { QuizResults } from '@/components/QuizResults';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { BottomNavigation } from '@/components/BottomNavigation';
 import { Rankings } from '@/components/Rankings';
+import { ReferralShare } from '@/components/ReferralShare';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
 import { Button } from '@/components/ui/button';
@@ -16,7 +17,7 @@ import type { Country } from '@shared/schema';
 import { apiRequest } from '@/lib/queryClient';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings';
+type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings' | 'referral';
 
 export default function Home() {
   const { user, isLoading } = useAuth();
@@ -210,8 +211,33 @@ export default function Home() {
           <Rankings selectedCountryCode={selectedCountry?.code} />
         </div>
       )}
+
+      {gameState === 'referral' && (
+        <div className="container mx-auto p-4 max-w-2xl">
+          <div className="mb-4">
+            <Button
+              variant="outline"
+              onClick={() => setGameState('country-selection')}
+              className="flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Volver
+            </Button>
+          </div>
+          <ReferralShare />
+        </div>
+      )}
       
-      <BottomNavigation activeTab="play" />
+      <BottomNavigation 
+        activeTab={gameState === 'rankings' ? 'ranking' : gameState === 'referral' ? 'referral' : 'play'} 
+        onTabChange={(tab) => {
+          if (tab === 'ranking') setGameState('rankings');
+          else if (tab === 'referral') setGameState('referral');
+          else if (tab === 'play' || tab === 'home') setGameState('country-selection');
+        }}
+      />
     </div>
   );
 }

@@ -25,9 +25,11 @@ export interface IStorage {
   // User operations (simplified for username system)
   getUserByUsername(username: string): Promise<User | undefined>;
   getUserById(id: number): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createUser(user: InsertUser, referralCode?: string): Promise<User>;
   updateUserSession(userId: number, sessionId: string): Promise<void>;
   updateUserScore(userId: number, additionalScore: number): Promise<void>;
+  addBonusHelp(userId: number): Promise<void>;
+  getUserByReferralCode(referralCode: string): Promise<User | undefined>;
   isUsernameAvailable(username: string): Promise<boolean>;
 
   // Country operations
@@ -71,10 +73,26 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
-  async createUser(userData: InsertUser): Promise<User> {
+  async createUser(userData: InsertUser, referralCode?: string): Promise<User> {
+    // Generate unique referral code for new user
+    const newUserReferralCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+    
+    // Find referrer if referral code provided
+    let referrerId = null;
+    if (referralCode) {
+      const [referrer] = await db.select().from(users).where(eq(users.referralCode, referralCode));
+      if (referrer) {
+        referrerId = referrer.id;
+      }
+    }
+    
     const [user] = await db
       .insert(users)
-      .values(userData)
+      .values({
+        ...userData,
+        referralCode: newUserReferralCode,
+        referredBy: referrerId,
+      })
       .returning();
     return user;
   }
@@ -103,6 +121,20 @@ export class DatabaseStorage implements IStorage {
   async isUsernameAvailable(username: string): Promise<boolean> {
     const [user] = await db.select().from(users).where(eq(users.username, username));
     return !user;
+  }
+
+  async addBonusHelp(userId: number): Promise<void> {
+    await db
+      .update(users)
+      .set({
+        bonusHelps: sql`${users.bonusHelps} + 1`,
+      })
+      .where(eq(users.id, userId));
+  }
+
+  async getUserByReferralCode(referralCode: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.referralCode, referralCode));
+    return user;
   }
 
   // Country operations

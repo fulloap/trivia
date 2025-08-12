@@ -1,4 +1,4 @@
-import { Home, Trophy, Play, Calendar, User } from 'lucide-react';
+import { Home, Trophy, Play, Gift, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +12,7 @@ export function BottomNavigation({ activeTab = 'play', onTabChange }: BottomNavi
     { id: 'home', label: 'Inicio', icon: Home },
     { id: 'ranking', label: 'Ranking', icon: Trophy },
     { id: 'play', label: 'Jugar', icon: Play },
-    { id: 'challenges', label: 'Retos', icon: Calendar },
+    { id: 'referral', label: 'Invitar', icon: Gift },
     { id: 'profile', label: 'Perfil', icon: User },
   ];
 

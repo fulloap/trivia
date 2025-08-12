@@ -31,6 +31,9 @@ export const users = pgTable("users", {
   totalScore: integer("total_score").default(0),
   gamesPlayed: integer("games_played").default(0),
   sessionId: varchar("session_id"), // To track current browser session
+  referralCode: varchar("referral_code", { length: 20 }), // Código único para invitar
+  referredBy: integer("referred_by"), // Quien me invitó
+  bonusHelps: integer("bonus_helps").default(0), // Ayudas bonus ganadas por referidos
   createdAt: timestamp("created_at").defaultNow(),
   lastActiveAt: timestamp("last_active_at").defaultNow(),
 });
@@ -87,7 +90,7 @@ export const quizSessions = pgTable("quiz_sessions", {
   score: integer("score").default(0),
   correctAnswers: integer("correct_answers").default(0),
   hintsUsed: integer("hints_used").default(0), // Número de ayudas usadas
-  hintsRemaining: integer("hints_remaining").default(3), // Ayudas restantes (máximo 3)
+  hintsRemaining: integer("hints_remaining").default(3), // Ayudas restantes (máximo 3 + bonus)
   sessionData: jsonb("session_data"), // Store current quiz state
   startedAt: timestamp("started_at").defaultNow(),
   completedAt: timestamp("completed_at"),

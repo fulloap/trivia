@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { Button } from '@/components/ui/button';
@@ -11,11 +11,24 @@ import { usernameSchema } from '@shared/schema';
 export function UserRegistration() {
   const [username, setUsername] = useState('');
   const [error, setError] = useState('');
+  const [referralCode, setReferralCode] = useState('');
   const queryClient = useQueryClient();
+
+  // Check for referral code in URL
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const refCode = urlParams.get('ref');
+    if (refCode) {
+      setReferralCode(refCode);
+    }
+  }, []);
 
   const registerMutation = useMutation({
     mutationFn: async (username: string) => {
-      const response = await apiRequest('POST', '/api/auth/register', { username });
+      const response = await apiRequest('POST', '/api/auth/register', { 
+        username,
+        referralCode: referralCode || undefined
+      });
       return response.json();
     },
     onSuccess: () => {
@@ -56,6 +69,13 @@ export function UserRegistration() {
             <CardTitle className="text-2xl font-bold">¡Bienvenido al Quiz!</CardTitle>
             <CardDescription className="mt-2">
               Elige un nombre único para comenzar a jugar y competir en los rankings
+              {referralCode && (
+                <div className="mt-2 p-2 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <p className="text-sm text-green-700 dark:text-green-300">
+                    🎉 ¡Te han invitado a jugar! Cuando respondas 3 preguntas correctas, tu amigo recibirá una ayuda gratis.
+                  </p>
+                </div>
+              )}
             </CardDescription>
           </div>
         </CardHeader>

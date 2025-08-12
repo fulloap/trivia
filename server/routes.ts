@@ -302,6 +302,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         accuracy,
       });
 
+      // Check if this completion triggers referral bonus
+      await checkReferralProgress(user.id);
+
       res.json({
         session,
         results: {
@@ -332,7 +335,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ message: "Quiz session not found" });
       }
 
-      const currentHints = session.hintsRemaining || 3;
+      // Calculate total hints available (base 3 + bonus helps)
+      const userInfo = await storage.getUserById(user.id);
+      const bonusHelps = userInfo?.bonusHelps || 0;
+      const maxHints = 3 + bonusHelps;
+      const currentHints = session.hintsRemaining !== undefined ? session.hintsRemaining : maxHints;
       if (currentHints <= 0) {
         return res.status(400).json({ message: "No quedan ayudas disponibles" });
       }
@@ -373,6 +380,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ message: "Failed to use hint" });
     }
   });
+
+  // Referral system API
+  app.get('/api/user/referral-info', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const domain = req.get('host');
+      const referralLink = `https://${domain}?ref=${user.referralCode}`;
+      
+      res.json({
+        referralCode: user.referralCode,
+        referralLink,
+        bonusHelps: user.bonusHelps || 0,
+      });
+    } catch (error) {
+      console.error("Error getting referral info:", error);
+      res.status(500).json({ message: "Failed to get referral info" });
+    }
+  });
+
+  // Check referral progress and award bonus helps
+  const checkReferralProgress = async (userId: number) => {
+    try {
+      const user = await storage.getUserById(userId);
+      if (!user || !user.referredBy) return;
+
+      // Count correct answers by this user
+      const userRankings = await storage.getUserRankingsByCountry(userId, 'cuba'); // Check any country
+      let totalCorrectAnswers = 0;
+      for (const ranking of userRankings) {
+        totalCorrectAnswers += ranking.correctAnswers;
+      }
+
+      // If user has completed 3 correct answers, give bonus help to referrer
+      if (totalCorrectAnswers >= 3) {
+        await storage.addBonusHelp(user.referredBy);
+        console.log(`Bonus help awarded to user ${user.referredBy} for referral ${userId}`);
+      }
+    } catch (error) {
+      console.error("Error checking referral progress:", error);
+    }
+  };
 
   // Rankings API - Order matters! Specific routes first
   app.get('/api/rankings/global/:level', async (req, res) => {
