@@ -345,6 +345,31 @@ export class DatabaseStorage implements IStorage {
       )
       .orderBy(desc(rankings.score), asc(rankings.level));
   }
+
+  async getUserRankings(userId: number): Promise<(Ranking & { username: string })[]> {
+    return await db
+      .select({
+        id: rankings.id,
+        userId: rankings.userId,
+        countryCode: rankings.countryCode,
+        level: rankings.level,
+        score: rankings.score,
+        correctAnswers: rankings.correctAnswers,
+        totalQuestions: rankings.totalQuestions,
+        accuracy: rankings.accuracy,
+        completedAt: rankings.completedAt,
+        username: users.username,
+      })
+      .from(rankings)
+      .innerJoin(users, eq(rankings.userId, users.id))
+      .where(eq(rankings.userId, userId))
+      .orderBy(desc(rankings.completedAt));
+  }
+
+  async getUserReferralsCount(userId: number): Promise<number> {
+    const referrals = await db.select().from(users).where(eq(users.referredBy, userId));
+    return referrals.length;
+  }
 }
 
 export const storage = new DatabaseStorage();

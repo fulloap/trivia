@@ -391,14 +391,58 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const referralLink = `https://trivia.cubacoin.org?ref=${user.referralCode}`;
       
+      const referralsCount = await storage.getUserReferralsCount(user.id);
+      
       res.json({
         referralCode: user.referralCode,
         referralLink,
         bonusHelps: user.bonusHelps || 0,
+        referralsCount
       });
     } catch (error) {
       console.error("Error getting referral info:", error);
       res.status(500).json({ message: "Failed to get referral info" });
+    }
+  });
+
+  // Get user statistics
+  app.get('/api/user/stats', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      const userRankings = await storage.getUserRankings(user.id);
+      const referralsCount = await storage.getUserReferralsCount(user.id);
+      
+      // Calculate statistics from rankings
+      let totalCorrect = 0;
+      let totalQuestions = 0;
+      let gamesPlayed = userRankings.length;
+      let bestLevel = 0;
+
+      userRankings.forEach(ranking => {
+        totalCorrect += ranking.correctAnswers;
+        totalQuestions += ranking.totalQuestions;
+        if (ranking.level > bestLevel) {
+          bestLevel = ranking.level;
+        }
+      });
+
+      const accuracy = totalQuestions > 0 ? (totalCorrect / totalQuestions) * 100 : 0;
+
+      res.json({
+        totalScore: user.totalScore || 0,
+        gamesPlayed,
+        bonusHelps: user.bonusHelps || 0,
+        referralsCount,
+        accuracy: Math.round(accuracy),
+        bestLevel
+      });
+    } catch (error) {
+      console.error("Error getting user stats:", error);
+      res.status(500).json({ message: "Failed to get user stats" });
     }
   });
 

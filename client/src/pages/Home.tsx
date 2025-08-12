@@ -9,6 +9,7 @@ import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { BottomNavigation } from '@/components/BottomNavigation';
 import { Rankings } from '@/components/Rankings';
 import { ReferralShare } from '@/components/ReferralShare';
+import { UserProfile } from '@/components/UserProfile';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
 import { Button } from '@/components/ui/button';
@@ -229,12 +230,36 @@ export default function Home() {
           <ReferralShare />
         </div>
       )}
+
+      {gameState === 'profile' && (
+        <div className="container mx-auto p-4 max-w-2xl">
+          <div className="mb-4">
+            <Button
+              variant="outline"
+              onClick={() => setGameState('country-selection')}
+              className="flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Volver
+            </Button>
+          </div>
+          <UserProfile />
+        </div>
+      )}
       
       <BottomNavigation 
-        activeTab={gameState === 'rankings' ? 'ranking' : gameState === 'referral' ? 'referral' : 'play'} 
+        activeTab={
+          gameState === 'rankings' ? 'ranking' : 
+          gameState === 'referral' ? 'referral' : 
+          gameState === 'profile' ? 'profile' : 
+          'play'
+        } 
         onTabChange={(tab) => {
           if (tab === 'ranking') setGameState('rankings');
           else if (tab === 'referral') setGameState('referral');
+          else if (tab === 'profile') setGameState('profile');
           else if (tab === 'play' || tab === 'home') setGameState('country-selection');
         }}
       />
