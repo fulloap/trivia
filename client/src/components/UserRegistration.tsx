@@ -28,21 +28,15 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
   const authMutation = useMutation({
     mutationFn: async (data: { username: string; email?: string; password: string; isLogin: boolean }) => {
       if (data.isLogin) {
-        return await apiRequest('/api/auth/login', {
-          method: 'POST',
-          body: JSON.stringify({
-            username: data.username,
-            password: data.password
-          })
+        return await apiRequest('/api/auth/login', 'POST', {
+          username: data.username,
+          password: data.password
         });
       } else {
-        return await apiRequest('/api/auth/register', {
-          method: 'POST',
-          body: JSON.stringify({
-            username: data.username,
-            email: data.email,
-            password: data.password
-          })
+        return await apiRequest('/api/auth/register', 'POST', {
+          username: data.username,
+          email: data.email,
+          password: data.password
         });
       }
     },

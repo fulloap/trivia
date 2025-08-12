@@ -27,10 +27,7 @@ export function ProfileSettings() {
 
   const emailMutation = useMutation({
     mutationFn: async (data: { email: string }) => {
-      return await apiRequest('/api/auth/update-email', {
-        method: 'POST',
-        body: JSON.stringify(data)
-      });
+      return await apiRequest('/api/auth/update-email', 'POST', data);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
@@ -50,10 +47,7 @@ export function ProfileSettings() {
 
   const passwordMutation = useMutation({
     mutationFn: async (data: { currentPassword: string; newPassword: string }) => {
-      return await apiRequest('/api/auth/update-password', {
-        method: 'POST',
-        body: JSON.stringify(data)
-      });
+      return await apiRequest('/api/auth/update-password', 'POST', data);
     },
     onSuccess: () => {
       setPasswordForm({ currentPassword: '', newPassword: '', confirmPassword: '' });

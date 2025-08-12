@@ -33,7 +33,7 @@ Preferred communication style: Simple, everyday language.
 ### Data Storage Solutions
 - **Primary Database**: PostgreSQL with Neon serverless connection for persistent data storage
 - **Schema Design**: Complete relational schema with tables for:
-  - `users`: User authentication and total scores
+  - `users`: User authentication with email/password, total scores, and referral system
   - `countries`: Country configurations with flags and themes
   - `questions`: Quiz questions with descriptions and difficulty levels
   - `user_progress`: Individual progress tracking by country and level
@@ -47,10 +47,11 @@ Preferred communication style: Simple, everyday language.
 - **Data Persistence**: All quiz progress, rankings, and user activity permanently stored in PostgreSQL
 
 ### Authentication and Authorization
-- **Provider**: Replit Auth with OIDC flow
+- **Authentication System**: Custom email/password authentication with bcrypt hashing (upgraded from username-only)
 - **Session Storage**: PostgreSQL-backed sessions with configurable TTL
-- **User Management**: Automatic user creation/update with profile synchronization
-- **Route Protection**: Middleware-based authentication checks with fallback to landing page
+- **User Management**: Email/password registration with username, profile management capabilities
+- **Route Protection**: Session-based authentication checks with fallback to login screen
+- **Security Features**: Password hashing with bcrypt, email uniqueness validation, password strength requirements
 
 ## External Dependencies
 
