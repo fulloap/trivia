@@ -49,9 +49,23 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
       onSuccess();
     },
     onError: (error: any) => {
+      console.error('Auth error:', error);
+      let errorMessage = "Ha ocurrido un error";
+      
+      if (error.message) {
+        // Extract the actual error message from the response
+        if (error.message.includes("409:")) {
+          errorMessage = error.message.split("409:")[1].trim();
+        } else if (error.message.includes("400:")) {
+          errorMessage = error.message.split("400:")[1].trim();
+        } else {
+          errorMessage = error.message;
+        }
+      }
+      
       toast({
         title: "Error",
-        description: error.message || "Ha ocurrido un error",
+        description: errorMessage,
         variant: "destructive"
       });
     }
@@ -73,6 +87,24 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
       toast({
         title: "Error",
         description: "La contraseña debe tener al menos 6 caracteres",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!isLogin && !formData.email) {
+      toast({
+        title: "Error",
+        description: "El correo electrónico es requerido",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!formData.username.trim()) {
+      toast({
+        title: "Error",
+        description: "El nombre de usuario es requerido",
         variant: "destructive"
       });
       return;

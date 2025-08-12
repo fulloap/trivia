@@ -10,6 +10,7 @@ import { BottomNavigation } from '@/components/BottomNavigation';
 import { Rankings } from '@/components/Rankings';
 import { ReferralShare } from '@/components/ReferralShare';
 import { UserProfile } from '@/components/UserProfile';
+import { UserRegistration } from '@/components/UserRegistration';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ import type { Country } from '@shared/schema';
 import { apiRequest } from '@/lib/queryClient';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings' | 'referral';
+type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings' | 'referral' | 'profile';
 
 export default function Home() {
   const { user, isLoading } = useAuth();
