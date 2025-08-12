@@ -52,15 +52,23 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
       console.error('Auth error:', error);
       let errorMessage = "Ha ocurrido un error";
       
-      if (error.message) {
+      if (error?.message) {
         // Extract the actual error message from the response
-        if (error.message.includes("409:")) {
-          errorMessage = error.message.split("409:")[1].trim();
-        } else if (error.message.includes("400:")) {
-          errorMessage = error.message.split("400:")[1].trim();
+        const message = error.message.toString();
+        if (message.includes("409:")) {
+          errorMessage = message.split("409:")[1]?.trim() || "Recurso ya existe";
+        } else if (message.includes("400:")) {
+          errorMessage = message.split("400:")[1]?.trim() || "Datos inválidos";
+        } else if (message.includes("401:")) {
+          errorMessage = message.split("401:")[1]?.trim() || "Credenciales inválidas";
         } else {
-          errorMessage = error.message;
+          errorMessage = message;
         }
+      }
+      
+      // Ensure we show a user-friendly message
+      if (errorMessage === "Ha ocurrido un error" || !errorMessage) {
+        errorMessage = isLogin ? "Error al iniciar sesión" : "Error al crear la cuenta";
       }
       
       toast({
@@ -224,6 +232,12 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
             >
               {authMutation.isPending ? 'Procesando...' : (isLogin ? 'Iniciar Sesión' : 'Crear Cuenta')}
             </Button>
+
+            {authMutation.isError && (
+              <div className="text-sm text-red-600 dark:text-red-400 text-center mt-2">
+                Revisa los datos e intenta nuevamente
+              </div>
+            )}
           </form>
 
           <div className="mt-4 text-center">
