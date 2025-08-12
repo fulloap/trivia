@@ -280,7 +280,13 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
                     {countries && countries.map((country: any) => (
                       <SelectItem key={country.code} value={country.code}>
                         <div className="flex items-center gap-2">
-                          <span className="text-lg">{country.flag}</span>
+                          <img 
+                            src={`https://flagcdn.com/24x18/${country.code === 'cuba' ? 'cu' : country.code === 'honduras' ? 'hn' : 'world'}.png`}
+                            width="24"
+                            height="18"
+                            alt={`Bandera de ${country.name}`}
+                            className="rounded border border-gray-200"
+                          />
                           <span>{country.name}</span>
                         </div>
                       </SelectItem>
@@ -314,7 +320,16 @@ export function Rankings({ selectedCountryCode }: RankingsProps) {
             <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20">
               <CardTitle className="flex items-center gap-2 text-green-800 dark:text-green-200">
                 <Flag className="w-5 h-5" />
-                {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.flag} Rankings de {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.name} - {getLevelName(selectedLevel)}
+                <div className="flex items-center gap-2">
+                  <img 
+                    src={`https://flagcdn.com/24x18/${selectedCountryForRanking === 'cuba' ? 'cu' : selectedCountryForRanking === 'honduras' ? 'hn' : 'world'}.png`}
+                    width="24"
+                    height="18"
+                    alt={`Bandera de ${countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.name}`}
+                    className="rounded border border-gray-200"
+                  />
+                  Rankings de {countries && countries.find((c: any) => c.code === selectedCountryForRanking)?.name} - {getLevelName(selectedLevel)}
+                </div>
               </CardTitle>
               <CardDescription className="text-green-600 dark:text-green-300">
                 Los mejores jugadores de este país
