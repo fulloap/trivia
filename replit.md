@@ -4,6 +4,9 @@
 
 A cultural quiz web application that adapts to different countries and regions, allowing users to test their knowledge of local slang, expressions, customs, and memes. The application currently supports Cuba (1,032 questions) and Honduras (1,032 questions) with visual flag representations. Users progress through four difficulty levels, from beginner to "legend mode," with country-specific localization that changes language, styling, and cultural references based on their selection. Features a comprehensive scoring system with 1 point per correct answer, help system with 20-point penalty and 3 maximum hints per session, real-time rankings by country and level, and complete progress tracking stored in PostgreSQL. All questions are multiple-choice format with no text input required from users.
 
+### Referral System
+Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

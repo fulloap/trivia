@@ -389,8 +389,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(401).json({ message: "Usuario no autenticado" });
       }
 
-      const domain = req.get('host');
-      const referralLink = `https://${domain}?ref=${user.referralCode}`;
+      const referralLink = `https://trivia.cubacoin.org?ref=${user.referralCode}`;
       
       res.json({
         referralCode: user.referralCode,
