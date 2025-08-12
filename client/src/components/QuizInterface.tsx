@@ -24,6 +24,7 @@ export function QuizInterface({
   const [questionStartTime, setQuestionStartTime] = useState<number>(Date.now());
   const [showHint, setShowHint] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [showResult, setShowResult] = useState(false);
 
   const {
     currentQuestion,
@@ -41,6 +42,7 @@ export function QuizInterface({
     session,
     hintResult,
     isUsingHint,
+    answerResult,
   } = useQuiz(selectedCountry.code, selectedLevel);
 
   // Start quiz once when component mounts
@@ -68,7 +70,20 @@ export function QuizInterface({
     setSelectedAnswer('');
     setQuestionStartTime(Date.now());
     setShowHint(false);
+    setShowResult(false);
   }, [currentQuestionIndex]);
+
+  // Show result when answer comes back
+  useEffect(() => {
+    if (answerResult) {
+      setShowResult(true);
+      // Auto-hide result after 3 seconds
+      const timer = setTimeout(() => {
+        setShowResult(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [answerResult]);
 
   // Show hint when result arrives
   useEffect(() => {
@@ -199,6 +214,35 @@ export function QuizInterface({
             </div>
           </CardContent>
         </Card>
+
+        {/* Answer Result Feedback */}
+        {showResult && answerResult && (
+          <Card className={cn(
+            "mb-6 border-2 text-center",
+            answerResult.isCorrect 
+              ? "bg-green-50 border-green-500 dark:bg-green-950/20" 
+              : "bg-red-50 border-red-500 dark:bg-red-950/20"
+          )}>
+            <CardContent className="p-4">
+              <div className={cn(
+                "text-lg font-bold mb-2",
+                answerResult.isCorrect ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"
+              )}>
+                {answerResult.isCorrect ? "✅ ¡Correcto!" : "❌ Incorrecto"}
+              </div>
+              {!answerResult.isCorrect && (
+                <div className="text-sm text-red-600 dark:text-red-400">
+                  La respuesta correcta era: <strong>{answerResult.correctAnswer}</strong>
+                </div>
+              )}
+              {answerResult.explanation && (
+                <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  💡 {answerResult.explanation}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
 
         {/* Answer Options */}
         {isMultipleChoice ? (
