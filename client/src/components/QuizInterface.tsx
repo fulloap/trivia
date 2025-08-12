@@ -166,10 +166,17 @@ export function QuizInterface({
                 {currentQuestion.question}
               </h3>
               
-              {/* Description hint */}
+              {/* Hint with correct answer */}
               {(showHint || hintResult) && (
-                <div className="bg-white/20 rounded-xl p-4 text-sm mb-4">
-                  💡 {hintResult?.hint || currentQuestion.description || 'Pista disponible'}
+                <div className="bg-white/20 rounded-xl p-4 text-sm mb-4 space-y-2">
+                  {(hintResult?.hint || currentQuestion.description) && (
+                    <div>💡 {hintResult?.hint || currentQuestion.description}</div>
+                  )}
+                  {hintResult?.correctAnswer && (
+                    <div className="font-bold text-yellow-200">
+                      ✅ Respuesta correcta: {hintResult.correctAnswer}
+                    </div>
+                  )}
                 </div>
               )}
 

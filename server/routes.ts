@@ -365,7 +365,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         pointsDeducted: 20,
         newScore,
         hintsRemaining: newHintsRemaining,
-        hint: question.description, // Esta es la pista/descripción que se muestra al usuario
+        hint: question.description, // Descripción/contexto de la pregunta
+        correctAnswer: question.correctAnswer, // La respuesta correcta
       });
     } catch (error) {
       console.error("Error using hint:", error);
