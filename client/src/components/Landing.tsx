@@ -43,13 +43,13 @@ export function Landing({ onGetStarted }: LandingProps) {
       name: "Cuba", 
       flag: "🇨🇺", 
       flagUrl: "https://www.banderas-mundo.es/data/flags/w580/cu.png",
-      questions: "1,032" 
+      questions: "25" 
     },
     { 
       name: "Honduras", 
       flag: "🇭🇳", 
       flagUrl: "https://www.banderas-mundo.es/data/flags/w580/hn.png",
-      questions: "1,032" 
+      questions: "25" 
     }
   ];
 
@@ -76,7 +76,7 @@ export function Landing({ onGetStarted }: LandingProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <Card className="text-center border-0 bg-white/60 dark:bg-gray-800/60 backdrop-blur">
               <CardContent className="p-4">
-                <div className="text-2xl font-bold text-blue-600">2,064</div>
+                <div className="text-2xl font-bold text-blue-600">50</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Preguntas</div>
               </CardContent>
             </Card>
