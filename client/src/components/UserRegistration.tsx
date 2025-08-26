@@ -150,9 +150,12 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
                 type="text"
                 value={formData.username}
                 onChange={(e) => handleInputChange('username', e.target.value)}
-                placeholder="Tu nombre de usuario"
+                placeholder="ejemplo: miusuario123, user_name"
                 required
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Solo letras, números, guiones y puntos (3-50 caracteres)
+              </p>
             </div>
 
             {!isLogin && (
