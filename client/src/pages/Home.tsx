@@ -12,7 +12,7 @@ import { ReferralShare } from '@/components/ReferralShare';
 import { UserProfile } from '@/components/UserProfile';
 import { UserRegistration } from '@/components/UserRegistration';
 import { InstallPrompt } from '@/components/InstallPrompt';
-
+import { Landing } from '@/components/Landing';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
 import { Button } from '@/components/ui/button';
@@ -21,11 +21,11 @@ import type { Country } from '@shared/schema';
 import { apiRequest } from '@/lib/queryClient';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-type GameState = 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings' | 'referral' | 'profile';
+type GameState = 'landing' | 'country-selection' | 'level-selection' | 'quiz' | 'feedback' | 'results' | 'rankings' | 'referral' | 'profile';
 
 export default function Home() {
   const { user, isLoading } = useAuth();
-  const [gameState, setGameState] = useState<GameState>('country-selection');
+  const [gameState, setGameState] = useState<GameState>('landing');
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
   const [currentAnswerResult, setCurrentAnswerResult] = useState<any>(null);
@@ -118,6 +118,9 @@ export default function Home() {
   }
 
   if (!user) {
+    if (gameState === 'landing') {
+      return <Landing onGetStarted={() => setGameState('country-selection')} />;
+    }
     return <UserRegistration onSuccess={() => window.location.reload()} />;
   }
 

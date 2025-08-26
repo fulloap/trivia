@@ -140,6 +140,14 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
           <p className="text-gray-600 dark:text-gray-400">
             {isLogin ? 'Ingresa a tu cuenta' : 'Únete a ¿De dónde eres?'}
           </p>
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={() => window.location.reload()}
+            className="w-full text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950"
+          >
+            ← Volver al inicio
+          </Button>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
