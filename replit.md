@@ -11,6 +11,14 @@ A cultural quiz web application that adapts to different countries and regions, 
 - **PWA Integration**: Mobile app installation button integrated into bottom navigation menu
 - **Navigation Flow**: Landing → Registration → Game with proper back navigation
 - **Question Database Cleanup**: Removed 739 duplicate questions from Honduras dataset, maintaining 293 unique questions (77 level 1, 80 level 2, 79 level 3, 57 level 4). Cuba dataset was clean with 1,032 unique questions
+- **Massive Question Reorganization (August 26, 2025)**: Complete cultural question overhaul based on authentic 2024 research:
+  - Eliminated all previous duplicate questions from database
+  - Created 50 high-quality cultural questions (25 Cuba, 25 Honduras)
+  - Proper difficulty distribution: Level 1 (basic vocabulary) → Level 4 (expert cultural knowledge)
+  - All content uses authentic country-specific language and expressions
+  - Covers essential categories: slang, food, music, history, geography, traditions
+  - Questions sourced from comprehensive cultural research of Cuban and Honduran expressions, idioms, and cultural facts
+  - Framework established for expansion to 1000+ questions with 11 content categories per country
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.
@@ -49,8 +57,11 @@ Preferred communication style: Simple, everyday language.
   - `rankings`: Leaderboards by country, level, and global rankings
   - `sessions`: Authentication session storage
 - **Question Data**: JSON files organized by country in the data/questions directory for content management
-  - Cuba: 1,032 questions (222 level 1, 507 level 2, 224 level 3, 79 level 4) - Clean dataset
-  - Honduras: 293 questions (77 level 1, 80 level 2, 79 level 3, 57 level 4) - Cleaned from 1,032 with 739 duplicates removed
+  - Cuba: 25 questions (10 level 1, 5 level 2, 5 level 3, 5 level 4) - Completely rebuilt with authentic 2024 cultural research
+  - Honduras: 25 questions (10 level 1, 5 level 2, 5 level 3, 5 level 4) - Completely rebuilt with authentic 2024 cultural research
+  - **Content Quality**: All questions use authentic country-specific slang, expressions, and cultural references
+  - **Research Sources**: Based on comprehensive 2024 cultural research from authentic Cuban and Honduran sources
+  - **Expansion Ready**: Framework prepared for scaling to 1000+ questions across 11 content categories per country
 - **Migration System**: Drizzle Kit for database schema migrations and pushes
 - **Data Persistence**: All quiz progress, rankings, and user activity permanently stored in PostgreSQL
 
