@@ -19,7 +19,7 @@ import {
   type InsertRanking,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, desc, sql, asc } from "drizzle-orm";
+import { eq, and, desc, sql, asc, max } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (simplified for username system)
@@ -313,6 +313,23 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getRankingsByCountryAndLevel(countryCode: string, level: number, limit = 50): Promise<(Ranking & { username: string })[]> {
+    // Subquery to get the best score for each user
+    const bestScores = db
+      .select({
+        userId: rankings.userId,
+        maxScore: max(rankings.score).as('maxScore'),
+      })
+      .from(rankings)
+      .where(
+        and(
+          eq(rankings.countryCode, countryCode),
+          eq(rankings.level, level)
+        )
+      )
+      .groupBy(rankings.userId)
+      .as('bestScores');
+
+    // Main query to get full ranking details for best scores only
     return await db
       .select({
         id: rankings.id,
@@ -328,6 +345,12 @@ export class DatabaseStorage implements IStorage {
       })
       .from(rankings)
       .innerJoin(users, eq(rankings.userId, users.id))
+      .innerJoin(bestScores, 
+        and(
+          eq(rankings.userId, bestScores.userId),
+          eq(rankings.score, bestScores.maxScore)
+        )
+      )
       .where(
         and(
           eq(rankings.countryCode, countryCode),
@@ -340,6 +363,19 @@ export class DatabaseStorage implements IStorage {
 
   async getGlobalRankingsByLevel(level: number, limit = 50): Promise<(Ranking & { username: string })[]> {
     console.log('Storage getGlobalRankingsByLevel called with level:', level);
+    
+    // Subquery to get the best score for each user at this level
+    const bestScores = db
+      .select({
+        userId: rankings.userId,
+        maxScore: max(rankings.score).as('maxScore'),
+      })
+      .from(rankings)
+      .where(eq(rankings.level, level))
+      .groupBy(rankings.userId)
+      .as('bestScores');
+
+    // Main query to get full ranking details for best scores only
     const result = await db
       .select({
         id: rankings.id,
@@ -355,11 +391,17 @@ export class DatabaseStorage implements IStorage {
       })
       .from(rankings)
       .innerJoin(users, eq(rankings.userId, users.id))
+      .innerJoin(bestScores, 
+        and(
+          eq(rankings.userId, bestScores.userId),
+          eq(rankings.score, bestScores.maxScore)
+        )
+      )
       .where(eq(rankings.level, level))
       .orderBy(desc(rankings.score), desc(rankings.accuracy))
       .limit(limit);
     
-    console.log('Storage getGlobalRankingsByLevel returning:', result.length, 'records');
+    console.log('Storage getGlobalRankingsByLevel returning:', result.length, 'unique users');
     return result;
   }
 
