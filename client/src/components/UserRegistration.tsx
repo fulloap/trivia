@@ -10,9 +10,10 @@ import { useToast } from '@/hooks/use-toast';
 
 interface UserRegistrationProps {
   onSuccess: () => void;
+  onBackToLanding?: () => void;
 }
 
-export function UserRegistration({ onSuccess }: UserRegistrationProps) {
+export function UserRegistration({ onSuccess, onBackToLanding }: UserRegistrationProps) {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     username: '',
@@ -143,7 +144,7 @@ export function UserRegistration({ onSuccess }: UserRegistrationProps) {
           <Button
             type="button"
             variant="ghost"
-            onClick={() => window.location.reload()}
+            onClick={() => onBackToLanding?.()}
             className="w-full text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950"
           >
             ← Volver al inicio

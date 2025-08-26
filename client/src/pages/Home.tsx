@@ -121,7 +121,10 @@ export default function Home() {
     if (gameState === 'landing') {
       return <Landing onGetStarted={() => setGameState('country-selection')} />;
     }
-    return <UserRegistration onSuccess={() => window.location.reload()} />;
+    return <UserRegistration 
+      onSuccess={() => window.location.reload()} 
+      onBackToLanding={() => setGameState('landing')}
+    />;
   }
 
   return (
