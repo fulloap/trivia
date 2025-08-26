@@ -82,8 +82,10 @@ export function UserRegistration({ onSuccess, onBackToLanding }: UserRegistratio
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submit triggered:', { isLogin, formData: { ...formData, password: '***' } });
     
     if (!isLogin && formData.password !== formData.confirmPassword) {
+      console.log('Password mismatch error');
       toast({
         title: "Error",
         description: "Las contraseñas no coinciden",
@@ -118,6 +120,13 @@ export function UserRegistration({ onSuccess, onBackToLanding }: UserRegistratio
       });
       return;
     }
+
+    console.log('About to submit mutation with:', { 
+      username: formData.username, 
+      email: formData.email, 
+      hasPassword: !!formData.password,
+      isLogin 
+    });
 
     authMutation.mutate({
       username: formData.username,
