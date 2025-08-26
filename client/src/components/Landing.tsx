@@ -42,13 +42,13 @@ export function Landing({ onGetStarted }: LandingProps) {
     { 
       name: "Cuba", 
       flag: "🇨🇺", 
-      flagUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Flag_of_Cuba.svg/320px-Flag_of_Cuba.svg.png",
+      flagUrl: "https://www.banderas-mundo.es/data/flags/w580/cu.png",
       questions: "1,032" 
     },
     { 
       name: "Honduras", 
       flag: "🇭🇳", 
-      flagUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/320px-Flag_of_Honduras.svg.png",
+      flagUrl: "https://www.banderas-mundo.es/data/flags/w580/hn.png",
       questions: "1,032" 
     }
   ];
@@ -160,7 +160,10 @@ export function Landing({ onGetStarted }: LandingProps) {
                       onError={(e) => {
                         // Fallback to emoji if image fails
                         e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling.style.display = 'block';
+                        const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (nextElement) {
+                          nextElement.style.display = 'flex';
+                        }
                       }}
                     />
                     <div className="text-6xl flag-emoji hidden" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
