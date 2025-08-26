@@ -250,6 +250,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get next question for active session (avoiding duplicates)
+  app.get('/api/quiz/next-question', async (req: any, res) => {
+    try {
+      const user = await getCurrentUser(req);
+      if (!user) {
+        return res.status(401).json({ message: "Usuario no autenticado" });
+      }
+
+      // Get active session
+      const session = await storage.getActiveQuizSession(user.id);
+      if (!session) {
+        return res.status(404).json({ message: "No active quiz session found" });
+      }
+
+      // Get used question IDs from session data
+      const sessionData = session.sessionData as any || {};
+      const usedQuestionIds = sessionData.usedQuestionIds || [];
+
+      // Get next random unused question
+      const nextQuestion = await storage.getRandomQuestionNotUsed(
+        session.countryCode,
+        session.level,
+        usedQuestionIds
+      );
+
+      if (!nextQuestion) {
+        return res.status(404).json({ message: "No more questions available" });
+      }
+
+      res.json(nextQuestion);
+    } catch (error) {
+      console.error("Error fetching next question:", error);
+      res.status(500).json({ message: "Failed to fetch next question" });
+    }
+  });
+
   // User Progress API
   app.get('/api/progress/:countryCode', async (req: any, res) => {
     try {
@@ -311,6 +347,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         hintsRemaining: 3, // Máximo 3 ayudas por sesión
         sessionData: {
           startTime: new Date().toISOString(),
+          usedQuestionIds: [], // Track used questions to avoid repeats
+          answers: [],
         },
       });
 
@@ -346,12 +384,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const isCorrect = answer.toLowerCase().trim() === question.correctAnswer.toLowerCase().trim();
       const points = isCorrect ? 1 : 0; // Nuevo sistema: 1 punto por respuesta correcta
 
-      // Update session data
+      // Update session data and track used question
       const currentData = session.sessionData as any || {};
       const updatedData = {
         ...currentData,
         score: (currentData.score || 0) + points,
         correctAnswers: (currentData.correctAnswers || 0) + (isCorrect ? 1 : 0),
+        usedQuestionIds: [...(currentData.usedQuestionIds || []), questionId],
         answers: [
           ...(currentData.answers || []),
           {

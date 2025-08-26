@@ -166,6 +166,48 @@ export class DatabaseStorage implements IStorage {
       );
   }
 
+  async getRandomQuestionNotUsed(countryCode: string, level: number, usedQuestionIds: number[] = []): Promise<Question | undefined> {
+    // Base where conditions
+    let whereConditions = and(
+      eq(questions.countryCode, countryCode),
+      eq(questions.level, level),
+      eq(questions.isActive, true)
+    );
+    
+    // If there are used questions, exclude them
+    if (usedQuestionIds.length > 0) {
+      whereConditions = and(
+        whereConditions,
+        sql`${questions.id} NOT IN (${sql.raw(usedQuestionIds.join(','))})`
+      );
+    }
+    
+    const availableQuestions = await db
+      .select()
+      .from(questions)
+      .where(whereConditions);
+    
+    if (availableQuestions.length === 0) {
+      // If no unused questions, return a random one from all available
+      const allQuestions = await db
+        .select()
+        .from(questions)
+        .where(
+          and(
+            eq(questions.countryCode, countryCode),
+            eq(questions.level, level),
+            eq(questions.isActive, true)
+          )
+        );
+      
+      if (allQuestions.length === 0) return undefined;
+      return allQuestions[Math.floor(Math.random() * allQuestions.length)];
+    }
+    
+    // Return random question from unused ones
+    return availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+  }
+
   async getQuestionById(id: number): Promise<Question | undefined> {
     const [question] = await db.select().from(questions).where(eq(questions.id, id));
     return question;
