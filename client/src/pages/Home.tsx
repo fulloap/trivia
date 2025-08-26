@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { CountrySelection } from '@/components/CountrySelection';
 import { LevelSelection } from '@/components/LevelSelection';
@@ -25,6 +26,7 @@ type GameState = 'landing' | 'country-selection' | 'level-selection' | 'quiz' | 
 
 export default function Home() {
   const { user, isLoading } = useAuth();
+  // Initialize gameState based on authentication status
   const [gameState, setGameState] = useState<GameState>('landing');
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<number>(1);
@@ -33,6 +35,13 @@ export default function Home() {
   
   const { setCountry } = useLocalization(selectedCountry?.code);
   const { answerResult, resetQuiz } = useQuiz(selectedCountry?.code, selectedLevel);
+
+  // Update gameState when user authentication changes
+  React.useEffect(() => {
+    if (!isLoading && user && gameState === 'landing') {
+      setGameState('country-selection');
+    }
+  }, [user, isLoading, gameState]);
 
   const logoutMutation = useMutation({
     mutationFn: () => apiRequest('/api/auth/logout', 'POST'),
