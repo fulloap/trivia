@@ -39,8 +39,18 @@ export function Landing({ onGetStarted }: LandingProps) {
   ];
 
   const countries = [
-    { name: "Cuba", flag: "🇨🇺", questions: "1,032", unicode: "&#x1F1E8;&#x1F1FA;" },
-    { name: "Honduras", flag: "🇭🇳", questions: "1,032", unicode: "&#x1F1ED;&#x1F1F3;" }
+    { 
+      name: "Cuba", 
+      flag: "🇨🇺", 
+      flagUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Flag_of_Cuba.svg/320px-Flag_of_Cuba.svg.png",
+      questions: "1,032" 
+    },
+    { 
+      name: "Honduras", 
+      flag: "🇭🇳", 
+      flagUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Flag_of_Honduras.svg/320px-Flag_of_Honduras.svg.png",
+      questions: "1,032" 
+    }
   ];
 
   return (
@@ -142,8 +152,20 @@ export function Landing({ onGetStarted }: LandingProps) {
             {countries.map((country, index) => (
               <Card key={index} className="border-0 bg-white dark:bg-gray-800 shadow-lg">
                 <CardContent className="p-6 text-center">
-                  <div className="text-6xl mb-4 flag-emoji">
-                    {country.flag}
+                  <div className="w-24 h-16 mb-4 mx-auto relative overflow-hidden rounded-lg shadow-md">
+                    <img 
+                      src={country.flagUrl} 
+                      alt={`Bandera de ${country.name}`}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to emoji if image fails
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling.style.display = 'block';
+                      }}
+                    />
+                    <div className="text-6xl flag-emoji hidden" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {country.flag}
+                    </div>
                   </div>
                   <h4 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">
                     {country.name}
