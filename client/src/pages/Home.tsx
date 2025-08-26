@@ -117,17 +117,16 @@ export default function Home() {
     );
   }
 
+  // Show Landing page for non-authenticated users by default
   if (!user) {
-    console.log('User not authenticated, gameState is:', gameState);
-    if (gameState === 'landing') {
-      console.log('Showing Landing page');
-      return <Landing onGetStarted={() => setGameState('country-selection')} />;
+    if (gameState === 'country-selection') {
+      return <UserRegistration 
+        onSuccess={() => window.location.reload()} 
+        onBackToLanding={() => setGameState('landing')}
+      />;
     }
-    console.log('Showing UserRegistration');
-    return <UserRegistration 
-      onSuccess={() => window.location.reload()} 
-      onBackToLanding={() => setGameState('landing')}
-    />;
+    // Default: show landing page
+    return <Landing onGetStarted={() => setGameState('country-selection')} />;
   }
 
   return (
