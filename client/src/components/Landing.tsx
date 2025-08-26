@@ -9,6 +9,7 @@ interface LandingProps {
 }
 
 export function Landing({ onGetStarted }: LandingProps) {
+  console.log('Landing component is rendering');
   const [currentFeature, setCurrentFeature] = useState(0);
 
   const features = [

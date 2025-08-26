@@ -118,9 +118,12 @@ export default function Home() {
   }
 
   if (!user) {
+    console.log('User not authenticated, gameState is:', gameState);
     if (gameState === 'landing') {
+      console.log('Showing Landing page');
       return <Landing onGetStarted={() => setGameState('country-selection')} />;
     }
+    console.log('Showing UserRegistration');
     return <UserRegistration 
       onSuccess={() => window.location.reload()} 
       onBackToLanding={() => setGameState('landing')}
