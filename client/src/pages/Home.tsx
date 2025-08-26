@@ -11,6 +11,8 @@ import { Rankings } from '@/components/Rankings';
 import { ReferralShare } from '@/components/ReferralShare';
 import { UserProfile } from '@/components/UserProfile';
 import { UserRegistration } from '@/components/UserRegistration';
+import { InstallPrompt } from '@/components/InstallPrompt';
+import { MobileDownloadButton } from '@/components/MobileDownloadButton';
 import { useQuiz } from '@/hooks/useQuiz';
 import { useLocalization } from '@/hooks/useLocalization';
 import { Button } from '@/components/ui/button';
@@ -268,6 +270,9 @@ export default function Home() {
           else if (tab === 'play' || tab === 'home') setGameState('country-selection');
         }}
       />
+      
+      <InstallPrompt />
+      <MobileDownloadButton />
     </div>
   );
 }

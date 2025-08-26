@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import type { Country } from '@shared/schema';
+import logoUrl from '../assets/logo.png';
 
 interface CountrySelectionProps {
   onCountrySelect: (country: Country) => void;
@@ -41,9 +42,16 @@ export function CountrySelection({ onCountrySelect }: CountrySelectionProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4">
       <div className="text-center mb-12 animate-float">
-        <h1 className="text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-4">
-          ¿De dónde eres? 🌎
-        </h1>
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <img 
+            src={logoUrl}
+            alt="¿De dónde eres? Logo"
+            className="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-lg"
+          />
+          <h1 className="text-4xl md:text-6xl font-black text-gray-800 dark:text-white">
+            ¿De dónde eres?
+          </h1>
+        </div>
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-inter">
           Demuestra qué tan local eres con este quiz cultural
         </p>
