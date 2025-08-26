@@ -418,15 +418,6 @@ export class DatabaseStorage implements IStorage {
     return !user;
   }
 
-  async updateUserSession(userId: number, sessionId: string): Promise<void> {
-    await db.update(users).set({ sessionId }).where(eq(users.id, userId));
-  }
-
-  async getUserByReferralCode(referralCode: string): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.referralCode, referralCode));
-    return user;
-  }
-
   async updateUserEmail(userId: number, email: string): Promise<void> {
     await db.update(users).set({ email }).where(eq(users.id, userId));
   }
