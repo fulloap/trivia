@@ -4,12 +4,11 @@ import { QueryClientProvider } from "@tanstack/react-query";
 // import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/useAuth";
-import { UserRegistration } from "@/components/UserRegistration";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
 function Router() {
-  const { isAuthenticated, isLoading, needsRegistration } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
     return (
@@ -22,10 +21,7 @@ function Router() {
     );
   }
 
-  if (needsRegistration) {
-    return <UserRegistration />;
-  }
-
+  // Always go to Home - it will handle authentication and landing logic
   return (
     <Switch>
       <Route path="/" component={Home} />
