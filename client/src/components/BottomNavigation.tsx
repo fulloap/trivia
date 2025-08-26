@@ -1,4 +1,4 @@
-import { Home, Trophy, Play, Gift, User, Download } from 'lucide-react';
+import { Home, Trophy, Play, Gift, User, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -57,10 +57,10 @@ export function BottomNavigation({ activeTab = 'play', onTabChange }: BottomNavi
           variant="outline"
           size="sm"
           onClick={handleInstallClick}
-          className="ml-2 flex flex-col items-center p-2 border-blue-500 text-blue-500 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950"
+          className="ml-2 flex flex-col items-center p-2 border-2 border-blue-500 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950 dark:hover:to-purple-950 hover:shadow-md transition-all duration-200"
         >
-          <Download className="h-4 w-4 mb-1" />
-          <span className="text-xs font-inter">App</span>
+          <Smartphone className="h-4 w-4 mb-1 text-blue-500" />
+          <span className="text-xs font-inter font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Instalar</span>
         </Button>
       </div>
     </div>
