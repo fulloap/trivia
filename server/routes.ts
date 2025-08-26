@@ -511,7 +511,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const bonusHelps = userInfo?.bonusHelps || 0;
       const maxHints = 3 + bonusHelps;
       const currentHints = session.hintsRemaining !== undefined ? session.hintsRemaining : maxHints;
-      if (currentHints <= 0) {
+      if (!currentHints || currentHints <= 0) {
         return res.status(400).json({ message: "No quedan ayudas disponibles" });
       }
 
@@ -525,7 +525,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const currentData = session.sessionData as any || {};
       const currentScore = currentData.score || 0;
       const newScore = Math.max(0, currentScore - 20);
-      const newHintsRemaining = currentHints - 1;
+      const newHintsRemaining = (currentHints || 0) - 1;
 
       const updatedData = {
         ...currentData,
