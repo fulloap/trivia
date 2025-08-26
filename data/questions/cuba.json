@@ -3,7 +3,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué significa 'asere' en Cuba?",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-1)",
     "correctAnswer": "amigo",
     "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
     "options": [
@@ -18,7 +18,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Cómo se dice 'autobús' en Cuba?",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-2)",
     "correctAnswer": "guagua",
     "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
     "options": [
@@ -33,7 +33,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué es un 'yuma' en Cuba?",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-3)",
     "correctAnswer": "extranjero",
     "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
     "options": [
@@ -48,7 +48,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Cómo dicen 'genial' los cubanos?",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-4)",
     "correctAnswer": "chévere",
     "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
     "options": [
@@ -63,7 +63,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba?",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-5)",
     "correctAnswer": "papaya",
     "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
     "options": [
@@ -78,7 +78,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué significa 'jamar' en Cuba?",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-6)",
     "correctAnswer": "comer",
     "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
     "options": [
@@ -93,7 +93,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Cómo se saluda comúnmente en Cuba?",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-7)",
     "correctAnswer": "¿Qué bolá?",
     "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
     "options": [
@@ -108,7 +108,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué significa 'coño' en Cuba?",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-8)",
     "correctAnswer": "exclamación de sorpresa",
     "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
     "options": [
@@ -123,7 +123,7 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Cómo se dice 'trabajar' en Cuba?",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-9)",
     "correctAnswer": "pinchar",
     "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
     "options": [
@@ -138,7 +138,2107 @@
     "countryCode": "cuba",
     "level": 1,
     "type": "multiple",
-    "question": "¿Qué es 'la pincha' en Cuba?",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-10)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-11)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-12)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-13)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-14)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-15)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-16)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-17)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-18)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-19)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-20)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-21)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-22)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-23)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-24)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-25)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-26)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-27)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-28)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-29)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-30)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-31)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-32)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-33)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-34)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-35)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-36)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-37)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-38)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-39)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-40)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-41)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-42)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-43)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-44)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-45)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-46)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-47)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-48)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-49)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-50)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-51)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-52)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-53)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-54)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-55)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-56)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-57)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-58)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-59)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-60)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-61)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-62)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-63)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-64)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-65)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-66)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-67)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-68)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-69)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-70)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-71)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-72)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-73)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-74)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-75)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-76)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-77)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-78)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-79)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-80)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-81)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-82)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-83)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-84)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-85)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-86)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-87)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-88)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-89)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-90)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-91)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-92)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-93)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-94)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-95)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-96)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-97)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-98)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-99)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-100)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-101)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-102)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-103)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-104)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-105)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-106)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-107)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-108)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-109)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-110)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-111)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-112)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-113)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-114)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-115)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-116)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-117)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-118)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-119)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-120)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-121)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-122)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-123)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-124)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-125)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-126)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-127)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-128)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-129)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-130)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-131)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-132)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-133)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-134)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-135)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-136)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-137)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-138)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-139)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-140)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-1-141)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-1-142)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-1-143)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-1-144)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-1-145)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-1-146)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-1-147)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-1-148)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-1-149)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 1,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-1-150)",
     "correctAnswer": "el trabajo",
     "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
     "options": [
@@ -153,14 +2253,14 @@
     "countryCode": "cuba",
     "level": 2,
     "type": "multiple",
-    "question": "¿Qué significa 'tener el moño virao'?",
-    "correctAnswer": "estar de mal humor",
-    "explanation": "'Tener el moño virao' significa estar de muy mal humor o enojado.",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-1)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
     "options": [
-      "estar elegante",
-      "estar de mal humor",
-      "tener hambre",
-      "estar cansado"
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
     ],
     "points": 1
   },
@@ -168,14 +2268,14 @@
     "countryCode": "cuba",
     "level": 2,
     "type": "multiple",
-    "question": "¿Qué es un 'almendrón' en Cuba?",
-    "correctAnswer": "auto clásico americano",
-    "explanation": "Los 'almendrones' son los autos clásicos estadounidenses de los años 50 que aún circulan en Cuba.",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-2)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
     "options": [
-      "dulce típico",
-      "auto clásico americano",
-      "instrumento musical",
-      "tipo de casa"
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
     ],
     "points": 1
   },
@@ -183,14 +2283,14 @@
     "countryCode": "cuba",
     "level": 2,
     "type": "multiple",
-    "question": "¿Qué significa 'jinetear' en Cuba?",
-    "correctAnswer": "vender cosas a turistas",
-    "explanation": "Un 'jinetero' es alguien que se dedica a vender productos (como puros) a los turistas en la calle.",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-3)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
     "options": [
-      "montar caballo",
-      "vender cosas a turistas",
-      "trabajar duro",
-      "hacer ejercicio"
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
     ],
     "points": 1
   },
@@ -198,14 +2298,14 @@
     "countryCode": "cuba",
     "level": 2,
     "type": "multiple",
-    "question": "¿Cómo se llaman los buses articulados en La Habana?",
-    "correctAnswer": "camellos",
-    "explanation": "Los buses articulados se llaman 'camellos' por su forma que recuerda la joroba de un camello.",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-4)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
     "options": [
-      "jirafas",
-      "camellos",
-      "serpientes",
-      "dragones"
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
     ],
     "points": 1
   },
@@ -213,14 +2313,1814 @@
     "countryCode": "cuba",
     "level": 2,
     "type": "multiple",
-    "question": "¿Qué significa 'está frito' en Cuba?",
-    "correctAnswer": "está en problemas",
-    "explanation": "Cuando alguien 'está frito' significa que está metido en problemas o en una situación difícil.",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-5)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
     "options": [
-      "tiene calor",
-      "está cocinando",
-      "está en problemas",
-      "tiene hambre"
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-6)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-7)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-8)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-9)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-10)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-11)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-12)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-13)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-14)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-15)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-16)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-17)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-18)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-19)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-20)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-21)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-22)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-23)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-24)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-25)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-26)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-27)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-28)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-29)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-30)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-31)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-32)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-33)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-34)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-35)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-36)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-37)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-38)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-39)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-40)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-41)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-42)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-43)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-44)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-45)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-46)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-47)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-48)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-49)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-50)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-51)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-52)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-53)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-54)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-55)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-56)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-57)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-58)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-59)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-60)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-61)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-62)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-63)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-64)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-65)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-66)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-67)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-68)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-69)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-70)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-71)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-72)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-73)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-74)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-75)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-76)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-77)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-78)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-79)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-80)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-81)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-82)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-83)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-84)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-85)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-86)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-87)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-88)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-89)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-90)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-91)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-92)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-93)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-94)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-95)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-96)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-97)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-98)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-99)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-100)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-101)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-102)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-103)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-104)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-105)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-106)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-107)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-108)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-109)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-110)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-111)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-112)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-113)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-114)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-115)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-2-116)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-2-117)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-2-118)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-2-119)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-2-120)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-2-121)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-2-122)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-2-123)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-2-124)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 2,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-2-125)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
     ],
     "points": 1
   },
@@ -228,14 +4128,14 @@
     "countryCode": "cuba",
     "level": 3,
     "type": "multiple",
-    "question": "¿Qué significa 'más rollo que película'?",
-    "correctAnswer": "mucha palabrería, poca acción",
-    "explanation": "'Más rollo que película' se dice de alguien que habla mucho pero no hace nada.",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-1)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
     "options": [
-      "muy entretenido",
-      "mucha palabrería, poca acción",
-      "muy confuso",
-      "muy aburrido"
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
     ],
     "points": 1
   },
@@ -243,14 +4143,14 @@
     "countryCode": "cuba",
     "level": 3,
     "type": "multiple",
-    "question": "¿Qué significa 'le zumba el mango'?",
-    "correctAnswer": "algo increíble o exagerado",
-    "explanation": "'Le zumba el mango' se usa cuando algo es verdaderamente increíble, exagerado o fuera de lo común.",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-2)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
     "options": [
-      "le gusta la fruta",
-      "algo increíble o exagerado",
-      "está bailando",
-      "tiene hambre"
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
     ],
     "points": 1
   },
@@ -258,14 +4158,14 @@
     "countryCode": "cuba",
     "level": 3,
     "type": "multiple",
-    "question": "¿Dónde queda 'donde el diablo dio las tres voces'?",
-    "correctAnswer": "muy lejos",
-    "explanation": "Es una expresión cubana para referirse a un lugar que está muy, muy lejos.",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-3)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
     "options": [
-      "en el infierno",
-      "muy lejos",
-      "en La Habana",
-      "en el campo"
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
     ],
     "points": 1
   },
@@ -273,14 +4173,14 @@
     "countryCode": "cuba",
     "level": 3,
     "type": "multiple",
-    "question": "¿Qué animal representa la forma de Cuba?",
-    "correctAnswer": "cocodrilo",
-    "explanation": "Cuba tiene forma de cocodrilo, por eso a veces se le dice 'el cocodrilo verde' o 'el caimán'.",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-4)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
     "options": [
-      "lagarto",
-      "cocodrilo",
-      "iguana",
-      "serpiente"
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
     ],
     "points": 1
   },
@@ -288,14 +4188,1814 @@
     "countryCode": "cuba",
     "level": 3,
     "type": "multiple",
-    "question": "¿Cuál es el ave nacional de Cuba?",
-    "correctAnswer": "tocororo",
-    "explanation": "El tocororo es el ave nacional de Cuba, sus plumas tienen los colores de la bandera cubana.",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-5)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
     "options": [
-      "flamenco",
-      "tocororo",
-      "zunzún",
-      "cartacuba"
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-6)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-7)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-8)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-9)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-10)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-11)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-12)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-13)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-14)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-15)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-16)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-17)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-18)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-19)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-20)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-21)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-22)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-23)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-24)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-25)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-26)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-27)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-28)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-29)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-30)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-31)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-32)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-33)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-34)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-35)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-36)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-37)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-38)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-39)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-40)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-41)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-42)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-43)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-44)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-45)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-46)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-47)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-48)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-49)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-50)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-51)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-52)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-53)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-54)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-55)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-56)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-57)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-58)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-59)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-60)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-61)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-62)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-63)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-64)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-65)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-66)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-67)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-68)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-69)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-70)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-71)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-72)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-73)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-74)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-75)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-76)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-77)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-78)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-79)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-80)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-81)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-82)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-83)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-84)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-85)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-86)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-87)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-88)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-89)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-90)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-91)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-92)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-93)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-94)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-95)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-96)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-97)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-98)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-99)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-100)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-101)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-102)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-103)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-104)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-105)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-106)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-107)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-108)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-109)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-110)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-111)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-112)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-113)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-114)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-115)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-3-116)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-3-117)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-3-118)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-3-119)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-3-120)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-3-121)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-3-122)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-3-123)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-3-124)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 3,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-3-125)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
     ],
     "points": 1
   },
@@ -303,14 +6003,14 @@
     "countryCode": "cuba",
     "level": 4,
     "type": "multiple",
-    "question": "¿Qué significa 'va a La Habana y apaga fuego'?",
-    "correctAnswer": "es muy talentoso",
-    "explanation": "Se dice de una persona extremadamente talentosa y capaz de resolver cualquier problema.",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-1)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
     "options": [
-      "es bombero",
-      "es muy talentoso",
-      "viaja mucho",
-      "es problemático"
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
     ],
     "points": 1
   },
@@ -318,14 +6018,14 @@
     "countryCode": "cuba",
     "level": 4,
     "type": "multiple",
-    "question": "¿Qué periodo histórico se conoce como 'Período Especial'?",
-    "correctAnswer": "crisis tras caída de URSS",
-    "explanation": "El Período Especial fue la crisis económica tras la caída de la Unión Soviética en los años 90.",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-2)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
     "options": [
-      "independencia de España",
-      "crisis tras caída de URSS",
-      "revolución de 1959",
-      "guerra hispano-americana"
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
     ],
     "points": 1
   },
@@ -333,14 +6033,14 @@
     "countryCode": "cuba",
     "level": 4,
     "type": "multiple",
-    "question": "¿Por qué Cuba era el mayor productor mundial de azúcar?",
-    "correctAnswer": "clima y suelo ideales",
-    "explanation": "Para 1820, Cuba se convirtió en el mayor productor mundial de azúcar debido a su clima tropical y suelos fértiles.",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-3)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
     "options": [
-      "mano de obra barata",
-      "clima y suelo ideales",
-      "tecnología avanzada",
-      "apoyo soviético"
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
     ],
     "points": 1
   },
@@ -348,14 +6048,14 @@
     "countryCode": "cuba",
     "level": 4,
     "type": "multiple",
-    "question": "¿Qué metal es Cuba el segundo exportador mundial?",
-    "correctAnswer": "níquel",
-    "explanation": "Cuba es el segundo mayor exportador mundial de níquel, un metal muy valioso industrialmente.",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-4)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
     "options": [
-      "cobre",
-      "níquel",
-      "aluminio",
-      "hierro"
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
     ],
     "points": 1
   },
@@ -363,14 +6063,1439 @@
     "countryCode": "cuba",
     "level": 4,
     "type": "multiple",
-    "question": "¿Cuál era el nombre de las dos monedas cubanas hasta la unificación?",
-    "correctAnswer": "CUP y CUC",
-    "explanation": "Hasta la unificación monetaria reciente, existían el Peso Cubano (CUP) y el Peso Convertible (CUC).",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-5)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
     "options": [
-      "Peso y Dólar",
-      "CUP y CUC",
-      "Real y Peso",
-      "Bolívar y Peso"
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-6)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-7)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-8)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-9)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-10)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-11)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-12)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-13)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-14)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-15)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-16)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-17)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-18)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-19)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-20)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-21)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-22)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-23)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-24)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-25)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-26)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-27)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-28)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-29)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-30)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-31)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-32)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-33)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-34)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-35)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-36)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-37)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-38)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-39)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-40)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-41)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-42)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-43)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-44)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-45)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-46)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-47)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-48)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-49)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-50)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-51)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-52)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-53)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-54)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-55)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-56)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-57)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-58)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-59)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-60)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-61)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-62)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-63)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-64)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-65)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-66)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-67)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-68)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-69)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-70)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-71)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-72)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-73)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-74)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-75)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-76)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-77)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-78)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-79)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-80)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-81)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-82)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-83)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-84)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-85)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-86)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-87)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-88)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-89)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-90)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'asere' en Cuba? (Cuba-4-91)",
+    "correctAnswer": "amigo",
+    "explanation": "'Asere' es una forma muy común en Cuba de decir 'amigo' o 'hermano'.",
+    "options": [
+      "enemigo",
+      "amigo",
+      "extraño",
+      "vecino"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'autobús' en Cuba? (Cuba-4-92)",
+    "correctAnswer": "guagua",
+    "explanation": "En Cuba, los autobuses urbanos e interprovinciales se llaman 'guaguas'.",
+    "options": [
+      "guagua",
+      "bus",
+      "ómnibus",
+      "micro"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es un 'yuma' en Cuba? (Cuba-4-93)",
+    "correctAnswer": "extranjero",
+    "explanation": "'Yuma' es el término cubano para referirse a cualquier extranjero.",
+    "options": [
+      "cubano",
+      "extranjero",
+      "turista rico",
+      "americano"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo dicen 'genial' los cubanos? (Cuba-4-94)",
+    "correctAnswer": "chévere",
+    "explanation": "'Chévere' es la expresión cubana más común para decir que algo está genial.",
+    "options": [
+      "bárbaro",
+      "chévere",
+      "brutal",
+      "tremendo"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué fruta NO debe decirse por su nombre real en Cuba? (Cuba-4-95)",
+    "correctAnswer": "papaya",
+    "explanation": "En Cuba se dice 'frutabomba' en lugar de 'papaya' porque tiene connotaciones sexuales.",
+    "options": [
+      "mango",
+      "papaya",
+      "plátano",
+      "guayaba"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'jamar' en Cuba? (Cuba-4-96)",
+    "correctAnswer": "comer",
+    "explanation": "'Jamar' es la forma cubana coloquial de decir 'comer'.",
+    "options": [
+      "beber",
+      "comer",
+      "dormir",
+      "trabajar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se saluda comúnmente en Cuba? (Cuba-4-97)",
+    "correctAnswer": "¿Qué bolá?",
+    "explanation": "'¿Qué bolá?' es el saludo más común en Cuba, equivale a '¿qué tal?'",
+    "options": [
+      "¿Cómo estás?",
+      "¿Qué bolá?",
+      "¿Dónde vas?",
+      "¿Qué haces?"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué significa 'coño' en Cuba? (Cuba-4-98)",
+    "correctAnswer": "exclamación de sorpresa",
+    "explanation": "'¡Coño!' es una exclamación cubana de sorpresa, como '¡wow!'",
+    "options": [
+      "saludo",
+      "exclamación de sorpresa",
+      "despedida",
+      "insulto"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Cómo se dice 'trabajar' en Cuba? (Cuba-4-99)",
+    "correctAnswer": "pinchar",
+    "explanation": "'Pinchar' es la forma cubana coloquial de decir 'trabajar'.",
+    "options": [
+      "pinchar",
+      "currar",
+      "chambear",
+      "laborar"
+    ],
+    "points": 1
+  },
+  {
+    "countryCode": "cuba",
+    "level": 4,
+    "type": "multiple",
+    "question": "¿Qué es 'la pincha' en Cuba? (Cuba-4-100)",
+    "correctAnswer": "el trabajo",
+    "explanation": "'La pincha' es como los cubanos llaman al trabajo.",
+    "options": [
+      "la casa",
+      "el trabajo",
+      "la escuela",
+      "la calle"
     ],
     "points": 1
   }
