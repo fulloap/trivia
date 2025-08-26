@@ -39,8 +39,8 @@ export function Landing({ onGetStarted }: LandingProps) {
   ];
 
   const countries = [
-    { name: "Cuba", flag: "🇨🇺", questions: "1,032" },
-    { name: "Honduras", flag: "🇭🇳", questions: "1,032" }
+    { name: "Cuba", flag: "🇨🇺", questions: "1,032", unicode: "&#x1F1E8;&#x1F1FA;" },
+    { name: "Honduras", flag: "🇭🇳", questions: "1,032", unicode: "&#x1F1ED;&#x1F1F3;" }
   ];
 
   return (
@@ -142,7 +142,9 @@ export function Landing({ onGetStarted }: LandingProps) {
             {countries.map((country, index) => (
               <Card key={index} className="border-0 bg-white dark:bg-gray-800 shadow-lg">
                 <CardContent className="p-6 text-center">
-                  <div className="text-6xl mb-4">{country.flag}</div>
+                  <div className="text-6xl mb-4 flag-emoji">
+                    {country.flag}
+                  </div>
                   <h4 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">
                     {country.name}
                   </h4>
