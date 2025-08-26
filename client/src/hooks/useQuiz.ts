@@ -28,7 +28,7 @@ export function useQuiz(countryCode?: string, level?: number) {
   // Start quiz mutation
   const startQuizMutation = useMutation({
     mutationFn: async ({ countryCode, level }: { countryCode: string; level: number }) => {
-      const response = await apiRequest('POST', '/api/quiz/start', { countryCode, level });
+      const response = await apiRequest('/api/quiz/start', 'POST', { countryCode, level });
       return response.json();
     },
     onSuccess: (newSession) => {
@@ -56,7 +56,7 @@ export function useQuiz(countryCode?: string, level?: number) {
       answer: string; 
       timeSpent: number; 
     }) => {
-      const response = await apiRequest('POST', '/api/quiz/answer', {
+      const response = await apiRequest('/api/quiz/answer', 'POST', {
         sessionId,
         questionId,
         answer,
@@ -74,7 +74,7 @@ export function useQuiz(countryCode?: string, level?: number) {
   // Complete quiz mutation
   const completeQuizMutation = useMutation({
     mutationFn: async (sessionId: number) => {
-      const response = await apiRequest('POST', '/api/quiz/complete', { sessionId });
+      const response = await apiRequest('/api/quiz/complete', 'POST', { sessionId });
       return response.json();
     },
     onSuccess: () => {
@@ -104,7 +104,7 @@ export function useQuiz(countryCode?: string, level?: number) {
   // Use hint mutation
   const useHintMutation = useMutation({
     mutationFn: async ({ sessionId, questionId }: { sessionId: number; questionId: number }) => {
-      const response = await apiRequest('POST', '/api/quiz/hint', { sessionId, questionId });
+      const response = await apiRequest('/api/quiz/hint', 'POST', { sessionId, questionId });
       return response.json();
     },
     onSuccess: (result) => {
