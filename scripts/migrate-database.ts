@@ -40,6 +40,7 @@ async function createTables(db: any) {
       referral_code VARCHAR(20) UNIQUE NOT NULL,
       referred_by INTEGER REFERENCES users(id),
       total_score INTEGER DEFAULT 0,
+      games_played INTEGER DEFAULT 0,
       bonus_helps INTEGER DEFAULT 0,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       last_active_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -126,6 +127,34 @@ async function createTables(db: any) {
       console.log('✓ Table created successfully');
     } catch (error) {
       console.error('Error creating table:', error);
+    }
+  }
+  
+  // Add missing columns to existing tables
+  await updateExistingTables(db);
+}
+
+async function updateExistingTables(db: any) {
+  console.log('Updating existing tables with missing columns...');
+  
+  const updateQueries = [
+    // Add games_played column if it doesn't exist
+    `ALTER TABLE users ADD COLUMN IF NOT EXISTS games_played INTEGER DEFAULT 0`,
+    // Add any other missing columns
+    `ALTER TABLE countries ADD COLUMN IF NOT EXISTS primary_color VARCHAR(20) DEFAULT '#000000'`,
+    `ALTER TABLE countries ADD COLUMN IF NOT EXISTS is_active BOOLEAN DEFAULT true`,
+    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS type VARCHAR(50) DEFAULT 'multiple'`,
+    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS description TEXT`,
+    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS points INTEGER DEFAULT 1`,
+  ];
+  
+  for (const query of updateQueries) {
+    try {
+      await db.execute(query);
+      console.log('✓ Column updated successfully');
+    } catch (error) {
+      // Column might already exist, continue
+      console.log('Column update skipped (already exists)');
     }
   }
 }

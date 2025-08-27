@@ -52,5 +52,17 @@ Database is empty, populating with default data...
 2:XX:XX PM [express] GET /api/health 200 in Xms
 ```
 
+## Problema Corregido:
+
+**Error anterior:** `column "games_played" does not exist`  
+**Solución implementada:** Sistema de migración automática que añade columnas faltantes
+
+### Migración Automática Incluida:
+```sql
+ALTER TABLE users ADD COLUMN IF NOT EXISTS games_played INTEGER DEFAULT 0
+ALTER TABLE countries ADD COLUMN IF NOT EXISTS primary_color VARCHAR(20)
+ALTER TABLE questions ADD COLUMN IF NOT EXISTS type VARCHAR(50)
+```
+
 ## Resultado:
-Tu aplicación ahora se conectará correctamente a tu PostgreSQL interno y funcionará con todos los datos persistentes.
+Tu aplicación ahora se conectará correctamente a tu PostgreSQL interno, corregirá automáticamente cualquier columna faltante y funcionará con todos los datos persistentes.

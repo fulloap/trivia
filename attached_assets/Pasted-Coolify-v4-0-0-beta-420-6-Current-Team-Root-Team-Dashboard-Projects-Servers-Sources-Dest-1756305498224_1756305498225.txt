@@ -1,0 +1,103 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-143505414902
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+Testing database connection...
+Database URL configured: Yes
+Initializing production database...
+Starting database initialization...
+Initializing email system...
+Testing email connection to: veloz.colombiahosting.com.co
+Starting database initialization...
+2:36:29 PM [express] serving on port 3005
+Database connection successful
+✓ PostgreSQL connection successful
+✓ PostgreSQL connection successful
+✓ System will continue with existing data
+Database initialization had issues: PostgresError: column "games_played" does not exist
+    at ErrorResponse (file:///app/node_modules/postgres/src/connection.js:794:26)
+    at handle (file:///app/node_modules/postgres/src/connection.js:480:6)
+    at Socket.data (file:///app/node_modules/postgres/src/connection.js:315:9)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {
+  severity_local: 'ERROR',
+  severity: 'ERROR',
+  code: '42703',
+  position: '62',
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+Database initialization had issues: PostgresError: column "games_played" does not exist
+    at ErrorResponse (file:///app/node_modules/postgres/src/connection.js:794:26)
+    at handle (file:///app/node_modules/postgres/src/connection.js:480:6)
+    at Socket.data (file:///app/node_modules/postgres/src/connection.js:315:9)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {
+  severity_local: 'ERROR',
+  severity: 'ERROR',
+  code: '42703',
+  position: '62',
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+✓ System will continue with existing data
+✓ Production database ready
+2:36:33 PM [express] GET /api/health 200 in 6ms :: {"status":"ok","timestamp":"2025-08-27T14:36:33.2…
+2:37:03 PM [express] GET /api/health 200 in 2ms :: {"status":"ok","timestamp":"2025-08-27T14:37:03.3…
+2:37:33 PM [express] GET /api/health 200 in 3ms :: {"status":"ok","timestamp":"2025-08-27T14:37:33.4…
+2:38:03 PM [express] GET /api/health 200 in 2ms :: {"status":"ok","timestamp":"2025-08-27T14:38:03.5…
