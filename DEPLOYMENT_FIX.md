@@ -1,9 +1,11 @@
 # Deployment Fix for Coolify
 
-## Fixed Issues
+## Fixed Issues ✅
 1. **Docker Build Error**: Removed incorrect `/app/client/dist` copy command since vite builds to `/app/dist/public`
-2. **Health Check**: Added curl to Alpine image for health checks
+2. **Health Check**: Added curl to Alpine image for health checks  
 3. **Build Verification**: Added checks to verify build outputs exist
+4. **Vite Import Error**: Fixed ERR_MODULE_NOT_FOUND by using dynamic import for vite in development only
+5. **Production Bundle**: Server no longer tries to import vite packages in production
 
 ## Current Dockerfile Structure
 - **Base Stage**: Node 20 Alpine
