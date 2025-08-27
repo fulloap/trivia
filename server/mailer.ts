@@ -1,18 +1,23 @@
 import nodemailer from 'nodemailer';
 
-// Email configuration  
+// Email configuration using environment variables
 const transporter = nodemailer.createTransport({
-  host: 'veloz.colombiahosting.com.co',
-  port: 465,
+  host: process.env.EMAIL_HOST || 'veloz.colombiahosting.com.co',
+  port: parseInt(process.env.EMAIL_PORT || '465'),
   secure: true, // SSL
   auth: {
-    user: 'trivia@cubacoin.org',
-    pass: 'g@i*BJ{RZGmtA79]'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
 // Test email connection
 async function testEmailConnection() {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.warn('Email credentials not configured. Email features will be disabled.');
+    return false;
+  }
+  
   try {
     await transporter.verify();
     console.log('Email server connection successful');
@@ -25,9 +30,14 @@ async function testEmailConnection() {
 
 // Send welcome email
 export async function sendWelcomeEmail(to: string, username: string, referralCode: string) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.log('Email not configured, skipping welcome email');
+    return false;
+  }
+  
   try {
     const mailOptions = {
-      from: '"¿De dónde eres? Trivia" <trivia@cubacoin.org>',
+      from: `"¿De dónde eres? Trivia" <${process.env.EMAIL_USER}>`,
       to,
       subject: '¡Bienvenido a ¿De dónde eres? - Tu cuenta está lista! 🎉',
       html: `
@@ -92,9 +102,14 @@ export async function sendWelcomeEmail(to: string, username: string, referralCod
 
 // Send referral bonus notification
 export async function sendReferralBonusEmail(to: string, username: string, referredUsername: string) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.log('Email not configured, skipping referral bonus email');
+    return false;
+  }
+  
   try {
     const mailOptions = {
-      from: '"¿De dónde eres? Trivia" <trivia@cubacoin.org>',
+      from: `"¿De dónde eres? Trivia" <${process.env.EMAIL_USER}>`,
       to,
       subject: '🎁 ¡Has ganado una ayuda extra! Tu amigo se unió al juego',
       html: `
