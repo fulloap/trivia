@@ -40,6 +40,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "La contraseña debe tener al menos 6 caracteres" });
       }
       
+      // Validate email format
+      if (!email.includes('@') || email.length < 5) {
+        return res.status(400).json({ message: "Por favor ingresa un correo electrónico válido" });
+      }
+      
       // Validate username
       const validatedUsername = usernameSchema.parse(username);
       
@@ -88,8 +93,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (error instanceof z.ZodError) {
         return res.status(400).json({ message: error.errors[0].message });
       }
+      
       console.error("Error registering user:", error);
-      res.status(500).json({ message: "Error al crear el usuario" });
+      
+      // Check for specific database errors
+      if (error && typeof error === 'object') {
+        const err = error as any;
+        
+        // Connection errors
+        if (err.code === 'ECONNREFUSED' || err.code === 'ENOTFOUND' || err.message?.includes('ECONNREFUSED')) {
+          return res.status(500).json({ message: "Error desconocido en el servidor" });
+        }
+        
+        // Constraint violation errors (duplicate username/email)
+        if (err.code === '23505' || err.message?.includes('duplicate key') || err.message?.includes('unique constraint')) {
+          if (err.message?.includes('username')) {
+            return res.status(409).json({ message: "Este nombre de usuario ya está en uso" });
+          }
+          if (err.message?.includes('email')) {
+            return res.status(409).json({ message: "Este correo electrónico ya está en uso" });
+          }
+          return res.status(409).json({ message: "Este usuario ya existe" });
+        }
+        
+        // Invalid input errors
+        if (err.code === '22P02' || err.message?.includes('invalid input')) {
+          return res.status(400).json({ message: "Datos de usuario inválidos" });
+        }
+      }
+      
+      res.status(500).json({ message: "Error desconocido en el servidor" });
     }
   });
 
