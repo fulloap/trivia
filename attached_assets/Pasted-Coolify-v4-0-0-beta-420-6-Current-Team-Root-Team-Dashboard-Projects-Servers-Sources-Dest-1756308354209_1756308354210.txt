@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-152353535621
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+Warning: Batch 28 failed for honduras: malformed array literal: "["trabajar","ir de fiesta","estudiar","dormir"]"
+Warning: Batch 39 failed for honduras: malformed array literal: "["pachanga","celebración","party","juerga"]"
+Warning: Batch 33 failed for honduras: malformed array literal: "["diente","persona distraída","persona inteligente","herramienta"]"
+✓ Successfully loaded 0 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 0 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+3:25:18 PM [express] serving on port 3005
+✓ Successfully loaded 0 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 0 total questions loaded
+✅ Database migration completed successfully
+✓ Successfully loaded 0 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 0 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+3:25:20 PM [express] GET /api/health 200 in 7ms :: {"status":"ok","timestamp":"2025-08-27T15:25:20.1…
+3:25:21 PM [express] GET /api/auth/user 401 in 1ms :: {"message":"No authenticated"}
+Warning: Batch 29 failed for honduras: malformed array literal: "["trabajo","fiesta","problema","comida"]"
+Warning: Batch 40 failed for honduras: malformed array literal: "["maíz tierno","persona lenta","persona rápida","comida"]"
+Warning: Batch 34 failed for honduras: malformed array literal: "["policía","chepos","guardia","agente"]"
+Warning: Batch 41 failed for honduras: malformed array literal: "["pez","tienda pequeña","persona astuta","problema"]"
+Warning: Batch 30 failed for honduras: malformed array literal: "["animal","persona despistada","persona inteligente","persona fuerte"]"
+Warning: Batch 42 failed for honduras: malformed array literal: "["bailes típicos","tradiciones de hermandad","comidas","instrumentos"]"
+Warning: Batch 35 failed for honduras: malformed array literal: "["Carnaval","Feria de San Isidro","Festival del Maíz","Día de la Independencia"]"
+Warning: Batch 31 failed for honduras: malformed array literal: "["bailes típicos","tradiciones de hermandad","comidas","instrumentos"]"
+Warning: Batch 32 failed for honduras: malformed array literal: "["pesado","excelente calidad","difícil","grande"]"
+Warning: Batch 43 failed for honduras: malformed array literal: "["pesado","excelente calidad","difícil","grande"]"
+Warning: Batch 36 failed for honduras: malformed array literal: "["verdad","mentira","hierba","trabajo"]"
+Warning: Batch 44 failed for honduras: malformed array literal: "["diente","persona distraída","persona inteligente","herramienta"]"
+Warning: Batch 33 failed for honduras: malformed array literal: "["diente","persona distraída","persona inteligente","herramienta"]"
+Warning: Batch 34 failed for honduras: malformed array literal: "["policía","chepos","guardia","agente"]"
+Warning: Batch 45 failed for honduras: malformed array literal: "["policía","chepos","guardia","agente"]"
+Warning: Batch 37 failed for honduras: malformed array literal: "["limpio","sucio/inmoral","bonito","caro"]"
+Warning: Batch 46 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 38 failed for honduras: malformed array literal: "["soldados","chafas","militares","guardia"]"
+Warning: Batch 35 failed for honduras: malformed array literal: "["Carnaval","Feria de San Isidro","Festival del Maíz","Día de la Independencia"]"
+Warning: Batch 39 failed for honduras: malformed array literal: "["pachanga","celebración","party","juerga"]"
+Warning: Batch 47 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 40 failed for honduras: malformed array literal: "["maíz tierno","persona lenta","persona rápida","comida"]"
+Warning: Batch 48 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 36 failed for honduras: malformed array literal: "["verdad","mentira","hierba","trabajo"]"
+Warning: Batch 49 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 41 failed for honduras: malformed array literal: "["pez","tienda pequeña","persona astuta","problema"]"
+Warning: Batch 37 failed for honduras: malformed array literal: "["limpio","sucio/inmoral","bonito","caro"]"
+Warning: Batch 50 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 51 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 38 failed for honduras: malformed array literal: "["soldados","chafas","militares","guardia"]"
+Warning: Batch 42 failed for honduras: malformed array literal: "["bailes típicos","tradiciones de hermandad","comidas","instrumentos"]"
+Warning: Batch 43 failed for honduras: malformed array literal: "["pesado","excelente calidad","difícil","grande"]"
+Warning: Batch 52 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 39 failed for honduras: malformed array literal: "["pachanga","celebración","party","juerga"]"
+Warning: Batch 53 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 40 failed for honduras: malformed array literal: "["maíz tierno","persona lenta","persona rápida","comida"]"
+Warning: Batch 44 failed for honduras: malformed array literal: "["diente","persona distraída","persona inteligente","herramienta"]"
+Warning: Batch 41 failed for honduras: malformed array literal: "["pez","tienda pequeña","persona astuta","problema"]"
+Warning: Batch 45 failed for honduras: malformed array literal: "["policía","chepos","guardia","agente"]"
+Warning: Batch 54 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 46 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 42 failed for honduras: malformed array literal: "["bailes típicos","tradiciones de hermandad","comidas","instrumentos"]"
+Warning: Batch 55 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 47 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 56 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 43 failed for honduras: malformed array literal: "["pesado","excelente calidad","difícil","grande"]"
+Warning: Batch 48 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 44 failed for honduras: malformed array literal: "["diente","persona distraída","persona inteligente","herramienta"]"
+Warning: Batch 57 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 49 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 58 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 45 failed for honduras: malformed array literal: "["policía","chepos","guardia","agente"]"
+Warning: Batch 50 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 46 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 51 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 59 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 47 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 52 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 60 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 48 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 53 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 49 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 54 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 50 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 55 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 51 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 56 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 52 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 57 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 53 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 58 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 54 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 55 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 59 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 60 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 56 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 57 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 58 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
+Warning: Batch 59 failed for honduras: malformed array literal: "["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]"
+Warning: Batch 60 failed for honduras: malformed array literal: "["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]"
