@@ -19,15 +19,18 @@ execSync('cp server/production.ts dist/production.js', { stdio: 'inherit' });
 
 // Step 4: Fix import in the built file to use production.js
 console.log('🔧 Patching imports...');
-let serverCode = readFileSync('dist/index.js', 'utf8');
+let serverCode = readFileSync('dist/server/index.js', 'utf8');
 
 // Replace vite.js imports with production.js in the built file
 serverCode = serverCode.replace(
   /await import\("\.\/vite\.js"\)/g, 
-  'await import("./production.js")'
+  'await import("../production.js")'
 );
 
-writeFileSync('dist/index.js', serverCode);
+writeFileSync('dist/server/index.js', serverCode);
+
+// Copy migration script to root dist
+execSync('cp dist/scripts/migrate-database.js dist/', { stdio: 'inherit' });
 
 console.log('✅ Production build complete!');
 console.log('📊 Build outputs:');
