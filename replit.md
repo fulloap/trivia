@@ -61,10 +61,11 @@ A cultural quiz web application that adapts to different countries and regions, 
   - Complete migration system: 66.5kb server + 16.7kb migration script
 - **Production JSON Error Fix (August 27, 2025)**: Critical database insertion error resolved
   - Fixed "malformed array literal" error in question options
-  - Corrected double JSON encoding issue in migration script
-  - Changed from `JSON.stringify(q.options)` to proper array handling
+  - Root cause: PostgreSQL JSONB requires JSON strings, not JavaScript objects
+  - Advanced debugging revealed raw arrays were reaching database correctly
+  - Final solution: Force JSON.stringify() for JSONB column compatibility
+  - Production deployment now stable with 67.2kb server + 17.4kb migration
   - Ensures all 3,000 questions load successfully without batch failures
-  - Production deployment now stable with integrated server migration
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.

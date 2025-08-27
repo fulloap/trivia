@@ -290,7 +290,8 @@ async function populateDefaultQuestions() {
               question: q.question,
               options: q.options,
               optionsType: typeof q.options,
-              isArray: Array.isArray(q.options)
+              isArray: Array.isArray(q.options),
+              jsonified: JSON.stringify(q.options)
             });
           }
           
@@ -300,7 +301,7 @@ async function populateDefaultQuestions() {
             type: q.type || 'multiple',
             question: q.question,
             correctAnswer: q.correct_answer || q.correctAnswer,
-            options: q.options, // Store as JSONB directly - no conversion needed
+            options: JSON.stringify(q.options), // Force JSON string for JSONB column
             explanation: q.explanation || '',
             description: q.description || '',
             points: 1,
@@ -338,7 +339,8 @@ async function populateDefaultQuestions() {
               console.log(`🔍 Failed batch sample:`, {
                 question: batch[0].question,
                 options: batch[0].options,
-                optionsType: typeof batch[0].options
+                optionsType: typeof batch[0].options,
+                stringified: typeof batch[0].options === 'string'
               });
             }
           }
