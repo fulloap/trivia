@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-211520370400
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+✓ Batch 57: Inserted 25 questions for cuba
+✓ Batch 56: Inserted 25 questions for cuba
+✓ Batch 52: Inserted 25 questions for honduras
+✓ Batch 58: Inserted 25 questions for cuba
+✓ Batch 53: Inserted 25 questions for honduras
+✓ Batch 59: Inserted 25 questions for cuba
+✓ Batch 57: Inserted 25 questions for cuba
+✓ Batch 58: Inserted 25 questions for cuba
+✓ Batch 54: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for cuba
+✓ Successfully loaded 1500 unique questions for cuba
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+Loading questions for honduras...
+✓ Removed 0 duplicate questions for honduras
+✓ honduras difficulty distribution: Level 1: 375, Level 2: 375, Level 3: 375, Level 4: 375
+🔍 Sample question structure for honduras: {
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+✓ honduras already has 1350 questions, skipping
+✓ Batch 59: Inserted 25 questions for cuba
+✅ Final question count: 4325 total questions loaded
+✅ Database migration completed successfully
+✓ Batch 55: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for cuba
+✓ Successfully loaded 1500 unique questions for cuba
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+Loading questions for honduras...
+✓ Removed 0 duplicate questions for honduras
+✓ honduras difficulty distribution: Level 1: 375, Level 2: 375, Level 3: 375, Level 4: 375
+🔍 Sample question structure for honduras: {
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+✓ Batch 56: Inserted 25 questions for honduras
+✓ Batch 57: Inserted 25 questions for honduras
+✓ honduras already has 1400 questions, skipping
+✅ Final question count: 4425 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+✓ Batch 58: Inserted 25 questions for honduras
+✓ Batch 59: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for honduras
+✓ Successfully loaded 1500 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 4500 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+9:16:16 PM [express] serving on port 3005
+9:16:19 PM [express] GET /api/health 200 in 7ms :: {"status":"ok","timestamp":"2025-08-27T21:16:19.7…
+9:16:49 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:16:49.8…
+9:17:19 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:17:19.9…
+9:17:50 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:17:50.0…
+9:18:20 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:18:20.2…
+9:18:50 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:18:50.3…
+9:19:20 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:19:20.3…
+9:19:50 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:19:50.4…
+9:20:20 PM [express] GET /api/health 200 in 2ms :: {"status":"ok","timestamp":"2025-08-27T21:20:20.5…
+9:20:50 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:20:50.6…
+9:21:20 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:21:20.6…
+9:21:21 PM [express] GET /api/progress/cuba 304 in 14ms :: []
+9:21:37 PM [express] GET /api/user/referral-info 200 in 7ms :: {"referralCode":"5VAZZO","referralLin…
+9:21:41 PM [express] GET /api/user/stats 200 in 8ms :: {"totalScore":0,"gamesPlayed":0,"bonusHelps":…
+9:21:50 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T21:21:50.7…
+9:22:02 PM [express] GET /api/rankings/cuba/2 200 in 12ms :: []
+Global rankings request - level: 2 limit: 50
+Storage getGlobalRankingsByLevel called with level: 2
+Storage getGlobalRankingsByLevel returning: 0 unique users
+Global rankings result: 0 records
+First few records: []
+9:22:03 PM [express] GET /api/rankings/global/2 304 in 6ms :: []
+Global rankings request - level: 3 limit: 50
+Storage getGlobalRankingsByLevel called with level: 3
+Storage getGlobalRankingsByLevel returning: 0 unique users
+Global rankings result: 0 records
+First few records: []
+9:22:05 PM [express] GET /api/rankings/global/3 304 in 9ms :: []
+Global rankings request - level: 4 limit: 50
+Storage getGlobalRankingsByLevel called with level: 4
+Storage getGlobalRankingsByLevel returning: 0 unique users
+Global rankings result: 0 records
+First few records: []
+9:22:06 PM [express] GET /api/rankings/global/4 304 in 6ms :: []
+Email server connection failed: Error: Connection timeout
+    at SMTPConnection._formatError (/app/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._onError (/app/node_modules/nodemailer/lib/smtp-connection/index.js:795:20)
+    at Timeout.<anonymous> (/app/node_modules/nodemailer/lib/smtp-connection/index.js:237:22)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  code: 'ETIMEDOUT',
+  command: 'CONN'
+}
+Host: veloz.colombiahosting.com.co Port: 465
+Make sure SMTP server is accessible from Docker containers

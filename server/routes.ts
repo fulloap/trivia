@@ -513,6 +513,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await storage.updateUserScore(user.id, totalScore);
 
       // Add to rankings
+      console.log(`🏆 Adding user ${user.username} to rankings: ${session.countryCode} level ${session.level}, score: ${totalScore}`);
       await storage.addRanking({
         userId: user.id,
         countryCode: session.countryCode,
@@ -522,6 +523,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         totalQuestions,
         accuracy,
       });
+      console.log(`✅ User ${user.username} successfully added to rankings`);
 
       // Check if this completion triggers referral bonus
       await checkReferralProgress(user.id);
