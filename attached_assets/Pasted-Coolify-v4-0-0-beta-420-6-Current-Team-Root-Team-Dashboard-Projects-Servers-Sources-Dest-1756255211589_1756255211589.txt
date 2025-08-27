@@ -1,0 +1,354 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Sponsor us
+Feedback
+Logout
+Deployment
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Exited
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Deploy
+Deployment Log
+Show Debug Logs
+Deployment is Failed.
+
+
+
+
+2025-Aug-27 00:38:19.284403
+Starting deployment of fulloap/trivia:main to localhost.
+2025-Aug-27 00:38:19.608342
+Preparing container with helper image: ghcr.io/coollabsio/coolify-helper:1.0.10.
+2025-Aug-27 00:38:21.930330
+----------------------------------------
+2025-Aug-27 00:38:21.934434
+Importing fulloap/trivia:main (commit sha HEAD) to /artifacts/d0ooswsssok8og84kgs4k4gw.
+2025-Aug-27 00:38:23.359231
+Image not found (jkcg4wgows40k4kc00os0sk0:4b5de8511256affd33aa013f8a9e8232ba0406ce). Building new image.
+2025-Aug-27 00:38:25.031666
+----------------------------------------
+2025-Aug-27 00:38:25.036249
+Building docker image started.
+2025-Aug-27 00:38:25.039786
+To check the current progress, click on Show Debug Logs.
+2025-Aug-27 00:39:14.435312
+Oops something is not okay, are you okay? 😢
+2025-Aug-27 00:39:14.440551
+#0 building with "default" instance using docker driver
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#1 [internal] load build definition from Dockerfile
+2025-Aug-27 00:39:14.440551
+#1 transferring dockerfile: 1.44kB done
+2025-Aug-27 00:39:14.440551
+#1 DONE 0.0s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+2025-Aug-27 00:39:14.440551
+#2 DONE 1.3s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#3 [internal] load .dockerignore
+2025-Aug-27 00:39:14.440551
+#3 transferring context: 888B done
+2025-Aug-27 00:39:14.440551
+#3 DONE 0.0s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#4 [base 1/1] FROM docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+2025-Aug-27 00:39:14.440551
+#4 resolve docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799 0.0s done
+2025-Aug-27 00:39:14.440551
+#4 sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799 7.67kB / 7.67kB done
+2025-Aug-27 00:39:14.440551
+#4 sha256:ae6ee91a652d927de01d550c29f863a52f1da390c89df95f3ceba256d1e62604 1.72kB / 1.72kB done
+2025-Aug-27 00:39:14.440551
+#4 sha256:7cdef5a331927fafa250be6166052d8599bf5eb7b014342538c2cc79b70a081f 6.42kB / 6.42kB done
+2025-Aug-27 00:39:14.440551
+#4 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#5 [internal] load build context
+2025-Aug-27 00:39:14.440551
+#5 transferring context: 4.57MB 0.1s done
+2025-Aug-27 00:39:14.440551
+#5 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#6 [builder 1/5] WORKDIR /app
+2025-Aug-27 00:39:14.440551
+#6 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#7 [builder 2/5] COPY package.json package-lock.json* ./
+2025-Aug-27 00:39:14.440551
+#7 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#8 [runner  2/10] RUN addgroup --system --gid 1001 nodejs
+2025-Aug-27 00:39:14.440551
+#8 DONE 0.2s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#9 [builder 3/5] RUN npm ci
+2025-Aug-27 00:39:14.440551
+#9 ...
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#10 [runner  3/10] RUN adduser --system --uid 1001 nextjs
+2025-Aug-27 00:39:14.440551
+#10 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#11 [deps 1/4] RUN apk add --no-cache libc6-compat
+2025-Aug-27 00:39:14.440551
+#11 0.155 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+2025-Aug-27 00:39:14.440551
+#11 0.304 fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+2025-Aug-27 00:39:14.440551
+#11 0.841 (1/3) Installing musl-obstack (1.2.3-r2)
+2025-Aug-27 00:39:14.440551
+#11 0.846 (2/3) Installing libucontext (1.3.2-r0)
+2025-Aug-27 00:39:14.440551
+#11 0.847 (3/3) Installing gcompat (1.1.0-r4)
+2025-Aug-27 00:39:14.440551
+#11 0.852 OK: 10 MiB in 21 packages
+2025-Aug-27 00:39:14.440551
+#11 DONE 1.0s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#9 [builder 3/5] RUN npm ci
+2025-Aug-27 00:39:14.440551
+#9 ...
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#12 [deps 2/4] WORKDIR /app
+2025-Aug-27 00:39:14.440551
+#12 DONE 0.0s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#13 [deps 3/4] COPY package.json package-lock.json* ./
+2025-Aug-27 00:39:14.440551
+#13 DONE 0.0s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#14 [deps 4/4] RUN npm ci --only=production && npm cache clean --force
+2025-Aug-27 00:39:14.440551
+#14 0.368 npm warn config only Use `--omit=dev` to omit dev dependencies from the install.
+2025-Aug-27 00:39:14.440551
+#14 ...
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#9 [builder 3/5] RUN npm ci
+2025-Aug-27 00:39:14.440551
+#9 12.41 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-Aug-27 00:39:14.440551
+#9 12.48 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-Aug-27 00:39:14.440551
+#9 ...
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#14 [deps 4/4] RUN npm ci --only=production && npm cache clean --force
+2025-Aug-27 00:39:14.440551
+#14 20.70
+2025-Aug-27 00:39:14.440551
+#14 20.70 added 394 packages, and audited 395 packages in 20s
+2025-Aug-27 00:39:14.440551
+#14 20.70
+2025-Aug-27 00:39:14.440551
+#14 20.70 57 packages are looking for funding
+2025-Aug-27 00:39:14.440551
+#14 20.70   run `npm fund` for details
+2025-Aug-27 00:39:14.440551
+#14 20.70
+2025-Aug-27 00:39:14.440551
+#14 20.70 3 low severity vulnerabilities
+2025-Aug-27 00:39:14.440551
+#14 20.70
+2025-Aug-27 00:39:14.440551
+#14 20.70 To address all issues, run:
+2025-Aug-27 00:39:14.440551
+#14 20.70   npm audit fix
+2025-Aug-27 00:39:14.440551
+#14 20.70
+2025-Aug-27 00:39:14.440551
+#14 20.70 Run `npm audit` for details.
+2025-Aug-27 00:39:14.440551
+#14 20.70 npm notice
+2025-Aug-27 00:39:14.440551
+#14 20.70 npm notice New major version of npm available! 10.8.2 -> 11.5.2
+2025-Aug-27 00:39:14.440551
+#14 20.70 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
+2025-Aug-27 00:39:14.440551
+#14 20.70 npm notice To update run: npm install -g npm@11.5.2
+2025-Aug-27 00:39:14.440551
+#14 20.70 npm notice
+2025-Aug-27 00:39:14.440551
+#14 21.09 npm warn using --force Recommended protections disabled.
+2025-Aug-27 00:39:14.440551
+#14 DONE 23.4s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#9 [builder 3/5] RUN npm ci
+2025-Aug-27 00:39:14.440551
+#9 30.44
+2025-Aug-27 00:39:14.440551
+#9 30.44 added 503 packages, and audited 504 packages in 30s
+2025-Aug-27 00:39:14.440551
+#9 30.44
+2025-Aug-27 00:39:14.440551
+#9 30.44 69 packages are looking for funding
+2025-Aug-27 00:39:14.440551
+#9 30.44   run `npm fund` for details
+2025-Aug-27 00:39:14.440551
+#9 30.51
+2025-Aug-27 00:39:14.440551
+#9 30.51 11 vulnerabilities (3 low, 8 moderate)
+2025-Aug-27 00:39:14.440551
+#9 30.51
+2025-Aug-27 00:39:14.440551
+#9 30.51 To address issues that do not require attention, run:
+2025-Aug-27 00:39:14.440551
+#9 30.51   npm audit fix
+2025-Aug-27 00:39:14.440551
+#9 30.51
+2025-Aug-27 00:39:14.440551
+#9 30.51 To address all issues (including breaking changes), run:
+2025-Aug-27 00:39:14.440551
+#9 30.51   npm audit fix --force
+2025-Aug-27 00:39:14.440551
+#9 30.51
+2025-Aug-27 00:39:14.440551
+#9 30.51 Run `npm audit` for details.
+2025-Aug-27 00:39:14.440551
+#9 30.51 npm notice
+2025-Aug-27 00:39:14.440551
+#9 30.51 npm notice New major version of npm available! 10.8.2 -> 11.5.2
+2025-Aug-27 00:39:14.440551
+#9 30.51 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.5.2
+2025-Aug-27 00:39:14.440551
+#9 30.51 npm notice To update run: npm install -g npm@11.5.2
+2025-Aug-27 00:39:14.440551
+#9 30.51 npm notice
+2025-Aug-27 00:39:14.440551
+#9 DONE 30.8s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#15 [builder 4/5] COPY . .
+2025-Aug-27 00:39:14.440551
+#15 DONE 0.1s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#16 [builder 5/5] RUN npm run build
+2025-Aug-27 00:39:14.440551
+#16 0.415
+2025-Aug-27 00:39:14.440551
+#16 0.415 > rest-express@1.0.0 build
+2025-Aug-27 00:39:14.440551
+#16 0.415 > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+2025-Aug-27 00:39:14.440551
+#16 0.415
+2025-Aug-27 00:39:14.440551
+#16 0.889 vite v5.4.19 building for production...
+2025-Aug-27 00:39:14.440551
+#16 0.992 transforming...
+2025-Aug-27 00:39:14.440551
+#16 2.025 Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+2025-Aug-27 00:39:14.440551
+#16 2.025   npx update-browserslist-db@latest
+2025-Aug-27 00:39:14.440551
+#16 2.025   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-Aug-27 00:39:14.440551
+#16 13.88 ✓ 1731 modules transformed.
+2025-Aug-27 00:39:14.440551
+#16 14.32 rendering chunks...
+2025-Aug-27 00:39:14.440551
+#16 14.33 computing gzip size...
+2025-Aug-27 00:39:14.440551
+#16 14.36 ../dist/public/index.html                   2.04 kB │ gzip:   0.93 kB
+2025-Aug-27 00:39:14.440551
+#16 14.36 ../dist/public/assets/logo-RhC74sMX.png   356.25 kB
+2025-Aug-27 00:39:14.440551
+#16 14.36 ../dist/public/assets/index-G8lvTqQ3.css   86.38 kB │ gzip:  14.30 kB
+2025-Aug-27 00:39:14.440551
+#16 14.36 ../dist/public/assets/index-BoYPoKEW.js   387.29 kB │ gzip: 120.41 kB
+2025-Aug-27 00:39:14.440551
+#16 14.36 ✓ built in 13.41s
+2025-Aug-27 00:39:14.440551
+#16 14.47
+2025-Aug-27 00:39:14.440551
+#16 14.47   dist/index.js  43.2kb
+2025-Aug-27 00:39:14.440551
+#16 14.47
+2025-Aug-27 00:39:14.440551
+#16 14.47 ⚡ Done in 22ms
+2025-Aug-27 00:39:14.440551
+#16 DONE 14.5s
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#17 [runner  4/10] COPY --from=builder --chown=nextjs:nodejs /app/dist ./dist
+2025-Aug-27 00:39:14.440551
+#17 CACHED
+2025-Aug-27 00:39:14.440551
+2025-Aug-27 00:39:14.440551
+#18 [runner  5/10] COPY --from=builder --chown=nextjs:nodejs /app/client/dist ./client/dist
+2025-Aug-27 00:39:14.440551
+#18 ERROR: failed to calculate checksum of ref 31286f1e-53a3-4cb7-8847-c8fe0a302e92::upo0uattbyq71bimr90d8u4w4: "/app/client/dist": not found
+2025-Aug-27 00:39:14.440551
+------
+2025-Aug-27 00:39:14.440551
+> [runner  5/10] COPY --from=builder --chown=nextjs:nodejs /app/client/dist ./client/dist:
+2025-Aug-27 00:39:14.440551
+------
+2025-Aug-27 00:39:14.440551
+Dockerfile:37
+2025-Aug-27 00:39:14.440551
+--------------------
+2025-Aug-27 00:39:14.440551
+35 |     # Copy built application
+2025-Aug-27 00:39:14.440551
+36 |     COPY --from=builder --chown=nextjs:nodejs /app/dist ./dist
+2025-Aug-27 00:39:14.440551
+37 | >>> COPY --from=builder --chown=nextjs:nodejs /app/client/dist ./client/dist
+2025-Aug-27 00:39:14.440551
+38 |     COPY --from=deps --chown=nextjs:nodejs /app/node_modules ./node_modules
+2025-Aug-27 00:39:14.440551
+39 |     COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+2025-Aug-27 00:39:14.440551
+--------------------
+2025-Aug-27 00:39:14.440551
+ERROR: failed to build: failed to solve: failed to compute cache key: failed to calculate checksum of ref 31286f1e-53a3-4cb7-8847-c8fe0a302e92::upo0uattbyq71bimr90d8u4w4: "/app/client/dist": not found
+2025-Aug-27 00:39:14.440551
+exit status 1
+2025-Aug-27 00:39:14.445372
+Deployment failed. Removing the new version of your application.
+2025-Aug-27 00:39:14.876087
+Gracefully shutting down build container: d0ooswsssok8og84kgs4k4gw
