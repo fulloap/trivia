@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-160951651495
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+✓ Batch 47: Inserted 25 questions for cuba
+✓ Batch 45: Inserted 25 questions for honduras
+✓ Batch 48: Inserted 25 questions for cuba
+✓ Batch 51: Inserted 25 questions for cuba
+✓ Batch 46: Inserted 25 questions for honduras
+✓ Batch 49: Inserted 25 questions for cuba
+✓ Batch 52: Inserted 25 questions for cuba
+✓ Batch 47: Inserted 25 questions for honduras
+✓ Batch 50: Inserted 25 questions for cuba
+✓ Batch 53: Inserted 25 questions for cuba
+✓ Batch 48: Inserted 25 questions for honduras
+✓ Batch 51: Inserted 25 questions for cuba
+✓ Batch 54: Inserted 25 questions for cuba
+✓ Batch 49: Inserted 25 questions for honduras
+✓ Batch 52: Inserted 25 questions for cuba
+✓ Batch 55: Inserted 25 questions for cuba
+✓ Batch 53: Inserted 25 questions for cuba
+✓ Batch 50: Inserted 25 questions for honduras
+✓ Batch 56: Inserted 25 questions for cuba
+✓ Batch 54: Inserted 25 questions for cuba
+✓ Batch 51: Inserted 25 questions for honduras
+✓ Batch 57: Inserted 25 questions for cuba
+✓ Batch 52: Inserted 25 questions for honduras
+✓ Batch 55: Inserted 25 questions for cuba
+✓ Batch 56: Inserted 25 questions for cuba
+✓ Batch 53: Inserted 25 questions for honduras
+✓ Batch 58: Inserted 25 questions for cuba
+✓ Batch 57: Inserted 25 questions for cuba
+✓ Batch 59: Inserted 25 questions for cuba
+✓ Batch 54: Inserted 25 questions for honduras
+✓ Batch 58: Inserted 25 questions for cuba
+✓ Batch 55: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for cuba
+✓ Successfully loaded 1500 unique questions for cuba
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+Loading questions for honduras...
+✓ Removed 0 duplicate questions for honduras
+✓ honduras difficulty distribution: Level 1: 375, Level 2: 375, Level 3: 375, Level 4: 375
+🔍 Sample question structure for honduras: {
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+✓ Batch 56: Inserted 25 questions for honduras
+✓ honduras already has 1375 questions, skipping
+✓ Batch 59: Inserted 25 questions for cuba
+✅ Final question count: 4375 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+4:11:14 PM [express] serving on port 3005
+✓ Batch 57: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for cuba
+✓ Successfully loaded 1500 unique questions for cuba
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+Loading questions for honduras...
+✓ Removed 0 duplicate questions for honduras
+✓ honduras difficulty distribution: Level 1: 375, Level 2: 375, Level 3: 375, Level 4: 375
+🔍 Sample question structure for honduras: {
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+✓ honduras already has 1425 questions, skipping
+✅ Final question count: 4425 total questions loaded
+✅ Database migration completed successfully
+✓ Batch 58: Inserted 25 questions for honduras
+✓ Batch 59: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for honduras
+✓ Successfully loaded 1500 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 4500 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+4:11:17 PM [express] GET /api/health 200 in 6ms :: {"status":"ok","timestamp":"2025-08-27T16:11:17.1…
+4:11:47 PM [express] GET /api/health 200 in 4ms :: {"status":"ok","timestamp":"2025-08-27T16:11:47.1…
+4:12:17 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T16:12:17.2…
+4:12:47 PM [express] GET /api/health 200 in 0ms :: {"status":"ok","timestamp":"2025-08-27T16:12:47.3…
+4:13:17 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T16:13:17.3…
+4:13:37 PM [express] GET /api/auth/user 304 in 10ms :: {"id":2,"username":"fulloap","email":"fulloap…
+4:13:37 PM [express] GET /api/countries 304 in 6ms :: [{"id":2,"code":"cuba","name":"Cuba","flag":"�…
+4:13:39 PM [express] GET /api/progress/cuba 304 in 16ms :: []
+4:13:40 PM [express] GET /api/questions/cuba/1 200 in 82ms :: [{"id":1,"countryCode":"cuba","level":…
+4:13:41 PM [express] POST /api/quiz/start 200 in 8ms :: {"id":1,"userId":2,"countryCode":"cuba","lev…
+4:13:41 PM [express] POST /api/quiz/start 200 in 7ms :: {"id":1,"userId":2,"countryCode":"cuba","lev…
+4:13:47 PM [express] GET /api/health 200 in 2ms :: {"status":"ok","timestamp":"2025-08-27T16:13:47.4…
+Email server connection failed: Error: Connection timeout
+    at SMTPConnection._formatError (/app/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._onError (/app/node_modules/nodemailer/lib/smtp-connection/index.js:795:20)
+    at Timeout.<anonymous> (/app/node_modules/nodemailer/lib/smtp-connection/index.js:237:22)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  code: 'ETIMEDOUT',
+  command: 'CONN'
+}
+Host: veloz.colombiahosting.com.co Port: 465
+Make sure SMTP server is accessible from Docker containers
