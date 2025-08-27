@@ -154,7 +154,7 @@ export class DatabaseStorage implements IStorage {
 
   // Question operations
   async getQuestionsByCountryAndLevel(countryCode: string, level: number): Promise<Question[]> {
-    return await db
+    const rawQuestions = await db
       .select()
       .from(questions)
       .where(
@@ -164,6 +164,12 @@ export class DatabaseStorage implements IStorage {
           eq(questions.isActive, true)
         )
       );
+
+    // Convert options from JSON string to array for frontend compatibility
+    return rawQuestions.map(q => ({
+      ...q,
+      options: typeof q.options === 'string' ? JSON.parse(q.options) : q.options
+    }));
   }
 
   async getRandomQuestionNotUsed(countryCode: string, level: number, usedQuestionIds: number[] = []): Promise<Question | undefined> {
@@ -201,16 +207,32 @@ export class DatabaseStorage implements IStorage {
         );
       
       if (allQuestions.length === 0) return undefined;
-      return allQuestions[Math.floor(Math.random() * allQuestions.length)];
+      const randomQuestion = allQuestions[Math.floor(Math.random() * allQuestions.length)];
+      // Convert options from JSON string to array
+      return {
+        ...randomQuestion,
+        options: typeof randomQuestion.options === 'string' ? JSON.parse(randomQuestion.options) : randomQuestion.options
+      };
     }
     
     // Return random question from unused ones
-    return availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+    const randomQuestion = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+    // Convert options from JSON string to array
+    return {
+      ...randomQuestion,
+      options: typeof randomQuestion.options === 'string' ? JSON.parse(randomQuestion.options) : randomQuestion.options
+    };
   }
 
   async getQuestionById(id: number): Promise<Question | undefined> {
     const [question] = await db.select().from(questions).where(eq(questions.id, id));
-    return question;
+    if (!question) return undefined;
+    
+    // Convert options from JSON string to array
+    return {
+      ...question,
+      options: typeof question.options === 'string' ? JSON.parse(question.options) : question.options
+    };
   }
 
   async createQuestion(questionData: InsertQuestion): Promise<Question> {
