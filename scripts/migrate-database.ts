@@ -136,17 +136,39 @@ async function createTables(db: any) {
 async function updateExistingTables(db: any) {
   console.log('Updating existing tables with missing columns...');
   
+  // Force recreation of questions table with TEXT options
+  try {
+    console.log('🔄 Recreating questions table with TEXT schema...');
+    await db.execute('DROP TABLE IF EXISTS questions CASCADE');
+    await db.execute(`
+      CREATE TABLE questions (
+        id SERIAL PRIMARY KEY,
+        country_code VARCHAR(10) NOT NULL,
+        level INTEGER NOT NULL,
+        type VARCHAR(50) DEFAULT 'multiple',
+        question TEXT NOT NULL,
+        correct_answer TEXT NOT NULL,
+        explanation TEXT DEFAULT '',
+        description TEXT DEFAULT '',
+        options TEXT NOT NULL,
+        points INTEGER DEFAULT 1,
+        is_active BOOLEAN DEFAULT true,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    console.log('✓ Questions table recreated with TEXT options column');
+  } catch (e: any) {
+    console.warn('Could not recreate questions table:', e.message);
+  }
+  
   const updateQueries = [
     // Add games_played column if it doesn't exist
     `ALTER TABLE users ADD COLUMN IF NOT EXISTS games_played INTEGER DEFAULT 0`,
     // Add any other missing columns
     `ALTER TABLE countries ADD COLUMN IF NOT EXISTS primary_color VARCHAR(20) DEFAULT '#000000'`,
     `ALTER TABLE countries ADD COLUMN IF NOT EXISTS is_active BOOLEAN DEFAULT true`,
-    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS type VARCHAR(50) DEFAULT 'multiple'`,
-    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS description TEXT`,
-    `ALTER TABLE questions ADD COLUMN IF NOT EXISTS points INTEGER DEFAULT 1`,
     // Add used_question_ids column for anti-repetition system
-    `ALTER TABLE quiz_sessions ADD COLUMN IF NOT EXISTS used_question_ids JSONB DEFAULT '[]'`,
+    `ALTER TABLE quiz_sessions ADD COLUMN IF NOT EXISTS used_question_ids TEXT DEFAULT '[]'`,
   ];
   
   for (const query of updateQueries) {

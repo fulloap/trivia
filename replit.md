@@ -61,12 +61,12 @@ A cultural quiz web application that adapts to different countries and regions, 
   - Complete migration system: 66.5kb server + 16.7kb migration script
 - **Production JSONB Error Fix (August 27, 2025)**: Critical database insertion error resolved
   - Fixed "malformed array literal" error in question options
-  - Root cause: PostgreSQL JSONB incompatibility with Drizzle ORM in production
-  - Advanced debugging revealed correct data format but persistent JSONB conversion issues
-  - Final solution: Changed options column from JSONB to TEXT for maximum compatibility
-  - Schema updated: `options: text("options")` with JSON.stringify() conversion
-  - Production deployment now stable with 67.3kb server + 17.5kb migration
-  - Ensures all 3,000 questions load successfully without JSONB conversion failures
+  - Root cause: Existing production table retained JSONB structure despite schema changes
+  - Advanced debugging revealed correct data format but legacy table structure conflicts
+  - Final solution: Forced DROP/CREATE of questions table with TEXT options column
+  - Migration now includes: `DROP TABLE IF EXISTS questions CASCADE` + new TEXT schema
+  - Production deployment now stable with 67.9kb server + 18.0kb migration
+  - Guarantees all 3,000 questions load successfully with completely new table structure
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.
