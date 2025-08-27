@@ -1,7 +1,7 @@
 {
   "name": "¿De dónde eres? - Quiz Cultural",
   "short_name": "¿De dónde eres?",
-  "description": "Quiz cultural sobre expresiones y slang de países latinoamericanos",
+  "description": "Quiz cultural con miles de preguntas auténticas sobre argot, expresiones y tradiciones de países latinos. Demuestra qué tan local eres.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

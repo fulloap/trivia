@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAM_ID.org.cubacoin.trivia",
+        "paths": [
+          "/quiz/*",
+          "/rankings",
+          "/share/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAM_ID.org.cubacoin.trivia"]
+  }
+}
