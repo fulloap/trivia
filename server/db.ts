@@ -16,11 +16,14 @@ export const db = drizzle(sql, { schema });
 async function testConnection() {
   try {
     console.log('Testing database connection...');
+    console.log('Database URL configured:', process.env.DATABASE_URL ? 'Yes' : 'No');
     await sql`SELECT 1 as test`;
     console.log('Database connection successful');
   } catch (error) {
     console.error('Database connection failed:', error);
     console.error('DATABASE_URL format should be: postgres://user:password@host:port/database');
+    console.error('Current URL starts with:', process.env.DATABASE_URL?.substring(0, 30) + '...');
+    console.error('Make sure the database URL is publicly accessible from Docker containers');
   }
 }
 

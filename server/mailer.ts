@@ -19,11 +19,14 @@ async function testEmailConnection() {
   }
   
   try {
+    console.log('Testing email connection to:', process.env.EMAIL_HOST);
     await transporter.verify();
     console.log('Email server connection successful');
     return true;
   } catch (error) {
     console.error('Email server connection failed:', error);
+    console.error('Host:', process.env.EMAIL_HOST, 'Port:', process.env.EMAIL_PORT);
+    console.error('Make sure SMTP server is accessible from Docker containers');
     return false;
   }
 }
