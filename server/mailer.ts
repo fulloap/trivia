@@ -1,15 +1,26 @@
 import nodemailer from 'nodemailer';
 
 // Email configuration using environment variables
-const transporter = nodemailer.createTransport({
+const emailConfig: any = {
   host: process.env.EMAIL_HOST || 'veloz.colombiahosting.com.co',
   port: parseInt(process.env.EMAIL_PORT || '465'),
-  secure: true, // SSL
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
-});
+};
+
+// Set secure based on port (465 = SSL, 587 = STARTTLS)
+if (emailConfig.port === 465) {
+  emailConfig.secure = true; // SSL
+} else if (emailConfig.port === 587) {
+  emailConfig.secure = false; // STARTTLS
+  emailConfig.requireTLS = true;
+} else {
+  emailConfig.secure = true; // Default to SSL
+}
+
+const transporter = nodemailer.createTransport(emailConfig);
 
 // Test email connection
 async function testEmailConnection() {
