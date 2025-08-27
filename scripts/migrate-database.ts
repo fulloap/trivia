@@ -1,5 +1,5 @@
-import { neon } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-http';
+import postgres from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres-js';
 import * as schema from '../shared/schema.js';
 import fs from 'fs';
 import path from 'path';
@@ -7,7 +7,8 @@ import path from 'path';
 // Use the same database for source and target - your PostgreSQL database
 const DATABASE_URL = process.env.DATABASE_URL || 'postgres://postgres:hIJWL0kFomqH24jZ17CmV1OfacXyHhnd4idNwY7tyEhi2yWr4eXDtvGAnZlq2N9A@qcggssww444k4wc48kww8844:5432/postgres';
 
-const db = drizzle(neon(DATABASE_URL), { schema });
+const client = postgres(DATABASE_URL);
+const db = drizzle(client, { schema });
 
 async function checkTableExists(db: any, tableName: string): Promise<boolean> {
   try {

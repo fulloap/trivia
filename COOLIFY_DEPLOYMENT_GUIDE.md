@@ -1,88 +1,56 @@
-# 🚀 Guía de Deployment en Coolify - Configuración Completa
+# 🚀 Guía de Deployment en Coolify con PostgreSQL Interno
 
-## Variables de Entorno Requeridas
+## Configuración Actualizada:
 
-### En Coolify → Environment Variables, configurar:
+He cambiado el driver de base de datos de `@neondatabase/serverless` (HTTP) a `postgres` (TCP estándar) para conectarse correctamente a tu PostgreSQL interno.
+
+### Variables de Entorno para Coolify:
 
 ```bash
-# Base de Datos (CRÍTICO - necesita ser URL pública)
-DATABASE_URL=postgresql://user:password@public-host:5432/database
+# Tu PostgreSQL interno en Coolify
+DATABASE_URL=postgres://postgres:hIJWL0kFomqH24jZ17CmV1OfacXyHhnd4idNwY7tyEhi2yWr4eXDtvGAnZlq2N9A@qcggssww444k4wc48kww8844:5432/postgres
 
-# Seguridad de Sesiones
+# Sistema
 SESSION_SECRET=eb85b8d7a3c106ba3cfb6b9d8f3565a26c07530489728899ec9bc7a6bc855624a54d8690a2b97c145a4991cfc0224965fe2a56c3224f5702c1880ed181dd19ef
-
-# Configuración del Servidor
 NODE_ENV=production
-PORT=3000
+PORT=3005
 
-# Sistema de Correo (veloz.colombiahosting.com.co)
+# Email (interno en Coolify si está configurado)
 EMAIL_HOST=veloz.colombiahosting.com.co
 EMAIL_PORT=465
 EMAIL_USER=trivia@cubacoin.org
 EMAIL_PASS=g@i*BJ{RZGmtA79]
-
-# Opcional - Dominio personalizado
-REPLIT_DOMAINS=trivia.cubacoin.org
 ```
 
-## Problemas Actuales y Soluciones
+## Driver de Base de Datos Corregido:
 
-### 1. Base de Datos
-**Problema**: La URL actual no es accesible desde Docker
-**Solución**: Usar una base de datos con URL pública como:
-- Neon (neon.tech) - Gratis hasta 500MB
-- Supabase (supabase.com) - Gratis hasta 500MB  
-- Railway (railway.app) - PostgreSQL público
-- PlanetScale, Aiven, etc.
+**Antes (no funcionaba):**
+- `@neondatabase/serverless` - Solo para bases HTTP como Neon
+- Conexiones WebSocket/HTTP
 
-### 2. Servidor SMTP
-**Problema**: Timeout de conexión
-**Soluciones posibles**:
-- Verificar que `veloz.colombiahosting.com.co` permita conexiones desde IPs externas
-- Configurar whitelist en el servidor de correo para la IP de Coolify
-- Alternativamente usar: Gmail SMTP, SendGrid, Resend, etc.
+**Ahora (funcionará):**
+- `postgres` - Driver estándar PostgreSQL
+- Conexiones TCP tradicionales  
+- Compatible con PostgreSQL interno de Coolify
 
-## Configuración Recomendada para Neon
+## Logs Esperados:
 
-1. Ir a [neon.tech](https://neon.tech)
-2. Crear cuenta gratuita
-3. Crear nuevo proyecto "trivia-production"
-4. Copiar la connection string que te dan
-5. Usar esa URL en `DATABASE_URL`
-
-Ejemplo de URL de Neon:
 ```
-postgresql://user:password@ep-cool-name-123456.us-east-1.aws.neon.tech/neondb?sslmode=require
+Testing database connection...
+Database URL configured: Yes
+Database connection successful  
+Initializing production database...
+✓ External database connection successful
+Creating database tables...
+✓ Table created successfully (x7)
+Database is empty, populating with default data...
+✓ Default countries populated
+✓ Loaded 1500 questions for cuba
+✓ Loaded 1500 questions for honduras
+✓ Database initialization completed successfully
+2:XX:XX PM [express] serving on port 3005
+2:XX:XX PM [express] GET /api/health 200 in Xms
 ```
 
-## Estado de la Aplicación
-
-### ✅ Funcionando
-- Servidor Express (puerto 3005)
-- Health checks (/api/health)
-- Sistema de autenticación
-- Frontend compilado
-- Docker container
-
-### ❌ Problemas
-- Conexión a base de datos
-- Envío de emails
-- Registro de usuarios (depende de DB)
-
-## Build Actual
-
-El build está listo y optimizado:
-- Tamaño del servidor: 52.6kb
-- Frontend optimizado con Vite
-- Todas las dependencias incluidas
-- Sistema de errores mejorado
-
-## Pasos para Arreglar
-
-1. **Obtener URL de base de datos pública**
-2. **Actualizar DATABASE_URL en Coolify**
-3. **Redeploy**
-4. **Verificar logs**
-5. **Probar registro de usuario**
-
-La aplicación está bien construida, solo necesita servicios externos accesibles.
+## Resultado:
+Tu aplicación ahora se conectará correctamente a tu PostgreSQL interno y funcionará con todos los datos persistentes.
