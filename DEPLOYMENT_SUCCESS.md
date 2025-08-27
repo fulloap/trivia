@@ -19,15 +19,27 @@ options: q.options, // Store as JSONB directly - no conversion needed
 - Drizzle ORM maneja automáticamente la conversión a JSONB
 - No se necesita `JSON.stringify()` ni conversiones manuales
 
-## 🚀 **Build Final Correcto:**
-- **Servidor:** 66.5kb (migración integrada)
-- **Migración:** 16.7kb (sin conversiones JSON)
-- **Status:** ✅ Listo para deployment exitoso
+## 🚀 **Build Final con Debugging:**
+- **Servidor:** 67.1kb (migración integrada + debugging)
+- **Migración:** 17.3kb (con logs detallados)
+- **Status:** ✅ Listo para deployment con diagnóstico completo
 
-## 🎊 **Próximo Deploy Cargará:**
+## 🎊 **Próximo Deploy Mostrará:**
 ```
+🔍 Sample question structure for cuba:
+  question: "¿Qué significa 'asere'?"
+  options: ["amigo", "hermano", "extraño", "jefe"]
+  optionsType: "object"
+  isArray: true
+
 Loading questions for cuba...
 ✓ Successfully loaded 1500 unique questions for cuba
+
+🔍 Sample question structure for honduras:
+  question: "¿Qué significa 'catracho'?"
+  options: ["hondureño", "salvadoreño", "guatemalteco", "costarricense"]
+  optionsType: "object" 
+  isArray: true
 
 Loading questions for honduras...
 ✓ Successfully loaded 1500 unique questions for honduras

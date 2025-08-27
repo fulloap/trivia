@@ -283,18 +283,30 @@ async function populateDefaultQuestions() {
         // Validate difficulty distribution
         const levelCounts = validateDifficultyDistribution(uniqueQuestions, countryCode);
         
-        const questions = uniqueQuestions.map((q: any) => ({
-          countryCode,
-          level: q.level,
-          type: q.type || 'multiple',
-          question: q.question,
-          correctAnswer: q.correct_answer || q.correctAnswer,
-          options: q.options, // Store as JSONB directly - no conversion needed
-          explanation: q.explanation || '',
-          description: q.description || '',
-          points: 1,
-          isActive: true
-        }));
+        const questions = uniqueQuestions.map((q: any, index: number) => {
+          // Debug first question to understand structure
+          if (index === 0) {
+            console.log(`🔍 Sample question structure for ${countryCode}:`, {
+              question: q.question,
+              options: q.options,
+              optionsType: typeof q.options,
+              isArray: Array.isArray(q.options)
+            });
+          }
+          
+          return {
+            countryCode,
+            level: q.level,
+            type: q.type || 'multiple',
+            question: q.question,
+            correctAnswer: q.correct_answer || q.correctAnswer,
+            options: q.options, // Store as JSONB directly - no conversion needed
+            explanation: q.explanation || '',
+            description: q.description || '',
+            points: 1,
+            isActive: true
+          };
+        });
         
         // Check if questions already exist for this country
         const existingCount = await db
@@ -321,6 +333,14 @@ async function populateDefaultQuestions() {
             console.log(`✓ Batch ${Math.floor(i/batchSize) + 1}: Inserted ${batch.length} questions for ${countryCode}`);
           } catch (e: any) {
             console.warn(`Warning: Batch ${Math.floor(i/batchSize) + 1} failed for ${countryCode}:`, e.message);
+            // Debug failed batch
+            if (batch.length > 0) {
+              console.log(`🔍 Failed batch sample:`, {
+                question: batch[0].question,
+                options: batch[0].options,
+                optionsType: typeof batch[0].options
+              });
+            }
           }
         }
         
