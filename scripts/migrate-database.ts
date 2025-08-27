@@ -289,7 +289,7 @@ async function populateDefaultQuestions() {
           type: q.type || 'multiple',
           question: q.question,
           correctAnswer: q.correct_answer || q.correctAnswer,
-          options: JSON.stringify(q.options),
+          options: Array.isArray(q.options) ? q.options : JSON.parse(q.options),
           explanation: q.explanation || '',
           description: q.description || '',
           points: 1,
