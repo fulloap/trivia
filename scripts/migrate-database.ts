@@ -4,19 +4,10 @@ import * as schema from '../shared/schema.js';
 import fs from 'fs';
 import path from 'path';
 
-// Source database (current Replit)
-const SOURCE_URL = 'postgres://postgres:hIJWL0kFomqH24jZ17CmV1OfacXyHhnd4idNwY7tyEhi2yWr4eXDtvGAnZlq2N9A@qcggssww444k4wc48kww8844:5432/postgres';
+// Use the same database for source and target - your PostgreSQL database
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://postgres:hIJWL0kFomqH24jZ17CmV1OfacXyHhnd4idNwY7tyEhi2yWr4eXDtvGAnZlq2N9A@qcggssww444k4wc48kww8844:5432/postgres';
 
-// Target database (production)
-const TARGET_URL = process.env.DATABASE_URL;
-
-if (!TARGET_URL) {
-  console.error('DATABASE_URL environment variable is required');
-  process.exit(1);
-}
-
-const sourceDb = drizzle(neon(SOURCE_URL), { schema });
-const targetDb = drizzle(neon(TARGET_URL), { schema });
+const db = drizzle(neon(DATABASE_URL), { schema });
 
 async function checkTableExists(db: any, tableName: string): Promise<boolean> {
   try {
@@ -139,142 +130,43 @@ async function createTables(db: any) {
 }
 
 async function migrateData() {
-  console.log('Starting database migration...');
+  console.log('Starting database initialization...');
   
   try {
-    // Check if target database is accessible
-    await targetDb.execute('SELECT 1');
-    console.log('✓ Target database connection successful');
+    // Check if database is accessible
+    await db.execute('SELECT 1');
+    console.log('✓ Database connection successful');
     
     // Check if tables exist, if not create them
-    const tablesExist = await checkTableExists(targetDb, 'users');
+    const tablesExist = await checkTableExists(db, 'users');
     if (!tablesExist) {
-      await createTables(targetDb);
+      console.log('Creating database tables...');
+      await createTables(db);
     }
     
-    // Check if source database is accessible
-    try {
-      await sourceDb.execute('SELECT 1');
-      console.log('✓ Source database connection successful');
-    } catch (sourceError) {
-      console.warn('Source database not accessible, will populate with default data');
+    // Check if we have data already
+    const existingUsers = await db.select().from(schema.users).limit(1);
+    if (existingUsers.length === 0) {
+      console.log('Database is empty, populating with default data...');
       await populateDefaultData();
-      return;
-    }
-    
-    // Migrate data from source to target
-    await migrateUsers();
-    await migrateCountries();
-    await migrateQuestions();
-    await migrateUserProgress();
-    await migrateQuizSessions();
-    await migrateRankings();
-    
-    console.log('✓ Database migration completed successfully');
-    
-  } catch (error) {
-    console.error('Migration failed:', error);
-    // If migration fails, populate with default data
-    await populateDefaultData();
-  }
-}
-
-async function migrateUsers() {
-  console.log('Migrating users...');
-  try {
-    const users = await sourceDb.select().from(schema.users);
-    if (users.length > 0) {
-      // Clear existing data
-      await targetDb.delete(schema.users);
-      // Insert new data
-      await targetDb.insert(schema.users).values(users);
-      console.log(`✓ Migrated ${users.length} users`);
-    }
-  } catch (error: any) {
-    console.warn('Could not migrate users:', error.message);
-  }
-}
-
-async function migrateCountries() {
-  console.log('Migrating countries...');
-  try {
-    const countries = await sourceDb.select().from(schema.countries);
-    if (countries.length > 0) {
-      await targetDb.delete(schema.countries);
-      await targetDb.insert(schema.countries).values(countries);
-      console.log(`✓ Migrated ${countries.length} countries`);
     } else {
-      await populateDefaultCountries();
+      console.log('✓ Database already has data, skipping initialization');
     }
+    
+    console.log('✓ Database initialization completed successfully');
+    
   } catch (error) {
-    console.warn('Could not migrate countries, using defaults');
-    await populateDefaultCountries();
+    console.error('Database initialization failed:', error);
+    // Still try to populate with default data
+    try {
+      await populateDefaultData();
+    } catch (fallbackError) {
+      console.error('Failed to populate default data:', fallbackError);
+    }
   }
 }
 
-async function migrateQuestions() {
-  console.log('Migrating questions...');
-  try {
-    const questions = await sourceDb.select().from(schema.questions);
-    if (questions.length > 0) {
-      await targetDb.delete(schema.questions);
-      // Insert in batches to avoid timeout
-      const batchSize = 100;
-      for (let i = 0; i < questions.length; i += batchSize) {
-        const batch = questions.slice(i, i + batchSize);
-        await targetDb.insert(schema.questions).values(batch);
-      }
-      console.log(`✓ Migrated ${questions.length} questions`);
-    } else {
-      await populateDefaultQuestions();
-    }
-  } catch (error) {
-    console.warn('Could not migrate questions, using file data');
-    await populateDefaultQuestions();
-  }
-}
-
-async function migrateUserProgress() {
-  console.log('Migrating user progress...');
-  try {
-    const progress = await sourceDb.select().from(schema.userProgress);
-    if (progress.length > 0) {
-      await targetDb.delete(schema.userProgress);
-      await targetDb.insert(schema.userProgress).values(progress);
-      console.log(`✓ Migrated ${progress.length} progress records`);
-    }
-  } catch (error: any) {
-    console.warn('Could not migrate user progress:', error.message);
-  }
-}
-
-async function migrateQuizSessions() {
-  console.log('Migrating quiz sessions...');
-  try {
-    const sessions = await sourceDb.select().from(schema.quizSessions);
-    if (sessions.length > 0) {
-      await targetDb.delete(schema.quizSessions);
-      await targetDb.insert(schema.quizSessions).values(sessions);
-      console.log(`✓ Migrated ${sessions.length} quiz sessions`);
-    }
-  } catch (error: any) {
-    console.warn('Could not migrate quiz sessions:', error.message);
-  }
-}
-
-async function migrateRankings() {
-  console.log('Migrating rankings...');
-  try {
-    const rankings = await sourceDb.select().from(schema.rankings);
-    if (rankings.length > 0) {
-      await targetDb.delete(schema.rankings);
-      await targetDb.insert(schema.rankings).values(rankings);
-      console.log(`✓ Migrated ${rankings.length} rankings`);
-    }
-  } catch (error: any) {
-    console.warn('Could not migrate rankings:', error.message);
-  }
-}
+// Simplified data population functions since we're using the same database
 
 async function populateDefaultData() {
   console.log('Populating default data...');
@@ -301,7 +193,7 @@ async function populateDefaultCountries() {
   ];
   
   try {
-    await targetDb.insert(schema.countries).values(defaultCountries).onConflictDoNothing();
+    await db.insert(schema.countries).values(defaultCountries).onConflictDoNothing();
     console.log('✓ Default countries populated');
   } catch (error: any) {
     console.warn('Could not populate default countries:', error.message);
@@ -333,7 +225,7 @@ async function populateDefaultQuestions() {
           isActive: true
         }));
         
-        await targetDb.insert(schema.questions).values(questions).onConflictDoNothing();
+        await db.insert(schema.questions).values(questions).onConflictDoNothing();
         console.log(`✓ Loaded ${questions.length} questions for ${countryCode}`);
       }
     } catch (error: any) {
