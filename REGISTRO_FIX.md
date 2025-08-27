@@ -50,5 +50,11 @@ El registro de usuarios estaba fallando en producción con errores de conexión 
 3. Los errores ahora son informativos para el usuario sin exponer detalles técnicos
 4. La base de datos se probará automáticamente al iniciar el servidor
 
+## Sistema de Correo Integrado ✅
+- **Email de bienvenida**: Se envía automáticamente al registrarse
+- **Notificación de referidos**: Email cuando ganas ayudas por referir amigos  
+- **Servidor SMTP**: Configurado con trivia@cubacoin.org
+- **Plantillas HTML**: Emails profesionales con diseño responsivo
+
 ## Próximo Paso
-Redeploy en Coolify con las correcciones aplicadas. El sistema de registro ahora manejará correctamente todos los casos de error y proporcionará feedback claro al usuario.
+Redeploy en Coolify con las correcciones aplicadas. El sistema de registro ahora manejará correctamente todos los casos de error, proporcionará feedback claro al usuario, y enviará emails de confirmación y notificaciones.

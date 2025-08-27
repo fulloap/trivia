@@ -5,6 +5,7 @@ import { insertQuestionSchema, insertCountrySchema, usernameSchema } from "@shar
 import { z } from "zod";
 import { nanoid } from "nanoid";
 import bcrypt from "bcryptjs";
+import { sendWelcomeEmail, sendReferralBonusEmail } from "./mailer";
 
 // Extend session type
 declare module 'express-session' {
@@ -87,6 +88,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Set session
       req.session.userId = user.id;
       req.session.sessionId = sessionId;
+      
+      // Send welcome email (non-blocking)
+      sendWelcomeEmail(email, validatedUsername, user.referralCode).catch(err => {
+        console.error('Failed to send welcome email:', err);
+      });
       
       res.json({ user });
     } catch (error) {
@@ -665,8 +671,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // If user has completed 3 correct answers, give bonus help to referrer
       if (totalCorrectAnswers >= 3) {
-        await storage.addBonusHelp(user.referredBy);
-        console.log(`Bonus help awarded to user ${user.referredBy} for referral ${userId}`);
+        const referrer = await storage.getUserById(user.referredBy);
+        if (referrer) {
+          await storage.addBonusHelp(user.referredBy);
+          console.log(`Bonus help awarded to user ${user.referredBy} for referral ${userId}`);
+          
+          // Send referral bonus email (non-blocking)
+          sendReferralBonusEmail(referrer.email, referrer.username, user.username).catch(err => {
+            console.error('Failed to send referral bonus email:', err);
+          });
+        }
       }
     } catch (error) {
       console.error("Error checking referral progress:", error);

@@ -24,5 +24,15 @@ async function testConnection() {
   }
 }
 
-// Call test connection
+// Call test connection and initialize email system
 testConnection();
+
+// Initialize email system
+(async () => {
+  try {
+    const { initializeEmailSystem } = await import('./mailer.js');
+    await initializeEmailSystem();
+  } catch (error) {
+    console.error('Email system initialization failed:', error);
+  }
+})();
