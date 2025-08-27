@@ -3,6 +3,21 @@ import session from "express-session";
 import connectPg from "connect-pg-simple";
 import { registerRoutes } from "./routes";
 
+// Production migration function
+async function runProductionMigration() {
+  if (process.env.NODE_ENV === 'production') {
+    console.log('🚀 Running production database migration...');
+    try {
+      // Dynamic import to avoid dependency issues
+      const { migrateData } = await import('../scripts/migrate-database.js');
+      await migrateData();
+      console.log('✅ Production migration completed');
+    } catch (error: any) {
+      console.error('⚠️ Migration error (continuing anyway):', error.message);
+    }
+  }
+}
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -73,6 +88,9 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Run production migration first if needed
+  await runProductionMigration();
+  
   // Load environment-specific modules
   let serveStatic: any;
   let log: any;

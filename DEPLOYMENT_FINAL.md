@@ -2,24 +2,29 @@
 
 ## ✅ Sistema de Migración Automática en Docker
 
-### 🔧 **Dockerfile Optimizado:**
-```dockerfile
-# Nuevo CMD que ejecuta migración automática antes del inicio
-CMD ["node", "scripts/init-production.js"]
+### 🔧 **Sistema Integrado en Servidor:**
+```typescript
+// Migración automática integrada en server/index.ts
+async function runProductionMigration() {
+  if (process.env.NODE_ENV === 'production') {
+    await migrateData(); // Ejecuta automáticamente
+  }
+}
 ```
 
 ### 📋 **Proceso de Deployment:**
-1. **Build Stage:** Compila aplicación (65.9kb server + 16.7kb migration)
-2. **Container Start:** Ejecuta `init-production.js` automáticamente
-3. **Database Migration:** Llena la BD con todas las 3,000 preguntas
-4. **Application Start:** Inicia el servidor principal
+1. **Build Stage:** Compila aplicación (66.5kb server + 16.7kb migration)
+2. **Container Start:** Ejecuta `node dist/server/index.js`
+3. **Auto Migration:** Server ejecuta migración automáticamente
+4. **Database Population:** Llena la BD con todas las 3,000 preguntas
+5. **Application Ready:** Servidor arranca con datos completos
 
-### 🎯 **Scripts de Producción:**
+### 🎯 **Sistema Simplificado:**
 
-#### `scripts/init-production.js`:
-- **Función:** Ejecutar migración de BD antes del inicio
-- **Garantía:** Solo se ejecuta una vez por deployment
-- **Fallback:** Si migración falla, inicia la app de todos modos
+#### **Integración en Server:**
+- **Función:** Migración automática antes de iniciar rutas
+- **Activación:** Solo en NODE_ENV=production
+- **Fallback:** Si migración falla, app continúa funcionando
 
 #### `scripts/migrate-database.ts` (Mejorado):
 - **Anti-duplicados:** Filtra preguntas repetidas por texto + nivel
@@ -29,7 +34,7 @@ CMD ["node", "scripts/init-production.js"]
 
 ### 📊 **Logs Esperados en Deployment:**
 ```
-🚀 Starting production initialization...
+🚀 Running production database migration...
 🚀 Starting production database migration...
 ✓ PostgreSQL connection successful
 Tables exist, checking for missing columns...
@@ -49,8 +54,8 @@ Loading questions for honduras...
 
 ✅ Final question count: 3000 total questions loaded
 ✅ Database migration completed successfully
-✅ Production database initialized successfully
-🌟 Starting main application...
+✅ Production migration completed
+serving on port 3005
 ```
 
 ## 🗄️ **Base de Datos Garantizada:**
@@ -74,7 +79,7 @@ Loading questions for honduras...
 ## 🎊 **Estado Final:**
 
 ### **Build Outputs:**
-- ✅ **Servidor:** 65.9kb (incluye nuevas optimizaciones)
+- ✅ **Servidor:** 66.5kb (incluye migración integrada)
 - ✅ **Migración:** 16.7kb (sistema completo con anti-duplicados)
 - ✅ **Assets:** 1.96MB (logo, banners, manifest PWA, sitemap)
 
@@ -100,8 +105,9 @@ El sistema está completamente optimizado para deployment en Coolify:
 
 **Comando de deployment:** 
 ```bash
-# El Dockerfile se ejecuta automáticamente
-# La migración llena la BD solo una vez
+# El Dockerfile ejecuta: node dist/server/index.js
+# El servidor detecta NODE_ENV=production
+# Ejecuta migración automáticamente antes de arrancar
 # La aplicación inicia con datos completos
 ```
 

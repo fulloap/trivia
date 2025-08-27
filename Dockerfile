@@ -47,8 +47,6 @@ COPY --from=deps --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/shared ./shared
 COPY --from=builder --chown=nextjs:nodejs /app/data ./data
-COPY --from=builder --chown=nextjs:nodejs /app/scripts/init-production.js ./scripts/
-
 # Create directories for persistent data
 RUN mkdir -p /app/attached_assets && chown -R nextjs:nodejs /app/attached_assets
 
@@ -60,5 +58,5 @@ EXPOSE 3005
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:3005/api/health || exit 1
 
-# Run database migration and then start the application
-CMD ["node", "scripts/init-production.js"]
+# Start the application with built-in migration
+CMD ["node", "dist/server/index.js"]
