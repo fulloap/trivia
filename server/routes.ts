@@ -50,14 +50,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedUsername = usernameSchema.parse(username);
       
       // Check if username or email are available
-      const isUsernameAvailable = await storage.isUsernameAvailable(validatedUsername);
-      if (!isUsernameAvailable) {
-        return res.status(409).json({ message: "Este nombre de usuario ya está en uso" });
-      }
+      try {
+        const isUsernameAvailable = await storage.isUsernameAvailable(validatedUsername);
+        if (!isUsernameAvailable) {
+          return res.status(409).json({ message: "Este nombre de usuario ya está en uso" });
+        }
 
-      const isEmailAvailable = await storage.isEmailAvailable(email);
-      if (!isEmailAvailable) {
-        return res.status(409).json({ message: "Este correo electrónico ya está en uso" });
+        const isEmailAvailable = await storage.isEmailAvailable(email);
+        if (!isEmailAvailable) {
+          return res.status(409).json({ message: "Este correo electrónico ya está en uso" });
+        }
+      } catch (dbError) {
+        console.error("Database error during validation:", dbError);
+        return res.status(503).json({ message: "Servicio temporalmente no disponible. Intenta más tarde." });
       }
 
       // Hash password
@@ -76,14 +81,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Create user
       const sessionId = nanoid();
-      const user = await storage.createUser({
-        username: validatedUsername,
-        email,
-        password: hashedPassword,
-        sessionId,
-        referralCode: 'REF' + nanoid(6).toUpperCase(),
-        referredBy
-      });
+      let user;
+      try {
+        user = await storage.createUser({
+          username: validatedUsername,
+          email,
+          password: hashedPassword,
+          sessionId,
+          referralCode: 'REF' + nanoid(6).toUpperCase(),
+          referredBy
+        });
+      } catch (dbError) {
+        console.error("Database error during user creation:", dbError);
+        return res.status(503).json({ message: "Error al crear la cuenta. Intenta más tarde." });
+      }
       
       // Set session
       req.session.userId = user.id;
