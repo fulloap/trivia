@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-142819936926
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+✓ Table created successfully
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "user_progress" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+✓ Table created successfully
+✓ Table created successfully
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "quiz_sessions" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+✓ Table created successfully
+✓ Table created successfully
+✓ Table created successfully
+External database not accessible, using local file-based storage
+This is normal in Coolify environment due to firewall restrictions
+✓ Initializing local file-based storage for production
+✓ Questions loaded from JSON files
+✓ Countries configured: Cuba, Honduras
+✓ Local storage ready for user data
+Setting up in-memory storage for production...
+✓ Local storage initialized with questions from JSON files
+✓ Ready to serve quiz application
+External database not accessible, using local file-based storage
+This is normal in Coolify environment due to firewall restrictions
+✓ Initializing local file-based storage for production
+✓ Questions loaded from JSON files
+✓ Countries configured: Cuba, Honduras
+✓ Local storage ready for user data
+2:29:49 PM [express] GET /api/health 200 in 14ms :: {"status":"ok","timestamp":"2025-08-27T14:29:49.…
+2:30:19 PM [express] GET /api/health 200 in 1ms :: {"status":"ok","timestamp":"2025-08-27T14:30:19.8…
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {
+  severity_local: 'ERROR',
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(questions, 2200) already exists.',
+  schema_name: 'pg_catalog',
+  table_name: 'pg_type',
+  constraint_name: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+Error creating table: PostgresError: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at ErrorResponse (file:///app/node_modules/postgres/src/connection.js:794:26)
+    at handle (file:///app/node_modules/postgres/src/connection.js:480:6)
+    at Socket.data (file:///app/node_modules/postgres/src/connection.js:315:9)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {
+  severity_local: 'ERROR',
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(rankings, 2200) already exists.',
+  schema_name: 'pg_catalog',
+  table_name: 'pg_type',
+  constraint_name: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+Error creating table: PostgresError: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+    at ErrorResponse (file:///app/node_modules/postgres/src/connection.js:794:26)
+    at handle (file:///app/node_modules/postgres/src/connection.js:480:6)
+    at Socket.data (file:///app/node_modules/postgres/src/connection.js:315:9)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:191:23) {
+  severity_local: 'ERROR',
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (typname, typnamespace)=(sessions, 2200) already exists.',
+  schema_name: 'pg_catalog',
+  table_name: 'pg_type',
+  constraint_name: 'pg_type_typname_nsp_index',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+Database initialization failed, using in-memory storage: External database not accessible - using local storage mode
+Error: External database not accessible - using local storage mode
+    at migrateData (file:///app/dist/server/index.js:492:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

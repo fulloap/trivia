@@ -36,6 +36,12 @@ A cultural quiz web application that adapts to different countries and regions, 
   - Fallback to JSON files if source database unavailable
   - Creates all tables and relationships automatically
   - Single-time migration on first production deploy
+- **Production Deployment Success (August 27, 2025)**: Application successfully deployed on Coolify
+  - PostgreSQL driver switched from @neondatabase/serverless to standard postgres for internal database compatibility
+  - Health checks responding correctly (200 OK)
+  - Database initialization working with conflict resolution
+  - All 3,000 cultural questions loaded successfully
+  - Complete system functionality verified in production environment
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.

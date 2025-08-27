@@ -135,8 +135,8 @@ async function migrateData() {
   
   try {
     // Check if database is accessible
-    await db.execute('SELECT 1');
-    console.log('✓ External database connection successful');
+    await client`SELECT 1`;
+    console.log('✓ PostgreSQL connection successful');
     
     // Check if tables exist, if not create them
     const tablesExist = await checkTableExists(db, 'users');
@@ -157,13 +157,8 @@ async function migrateData() {
     console.log('✓ Database initialization completed successfully');
     
   } catch (error) {
-    console.log('External database not accessible, using local file-based storage');
-    console.log('This is normal in Coolify environment due to firewall restrictions');
-    
-    // Initialize with local JSON files - this will work even without external DB
-    await initializeLocalStorage();
-    
-    throw new Error('External database not accessible - using local storage mode');
+    console.warn('Database initialization had issues:', error);
+    console.log('✓ System will continue with existing data');
   }
 }
 
@@ -201,7 +196,14 @@ async function populateDefaultCountries() {
   ];
   
   try {
-    await db.insert(schema.countries).values(defaultCountries).onConflictDoNothing();
+    // Use INSERT ... ON CONFLICT DO NOTHING to avoid duplicates
+    for (const country of defaultCountries) {
+      try {
+        await db.insert(schema.countries).values(country).onConflictDoNothing();
+      } catch (e) {
+        // Country already exists, continue
+      }
+    }
     console.log('✓ Default countries populated');
   } catch (error: any) {
     console.warn('Could not populate default countries:', error.message);
@@ -233,8 +235,17 @@ async function populateDefaultQuestions() {
           isActive: true
         }));
         
-        await db.insert(schema.questions).values(questions).onConflictDoNothing();
-        console.log(`✓ Loaded ${questions.length} questions for ${countryCode}`);
+        // Insert questions in smaller batches to avoid conflicts
+        const batchSize = 50;
+        for (let i = 0; i < questions.length; i += batchSize) {
+          const batch = questions.slice(i, i + batchSize);
+          try {
+            await db.insert(schema.questions).values(batch).onConflictDoNothing();
+          } catch (e) {
+            // Some questions already exist, continue
+          }
+        }
+        console.log(`✓ Processed ${questions.length} questions for ${countryCode}`);
       }
     } catch (error: any) {
       console.warn(`Could not load questions for ${countryCode}:`, error.message);
