@@ -9,8 +9,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  * Separated from vite.ts to avoid bundling vite dependencies
  */
 export function serveStatic(app: express.Express) {
-  // Serve static files from dist/public
-  const publicPath = path.resolve(__dirname, "public");
+  // Serve static files from dist/public (corrected path)
+  const publicPath = path.resolve(process.cwd(), "dist/public");
   app.use(express.static(publicPath));
 
   // Catch-all handler for SPA routing

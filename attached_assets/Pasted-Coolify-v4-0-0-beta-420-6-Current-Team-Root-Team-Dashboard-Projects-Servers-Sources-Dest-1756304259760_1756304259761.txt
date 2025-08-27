@@ -1,0 +1,100 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-141539611170
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+Testing database connection...
+Database URL configured: Yes
+Checking database migration...
+Initializing email system...
+Testing email connection to: veloz.colombiahosting.com.co
+2:16:59 PM [express] serving on port 3005
+2:17:03 PM [express] GET /api/health 404 in 10ms
+Database migration failed: ReferenceError: module is not defined
+    at scripts/migrate-database.ts (file:///app/dist/server/index.js:568:28)
+    at __init (file:///app/dist/server/index.js:10:56)
+    at file:///app/dist/server/index.js:655:81
+    at async file:///app/dist/server/index.js:655:45
+Database connection failed: NeonDbError: Error connecting to database: fetch failed
+    at execute (file:///app/node_modules/@neondatabase/serverless/index.mjs:1549:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async testConnection (file:///app/dist/server/index.js:633:5) {
+  severity: undefined,
+  code: undefined,
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: undefined,
+  line: undefined,
+  routine: undefined,
+  sourceError: TypeError: fetch failed
+      at node:internal/deps/undici/undici:13510:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async execute (file:///app/node_modules/@neondatabase/serverless/index.mjs:1548:15)
+      at async testConnection (file:///app/dist/server/index.js:633:5) {
+    [cause]: AggregateError [ECONNREFUSED]: 
+        at internalConnectMultiple (node:net:1122:18)
+        at afterConnectMultiple (node:net:1689:7) {
+      code: 'ECONNREFUSED',
+      [errors]: [Array]
+    }
+  }
+}
+DATABASE_URL format should be: postgres://user:password@host:port/database
+Current URL starts with: postgres://postgres:hIJWL0kFom...
+Make sure the database URL is publicly accessible from Docker containers
+Error: ENOENT: no such file or directory, stat '/app/dist/server/public/index.html'

@@ -44,11 +44,16 @@ testConnection();
 if (process.env.NODE_ENV === 'production') {
   (async () => {
     try {
-      console.log('Checking database migration...');
-      const { migrateData } = await import('../scripts/migrate-database.js');
-      await migrateData();
+      console.log('Checking database initialization...');
+      // Only initialize if database is accessible
+      if (process.env.DATABASE_URL && !process.env.DATABASE_URL.includes('qcggssww444k4wc48kww8844')) {
+        const { migrateData } = await import('../scripts/migrate-database.js');
+        await migrateData();
+      } else {
+        console.log('Using fallback database configuration - skipping remote initialization');
+      }
     } catch (error) {
-      console.error('Database migration failed:', error);
+      console.error('Database initialization failed:', error);
     }
   })();
 }

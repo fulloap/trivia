@@ -235,7 +235,7 @@ async function populateDefaultQuestions() {
 }
 
 // Run migration
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   migrateData().catch(console.error);
 }
 
