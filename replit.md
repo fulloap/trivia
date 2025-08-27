@@ -29,6 +29,13 @@ A cultural quiz web application that adapts to different countries and regions, 
   - Referral bonus notifications when friends complete 3 questions
   - SMTP server configured with trivia@cubacoin.org
   - Non-blocking email sending with error handling and logging
+- **Automatic Database Migration System (August 27, 2025)**: Complete data migration for production deployment
+  - Automatically detects if production database is empty and migrates all data from development
+  - Migrates users, countries, questions, progress, sessions, and rankings
+  - Source: Replit database (postgres://postgres:hIJWL0kFom...)
+  - Fallback to JSON files if source database unavailable
+  - Creates all tables and relationships automatically
+  - Single-time migration on first production deploy
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.

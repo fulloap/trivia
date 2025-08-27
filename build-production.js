@@ -11,7 +11,7 @@ execSync('npx vite build', { stdio: 'inherit' });
 
 // Step 2: Build server with esbuild, excluding vite modules
 console.log('⚙️ Building server...');
-execSync('npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist --external:vite --external:@vitejs/* --external:"./vite.js"', { stdio: 'inherit' });
+execSync('npx esbuild server/index.ts scripts/migrate-database.ts --platform=node --packages=external --bundle --format=esm --outdir=dist --external:vite --external:@vitejs/* --external:"./vite.js"', { stdio: 'inherit' });
 
 // Step 3: Copy production.js to dist
 console.log('📄 Copying production modules...');

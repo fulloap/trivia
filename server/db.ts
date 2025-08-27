@@ -39,3 +39,16 @@ testConnection();
     console.error('Email system initialization failed:', error);
   }
 })();
+
+// Run database migration in production
+if (process.env.NODE_ENV === 'production') {
+  (async () => {
+    try {
+      console.log('Checking database migration...');
+      const { migrateData } = await import('../scripts/migrate-database.js');
+      await migrateData();
+    } catch (error) {
+      console.error('Database migration failed:', error);
+    }
+  })();
+}
