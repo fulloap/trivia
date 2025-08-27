@@ -1,0 +1,227 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Sponsor us
+Feedback
+Logout
+Deployment
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Restarting
+(unhealthy)
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Deployment Log
+Show Debug Logs
+Deployment is Failed.
+
+
+
+
+2025-Aug-27 00:54:15.300312
+Starting deployment of fulloap/trivia:main to localhost.
+2025-Aug-27 00:54:15.490423
+Preparing container with helper image: ghcr.io/coollabsio/coolify-helper:1.0.10.
+2025-Aug-27 00:54:17.788849
+----------------------------------------
+2025-Aug-27 00:54:17.791967
+Importing fulloap/trivia:main (commit sha HEAD) to /artifacts/msos4kw0808k8084w8s4sgg4.
+2025-Aug-27 00:54:19.200461
+Image not found (jkcg4wgows40k4kc00os0sk0:f1edcc412a5eee46a99a57016e60e376bf83d4c2). Building new image.
+2025-Aug-27 00:54:20.791543
+----------------------------------------
+2025-Aug-27 00:54:20.796307
+Building docker image started.
+2025-Aug-27 00:54:20.800150
+To check the current progress, click on Show Debug Logs.
+2025-Aug-27 00:54:22.877854
+Oops something is not okay, are you okay? 😢
+2025-Aug-27 00:54:22.881594
+#0 building with "default" instance using docker driver
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#1 [internal] load build definition from Dockerfile
+2025-Aug-27 00:54:22.881594
+#1 transferring dockerfile: 1.71kB done
+2025-Aug-27 00:54:22.881594
+#1 DONE 0.0s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#2 [internal] load metadata for docker.io/library/node:20-alpine
+2025-Aug-27 00:54:22.881594
+#2 DONE 0.7s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#3 [internal] load .dockerignore
+2025-Aug-27 00:54:22.881594
+#3 transferring context: 888B done
+2025-Aug-27 00:54:22.881594
+#3 DONE 0.0s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#4 [base 1/1] FROM docker.io/library/node:20-alpine@sha256:df02558528d3d3d0d621f112e232611aecfee7cbc654f6b375765f72bb262799
+2025-Aug-27 00:54:22.881594
+#4 DONE 0.0s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#5 [internal] load build context
+2025-Aug-27 00:54:22.881594
+#5 transferring context: 4.60MB 0.1s done
+2025-Aug-27 00:54:22.881594
+#5 DONE 0.1s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#6 [builder 1/8] WORKDIR /app
+2025-Aug-27 00:54:22.881594
+#6 CACHED
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#7 [builder 2/8] COPY package.json package-lock.json* ./
+2025-Aug-27 00:54:22.881594
+#7 CACHED
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#8 [builder 3/8] RUN npm ci
+2025-Aug-27 00:54:22.881594
+#8 CACHED
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#9 [builder 4/8] COPY . .
+2025-Aug-27 00:54:22.881594
+#9 DONE 0.1s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#10 [builder 5/8] RUN chmod +x build-production.js
+2025-Aug-27 00:54:22.881594
+#10 DONE 0.1s
+2025-Aug-27 00:54:22.881594
+2025-Aug-27 00:54:22.881594
+#11 [builder 6/8] RUN node build-production.js
+2025-Aug-27 00:54:22.881594
+#11 0.133 🚀 Building for production...
+2025-Aug-27 00:54:22.881594
+#11 0.135 📦 Building client...
+2025-Aug-27 00:54:22.881594
+#11 0.139 /bin/sh: vite: not found
+2025-Aug-27 00:54:22.881594
+#11 0.144 node:internal/errors:984
+2025-Aug-27 00:54:22.881594
+#11 0.144   const err = new Error(message);
+2025-Aug-27 00:54:22.881594
+#11 0.144               ^
+2025-Aug-27 00:54:22.881594
+#11 0.144
+2025-Aug-27 00:54:22.881594
+#11 0.144 Error: Command failed: vite build
+2025-Aug-27 00:54:22.881594
+#11 0.144     at genericNodeError (node:internal/errors:984:15)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at wrappedFn (node:internal/errors:538:14)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at checkExecSyncError (node:child_process:891:11)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at execSync (node:child_process:963:15)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at file:///app/build-production.js:10:1
+2025-Aug-27 00:54:22.881594
+#11 0.144     at ModuleJob.run (node:internal/modules/esm/module_job:263:25)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at async ModuleLoader.import (node:internal/modules/esm/loader:540:24)
+2025-Aug-27 00:54:22.881594
+#11 0.144     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+2025-Aug-27 00:54:22.881594
+#11 0.144   status: 127,
+2025-Aug-27 00:54:22.881594
+#11 0.144   signal: null,
+2025-Aug-27 00:54:22.881594
+#11 0.144   output: [ null, null, null ],
+2025-Aug-27 00:54:22.881594
+#11 0.144   pid: 16,
+2025-Aug-27 00:54:22.881594
+#11 0.144   stdout: null,
+2025-Aug-27 00:54:22.881594
+#11 0.144   stderr: null
+2025-Aug-27 00:54:22.881594
+#11 0.144 }
+2025-Aug-27 00:54:22.881594
+#11 0.144
+2025-Aug-27 00:54:22.881594
+#11 0.144 Node.js v20.19.4
+2025-Aug-27 00:54:22.881594
+#11 ERROR: process "/bin/sh -c node build-production.js" did not complete successfully: exit code: 1
+2025-Aug-27 00:54:22.881594
+------
+2025-Aug-27 00:54:22.881594
+> [builder 6/8] RUN node build-production.js:
+2025-Aug-27 00:54:22.881594
+0.144     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+2025-Aug-27 00:54:22.881594
+0.144   status: 127,
+2025-Aug-27 00:54:22.881594
+0.144   signal: null,
+2025-Aug-27 00:54:22.881594
+0.144   output: [ null, null, null ],
+2025-Aug-27 00:54:22.881594
+0.144   pid: 16,
+2025-Aug-27 00:54:22.881594
+0.144   stdout: null,
+2025-Aug-27 00:54:22.881594
+0.144   stderr: null
+2025-Aug-27 00:54:22.881594
+0.144 }
+2025-Aug-27 00:54:22.881594
+0.144
+2025-Aug-27 00:54:22.881594
+0.144 Node.js v20.19.4
+2025-Aug-27 00:54:22.881594
+------
+2025-Aug-27 00:54:22.881594
+Dockerfile:26
+2025-Aug-27 00:54:22.881594
+--------------------
+2025-Aug-27 00:54:22.881594
+24 |
+2025-Aug-27 00:54:22.881594
+25 |     # Build the application using custom production script
+2025-Aug-27 00:54:22.881594
+26 | >>> RUN node build-production.js
+2025-Aug-27 00:54:22.881594
+27 |
+2025-Aug-27 00:54:22.881594
+28 |     # Verify build outputs exist
+2025-Aug-27 00:54:22.881594
+--------------------
+2025-Aug-27 00:54:22.881594
+ERROR: failed to build: failed to solve: process "/bin/sh -c node build-production.js" did not complete successfully: exit code: 1
+2025-Aug-27 00:54:22.881594
+exit status 1
+2025-Aug-27 00:54:22.885175
+Deployment failed. Removing the new version of your application.

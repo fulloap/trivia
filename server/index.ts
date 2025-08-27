@@ -31,6 +31,17 @@ app.use(
   })
 );
 
+// Logging function for development
+function logRequest(message: string, source = "express") {
+  const formattedTime = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+  console.log(`${formattedTime} [${source}] ${message}`);
+}
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -54,7 +65,7 @@ app.use((req, res, next) => {
         logLine = logLine.slice(0, 79) + "…";
       }
 
-      log(logLine);
+      logRequest(logLine);
     }
   });
 
@@ -77,6 +88,9 @@ app.use((req, res, next) => {
   }
 
   const server = await registerRoutes(app);
+  
+  // Get log function for production
+  const logFunction = log || logRequest;
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -116,6 +130,6 @@ app.use((req, res, next) => {
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${port}`);
+    logFunction(`serving on port ${port}`);
   });
 })();
