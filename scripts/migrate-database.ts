@@ -62,7 +62,7 @@ async function createTables(db: any) {
       country_code VARCHAR(10) NOT NULL,
       level INTEGER NOT NULL,
       question TEXT NOT NULL,
-      options TEXT[] NOT NULL,
+      options TEXT NOT NULL,
       correct_answer VARCHAR(255) NOT NULL,
       explanation TEXT,
       is_active BOOLEAN DEFAULT true,

@@ -61,7 +61,7 @@ export const questions = pgTable("questions", {
   correctAnswer: text("correct_answer").notNull(),
   explanation: text("explanation").notNull(),
   description: text("description"), // Breve descripción de ayuda para el usuario
-  options: jsonb("options"), // For multiple choice questions
+  options: text("options"), // For multiple choice questions - stored as JSON string
   points: integer("points").default(1), // Cambiado a 1 punto por pregunta
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),

@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.420.6
+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-155101247976
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+✓ Successfully loaded 0 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 0 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+3:52:22 PM [express] serving on port 3005
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 8)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 11)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 13)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 16)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 18)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 21)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 23)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 26)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 28)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 31)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: '¿Dónde ocurre la lluvia de peces en Honduras? (Variación 33)',
+  options: '["Tegucigalpa","Yoro","La Ceiba","San Pedro Sula"]',
+  optionsType: 'string',
+  stringified: true
+}
+🔍 Failed batch sample: {
+  question: "¿Por qué Honduras se llamó 'República Bananera'? (Variación 36)",
+  options: '["forma del país","gran exportador de bananas","color de la bandera","tradición culinaria"]',
+  optionsType: 'string',
+  stringified: true
+}
+✓ Successfully loaded 0 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+✅ Final question count: 0 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+3:52:24 PM [express] GET /api/health 200 in 8ms :: {"status":"ok","timestamp":"2025-08-27T15:52:24.7…
+Warning: Batch 49 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 50 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
+Warning: Batch 51 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 52 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
+Warning: Batch 53 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 54 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
+Warning: Batch 55 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 56 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
+Warning: Batch 57 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 58 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
+Warning: Batch 59 failed for honduras: malformed array literal: ""[\"Tegucigalpa\",\"Yoro\",\"La Ceiba\",\"San Pedro Sula\"]""
+Warning: Batch 60 failed for honduras: malformed array literal: ""[\"forma del país\",\"gran exportador de bananas\",\"color de la bandera\",\"tradición culinaria\"]""
