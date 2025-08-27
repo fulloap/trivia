@@ -161,7 +161,7 @@ async function updateExistingTables(db: any) {
 }
 
 async function migrateData() {
-  console.log('Starting database initialization...');
+  console.log('🚀 Starting production database migration...');
   
   try {
     // Check if database is accessible
@@ -179,25 +179,36 @@ async function migrateData() {
       await updateExistingTables(db);
     }
     
-    // Check if we have data already (now that schema is correct)
+    // Always check and populate questions to ensure we have all 3000 questions
+    console.log('🔍 Checking question database completeness...');
+    
     try {
-      const existingUsers = await db.select().from(schema.users).limit(1);
-      if (existingUsers.length === 0) {
-        console.log('Database is empty, populating with default data...');
-        await populateDefaultData();
-      } else {
-        console.log('✓ Database already has data, skipping initialization');
-      }
+      const questionCount = await db.select({ count: sql`count(*)` }).from(schema.questions);
+      const cubaCount = await db.select({ count: sql`count(*)` }).from(schema.questions).where(sql`country_code = 'cuba'`);
+      const hondurasCount = await db.select({ count: sql`count(*)` }).from(schema.questions).where(sql`country_code = 'honduras'`);
+      
+      console.log(`📊 Current questions: Total: ${questionCount[0]?.count || 0}, Cuba: ${cubaCount[0]?.count || 0}, Honduras: ${hondurasCount[0]?.count || 0}`);
+      
+      // Populate countries first
+      await populateDefaultCountries();
+      
+      // Always try to populate questions to ensure completeness
+      await populateDefaultQuestions();
+      
+      // Final count verification
+      const finalCount = await db.select({ count: sql`count(*)` }).from(schema.questions);
+      console.log(`✅ Final question count: ${finalCount[0]?.count} total questions loaded`);
+      
     } catch (error) {
-      console.log('Error checking existing data, populating defaults...');
-      await populateDefaultData();
+      console.error('Error during question population:', error);
+      throw error;
     }
     
-    console.log('✓ Database initialization completed successfully');
+    console.log('✅ Database migration completed successfully');
     
   } catch (error) {
-    console.warn('Database initialization had issues:', error);
-    console.log('✓ System will continue with existing data');
+    console.error('❌ Database migration failed:', error);
+    throw error; // Re-throw to let the caller handle it
   }
 }
 
@@ -295,6 +306,8 @@ async function populateDefaultQuestions() {
           console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions, skipping`);
           continue;
         }
+        
+        console.log(`📥 Starting bulk insert for ${countryCode} (${questions.length} questions)...`);
         
         // Insert questions in batches with proper error handling
         const batchSize = 25; // Smaller batches for better reliability
