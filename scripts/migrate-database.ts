@@ -129,9 +129,7 @@ async function createTables(db: any) {
       console.error('Error creating table:', error);
     }
   }
-  
-  // Add missing columns to existing tables
-  await updateExistingTables(db);
+
 }
 
 async function updateExistingTables(db: any) {
@@ -172,15 +170,24 @@ async function migrateData() {
     if (!tablesExist) {
       console.log('Creating database tables...');
       await createTables(db);
+    } else {
+      // Tables exist, but might need updates
+      console.log('Tables exist, checking for missing columns...');
+      await updateExistingTables(db);
     }
     
-    // Check if we have data already
-    const existingUsers = await db.select().from(schema.users).limit(1);
-    if (existingUsers.length === 0) {
-      console.log('Database is empty, populating with default data...');
+    // Check if we have data already (now that schema is correct)
+    try {
+      const existingUsers = await db.select().from(schema.users).limit(1);
+      if (existingUsers.length === 0) {
+        console.log('Database is empty, populating with default data...');
+        await populateDefaultData();
+      } else {
+        console.log('✓ Database already has data, skipping initialization');
+      }
+    } catch (error) {
+      console.log('Error checking existing data, populating defaults...');
       await populateDefaultData();
-    } else {
-      console.log('✓ Database already has data, skipping initialization');
     }
     
     console.log('✓ Database initialization completed successfully');
