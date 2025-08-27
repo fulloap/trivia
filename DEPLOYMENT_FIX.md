@@ -4,8 +4,9 @@
 1. **Docker Build Error**: Removed incorrect `/app/client/dist` copy command since vite builds to `/app/dist/public`
 2. **Health Check**: Added curl to Alpine image for health checks  
 3. **Build Verification**: Added checks to verify build outputs exist
-4. **Vite Import Error**: Fixed ERR_MODULE_NOT_FOUND by using dynamic import for vite in development only
-5. **Production Bundle**: Server no longer tries to import vite packages in production
+4. **Vite Import Error**: Fixed ERR_MODULE_NOT_FOUND by creating separate production module
+5. **Production Bundle**: Custom build script completely eliminates vite dependencies from production bundle
+6. **Clean Separation**: Development uses vite.ts, production uses production.ts with same interface
 
 ## Current Dockerfile Structure
 - **Base Stage**: Node 20 Alpine
@@ -15,7 +16,11 @@
 
 ## Build Process
 1. `vite build` → Outputs client assets to `dist/public/`
-2. `esbuild server/index.ts` → Outputs server to `dist/index.js`
+2. `esbuild server/index.ts` → Outputs server to `dist/index.js` (excluding vite modules)
+3. `cp server/production.ts` → Copy production static server to `dist/production.js`
+4. Patch imports to use production.js instead of vite.js in built bundle
+
+**Custom Build Script**: `build-production.js` handles the complete production build process
 
 ## Production Ready Features
 - Multi-stage build for minimal image size

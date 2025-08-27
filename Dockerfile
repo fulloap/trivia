@@ -19,8 +19,11 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Make build script executable
+RUN chmod +x build-production.js
+
+# Build the application using custom production script
+RUN node build-production.js
 
 # Verify build outputs exist  
 RUN ls -la /app/dist/

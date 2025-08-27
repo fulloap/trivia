@@ -2,7 +2,6 @@ import express, { type Request, Response, NextFunction } from "express";
 import session from "express-session";
 import connectPg from "connect-pg-simple";
 import { registerRoutes } from "./routes";
-import { serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
@@ -63,6 +62,20 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Load environment-specific modules
+  let serveStatic: any;
+  let log: any;
+
+  if (process.env.NODE_ENV === "production") {
+    const prodModule = await import("./production.js");
+    serveStatic = prodModule.serveStatic;
+    log = prodModule.log;
+  } else {
+    const viteModule = await import("./vite.js");
+    serveStatic = viteModule.serveStatic;
+    log = viteModule.log;
+  }
+
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
