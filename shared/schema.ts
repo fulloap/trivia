@@ -94,6 +94,7 @@ export const quizSessions = pgTable("quiz_sessions", {
   hintsUsed: integer("hints_used").default(0), // Número de ayudas usadas
   hintsRemaining: integer("hints_remaining").default(3), // Ayudas restantes (máximo 3 + bonus)
   sessionData: jsonb("session_data"), // Store current quiz state
+  usedQuestionIds: jsonb("used_question_ids").default([]), // Array of question IDs shown to user
   startedAt: timestamp("started_at").defaultNow(),
   completedAt: timestamp("completed_at"),
 });

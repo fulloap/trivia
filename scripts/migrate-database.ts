@@ -1,5 +1,6 @@
 import postgres from 'postgres';
 import { drizzle } from 'drizzle-orm/postgres-js';
+import { sql } from 'drizzle-orm';
 import * as schema from '../shared/schema.js';
 import fs from 'fs';
 import path from 'path';
@@ -144,6 +145,8 @@ async function updateExistingTables(db: any) {
     `ALTER TABLE questions ADD COLUMN IF NOT EXISTS type VARCHAR(50) DEFAULT 'multiple'`,
     `ALTER TABLE questions ADD COLUMN IF NOT EXISTS description TEXT`,
     `ALTER TABLE questions ADD COLUMN IF NOT EXISTS points INTEGER DEFAULT 1`,
+    // Add used_question_ids column for anti-repetition system
+    `ALTER TABLE quiz_sessions ADD COLUMN IF NOT EXISTS used_question_ids JSONB DEFAULT '[]'`,
   ];
   
   for (const query of updateQueries) {
@@ -258,35 +261,90 @@ async function populateDefaultQuestions() {
     try {
       const filePath = path.join(process.cwd(), file);
       if (fs.existsSync(filePath)) {
+        console.log(`Loading questions for ${countryCode}...`);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const questionsData = JSON.parse(fileContent);
         
-        const questions = questionsData.map((q: any) => ({
+        // Remove duplicates by question text and level
+        const uniqueQuestions = removeDuplicates(questionsData);
+        console.log(`✓ Removed ${questionsData.length - uniqueQuestions.length} duplicate questions for ${countryCode}`);
+        
+        // Validate difficulty distribution
+        const levelCounts = validateDifficultyDistribution(uniqueQuestions, countryCode);
+        
+        const questions = uniqueQuestions.map((q: any) => ({
           countryCode,
           level: q.level,
+          type: q.type || 'multiple',
           question: q.question,
-          options: q.options,
-          correctAnswer: q.correctAnswer,
+          correctAnswer: q.correct_answer || q.correctAnswer,
+          options: JSON.stringify(q.options),
           explanation: q.explanation || '',
+          description: q.description || '',
+          points: 1,
           isActive: true
         }));
         
-        // Insert questions in smaller batches to avoid conflicts
-        const batchSize = 50;
+        // Check if questions already exist for this country
+        const existingCount = await db
+          .select({ count: sql`count(*)` })
+          .from(schema.questions)
+          .where(sql`country_code = ${countryCode}`);
+        
+        if (existingCount[0]?.count > 0) {
+          console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions, skipping`);
+          continue;
+        }
+        
+        // Insert questions in batches with proper error handling
+        const batchSize = 25; // Smaller batches for better reliability
+        let insertedCount = 0;
+        
         for (let i = 0; i < questions.length; i += batchSize) {
           const batch = questions.slice(i, i + batchSize);
           try {
             await db.insert(schema.questions).values(batch).onConflictDoNothing();
-          } catch (e) {
-            // Some questions already exist, continue
+            insertedCount += batch.length;
+            console.log(`✓ Batch ${Math.floor(i/batchSize) + 1}: Inserted ${batch.length} questions for ${countryCode}`);
+          } catch (e: any) {
+            console.warn(`Warning: Batch ${Math.floor(i/batchSize) + 1} failed for ${countryCode}:`, e.message);
           }
         }
-        console.log(`✓ Processed ${questions.length} questions for ${countryCode}`);
+        
+        console.log(`✓ Successfully loaded ${insertedCount} unique questions for ${countryCode}`);
+        console.log(`✓ Level distribution: ${JSON.stringify(levelCounts)}`);
       }
     } catch (error: any) {
       console.warn(`Could not load questions for ${countryCode}:`, error.message);
     }
   }
+}
+
+// Helper function to remove duplicate questions
+function removeDuplicates(questions: any[]) {
+  const seen = new Set();
+  return questions.filter(q => {
+    const key = `${q.question.toLowerCase().trim()}_${q.level}`;
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+// Helper function to validate difficulty distribution
+function validateDifficultyDistribution(questions: any[], countryCode: string) {
+  const levelCounts = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  questions.forEach(q => {
+    if (q.level >= 1 && q.level <= 4) {
+      levelCounts[q.level as keyof typeof levelCounts]++;
+    }
+  });
+  
+  console.log(`✓ ${countryCode} difficulty distribution: Level 1: ${levelCounts[1]}, Level 2: ${levelCounts[2]}, Level 3: ${levelCounts[3]}, Level 4: ${levelCounts[4]}`);
+  
+  return levelCounts;
 }
 
 // Run migration

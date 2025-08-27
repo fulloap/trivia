@@ -52,6 +52,13 @@ A cultural quiz web application that adapts to different countries and regions, 
   - Complete sitemap.xml, robots.txt, and Apple App Site Association
   - Meta tags optimized for "quiz cultural latino", "trivia cultural", "argot latinoamericano"
   - PWA manifest enhanced for app store discovery
+- **Database Anti-Repetition System (August 27, 2025)**: Advanced question management implemented
+  - New column `used_question_ids` in quiz_sessions table for session tracking
+  - Automatic duplicate removal by question text + difficulty level
+  - Difficulty distribution validation (Level 1-4) with detailed logging
+  - Optimized batch insertion (25 questions per batch) with error handling
+  - Guaranteed unique questions per user session with intelligent selection
+  - Complete migration system: 65.5kb server + 16.3kb migration script
 
 ### Referral System
 Complete referral system where each user receives a unique sharing link (trivia.cubacoin.org?ref=CODE). When referred friends complete 3 correct answers, the referrer receives 1 bonus help that adds to their base 3 helps per quiz session. The system tracks referral relationships and automatically awards bonuses.
