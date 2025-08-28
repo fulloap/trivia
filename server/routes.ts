@@ -494,9 +494,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Update user progress and score
       const sessionData = session.sessionData as any || {};
       const totalQuestions = (sessionData.answers || []).length;
-      const correctAnswers = sessionData.correctAnswers || 0;
-      const totalScore = sessionData.score || 0;
+      const correctAnswers = session.correctAnswers || session.score || 0; // Use session.score as backup
+      const totalScore = session.score || 0;
       const accuracy = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
+
+      console.log(`📊 Quiz completion stats: User: ${user.username}, Questions: ${totalQuestions}, Correct: ${correctAnswers}, Score: ${totalScore}`);
 
       await storage.upsertUserProgress({
         userId: user.id,
@@ -509,11 +511,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         lastPlayedAt: new Date(),
       });
 
-      // Update user total score
+      // Update user total score and games played
       await storage.updateUserScore(user.id, totalScore);
+      await storage.incrementGamesPlayed(user.id);
 
       // Add to rankings
-      console.log(`🏆 Adding user ${user.username} to rankings: ${session.countryCode} level ${session.level}, score: ${totalScore}`);
+      console.log(`🏆 Adding user ${user.username} to rankings: ${session.countryCode} level ${session.level}, score: ${totalScore}, accuracy: ${accuracy}%`);
       await storage.addRanking({
         userId: user.id,
         countryCode: session.countryCode,
@@ -675,24 +678,41 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const user = await storage.getUserById(userId);
       if (!user || !user.referredBy) return;
 
-      // Count correct answers by this user
-      const userRankings = await storage.getUserRankingsByCountry(userId, 'cuba'); // Check any country
-      let totalCorrectAnswers = 0;
-      for (const ranking of userRankings) {
-        totalCorrectAnswers += ranking.correctAnswers;
-      }
+      console.log(`🔗 Checking referral progress for user ${user.username} (referred by user ${user.referredBy})`);
 
-      // If user has completed 3 correct answers, give bonus help to referrer
-      if (totalCorrectAnswers >= 3) {
+      // Count how many quiz sessions this user has completed
+      const completedSessions = await db
+        .select({ count: sql`count(*)` })
+        .from(quizSessions)
+        .where(
+          and(
+            eq(quizSessions.userId, userId),
+            sql`${quizSessions.completedAt} IS NOT NULL`
+          )
+        );
+
+      const totalCompleted = completedSessions[0]?.count || 0;
+      console.log(`📊 User ${user.username} has completed ${totalCompleted} quiz sessions`);
+      
+      // If user has completed 3 or more sessions, award bonus to referrer (only once)
+      if (totalCompleted >= 3) {
         const referrer = await storage.getUserById(user.referredBy);
         if (referrer) {
+          console.log(`🎁 Awarding bonus help to referrer: ${referrer.username}`);
           await storage.addBonusHelp(user.referredBy);
-          console.log(`Bonus help awarded to user ${user.referredBy} for referral ${userId}`);
           
           // Send referral bonus email (non-blocking)
-          sendReferralBonusEmail(referrer.email, referrer.username, user.username).catch(err => {
-            console.error('Failed to send referral bonus email:', err);
-          });
+          if (referrer.email && sendEmail) {
+            console.log(`📧 Sending referral bonus email to ${referrer.email}`);
+            sendEmail(
+              referrer.email,
+              'Bonus de Referido - ¡Tu amigo ha jugado!',
+              `¡Felicidades! Tu amigo ${user.username} ha completado 3 quizzes y has ganado una ayuda extra.`,
+              `<p>¡Felicidades! Tu amigo <strong>${user.username}</strong> ha completado 3 quizzes completos y has ganado una ayuda extra para tus próximos juegos.</p>`
+            ).catch(err => {
+              console.error('Failed to send referral bonus email:', err);
+            });
+          }
         }
       }
     } catch (error) {

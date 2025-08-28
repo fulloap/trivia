@@ -112,8 +112,16 @@ export class DatabaseStorage implements IStorage {
       .update(users)
       .set({
         totalScore: sql`${users.totalScore} + ${additionalScore}`,
-        gamesPlayed: sql`${users.gamesPlayed} + 1`,
         lastActiveAt: new Date(),
+      })
+      .where(eq(users.id, userId));
+  }
+
+  async incrementGamesPlayed(userId: number): Promise<void> {
+    await db
+      .update(users)
+      .set({
+        gamesPlayed: sql`${users.gamesPlayed} + 1`,
       })
       .where(eq(users.id, userId));
   }

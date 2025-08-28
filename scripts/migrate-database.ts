@@ -218,22 +218,16 @@ async function migrateData() {
       // Populate countries first (always safe to do)
       await populateDefaultCountries();
       
-      // Only populate questions if database is significantly incomplete
+      // Only populate questions if database is truly empty or severely incomplete
       // Expected: 1500 per country = 3000 total
       const expectedPerCountry = 1500;
-      const minimumThreshold = expectedPerCountry * 0.8; // 80% threshold
+      const minimumRequired = 100; // Very low threshold to avoid repeated insertions
       
-      if (totalQuestions < (expectedPerCountry * 2 * 0.5)) {
-        console.log(`🚀 Database has ${totalQuestions} questions (< 1500), populating...`);
+      if (totalQuestions < minimumRequired) {
+        console.log(`🚀 Database has ${totalQuestions} questions (< ${minimumRequired}), populating...`);
         await populateDefaultQuestions();
-      } else if (cubaTotalQuestions < minimumThreshold) {
-        console.log(`🇨🇺 Cuba has ${cubaTotalQuestions} questions (< ${minimumThreshold}), populating Cuba...`);
-        await populateCountryQuestions('cuba');
-      } else if (hondurasTotalQuestions < minimumThreshold) {
-        console.log(`🇭🇳 Honduras has ${hondurasTotalQuestions} questions (< ${minimumThreshold}), populating Honduras...`);
-        await populateCountryQuestions('honduras');
       } else {
-        console.log(`✅ Questions complete: Cuba: ${cubaTotalQuestions}, Honduras: ${hondurasTotalQuestions} - Skipping population`);
+        console.log(`✅ Questions exist: Total: ${totalQuestions}, Cuba: ${cubaTotalQuestions}, Honduras: ${hondurasTotalQuestions} - Skipping population to avoid duplicates`);
       }
       
       // Always check for and remove duplicates
@@ -396,8 +390,8 @@ async function populateDefaultQuestions() {
           .from(schema.questions)
           .where(sql`country_code = ${countryCode}`);
         
-        if (existingCount[0]?.count >= (expectedPerCountry * 0.8)) {
-          console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions (>= 80% of expected), skipping`);
+        if (existingCount[0]?.count >= 50) {
+          console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions, skipping to avoid duplicates`);
           continue;
         }
         
