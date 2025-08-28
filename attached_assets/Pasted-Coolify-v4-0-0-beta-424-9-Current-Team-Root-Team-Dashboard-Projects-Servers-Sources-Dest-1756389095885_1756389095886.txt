@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.424
+9+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-134917399793
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+Found 1500 sets of duplicate questions
+✓ Batch 6: Inserted 25 questions for honduras
+✓ honduras already has 150 questions, skipping to avoid duplicates
+🧹 Checking for and removing duplicate questions...
+✓ Batch 7: Inserted 25 questions for honduras
+Found 1500 sets of duplicate questions
+✅ Duplicates removed. Final count: 1675 unique questions
+📊 Performing comprehensive data audit...
+✅ Final question count: 1700 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+1:50:29 PM [express] serving on port 3005
+✓ Batch 8: Inserted 25 questions for honduras
+✅ Duplicates removed. Final count: 1700 unique questions
+📊 Performing comprehensive data audit...
+✅ Final question count: 1700 total questions loaded
+✅ Database migration completed successfully
+✓ Batch 9: Inserted 25 questions for honduras
+✓ Batch 10: Inserted 25 questions for honduras
+✓ Batch 11: Inserted 25 questions for honduras
+✓ Batch 12: Inserted 25 questions for honduras
+✓ Batch 13: Inserted 25 questions for honduras
+✓ Batch 14: Inserted 25 questions for honduras
+✓ Batch 15: Inserted 25 questions for honduras
+✓ Batch 16: Inserted 25 questions for honduras
+✓ Batch 17: Inserted 25 questions for honduras
+✓ Batch 18: Inserted 25 questions for honduras
+✓ Batch 19: Inserted 25 questions for honduras
+✓ Batch 20: Inserted 25 questions for honduras
+✓ Batch 21: Inserted 25 questions for honduras
+✓ Batch 22: Inserted 25 questions for honduras
+✓ Batch 23: Inserted 25 questions for honduras
+✓ Batch 24: Inserted 25 questions for honduras
+✓ Batch 25: Inserted 25 questions for honduras
+✓ Batch 26: Inserted 25 questions for honduras
+✓ Batch 27: Inserted 25 questions for honduras
+✓ Batch 28: Inserted 25 questions for honduras
+✓ Batch 29: Inserted 25 questions for honduras
+✓ Batch 30: Inserted 25 questions for honduras
+✓ Batch 31: Inserted 25 questions for honduras
+✓ Batch 32: Inserted 25 questions for honduras
+✓ Batch 33: Inserted 25 questions for honduras
+✓ Batch 34: Inserted 25 questions for honduras
+✓ Batch 35: Inserted 25 questions for honduras
+✓ Batch 36: Inserted 25 questions for honduras
+✓ Batch 37: Inserted 25 questions for honduras
+✓ Batch 38: Inserted 25 questions for honduras
+✓ Batch 39: Inserted 25 questions for honduras
+✓ Batch 40: Inserted 25 questions for honduras
+✓ Batch 41: Inserted 25 questions for honduras
+✓ Batch 42: Inserted 25 questions for honduras
+✓ Batch 43: Inserted 25 questions for honduras
+✓ Batch 44: Inserted 25 questions for honduras
+✓ Batch 45: Inserted 25 questions for honduras
+✓ Batch 46: Inserted 25 questions for honduras
+✓ Batch 47: Inserted 25 questions for honduras
+✓ Batch 48: Inserted 25 questions for honduras
+✓ Batch 49: Inserted 25 questions for honduras
+✓ Batch 50: Inserted 25 questions for honduras
+✓ Batch 51: Inserted 25 questions for honduras
+✓ Batch 52: Inserted 25 questions for honduras
+✓ Batch 53: Inserted 25 questions for honduras
+✓ Batch 54: Inserted 25 questions for honduras
+✓ Batch 55: Inserted 25 questions for honduras
+✓ Batch 56: Inserted 25 questions for honduras
+✓ Batch 57: Inserted 25 questions for honduras
+✓ Batch 58: Inserted 25 questions for honduras
+✓ Batch 59: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for honduras
+✓ Successfully loaded 1500 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+🧹 Checking for and removing duplicate questions...
+Found 0 sets of duplicate questions
+✅ No duplicates found
+📊 Performing comprehensive data audit...
+✅ Final question count: 3000 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+1:50:31 PM [express] GET /api/health 200 in 8ms :: {"status":"ok","timestamp":"2025-08-28T13:50:31.3…
+Error during data audit: ReferenceError: and is not defined
+    at performDataAudit (file:///app/dist/server/index.js:594:86)
+    at migrateData (file:///app/dist/server/index.js:549:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async runProductionMigration (file:///app/dist/server/index.js:1825:7)
+    at async file:///app/dist/server/index.js:1892:3
+Error during data audit: ReferenceError: and is not defined
+    at performDataAudit (file:///app/dist/server/index.js:594:86)
+    at migrateData (file:///app/dist/server/index.js:549:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Error during data audit: ReferenceError: and is not defined
+    at performDataAudit (file:///app/dist/server/index.js:594:86)
+    at migrateData (file:///app/dist/server/index.js:549:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///app/dist/server/index.js:855:7
