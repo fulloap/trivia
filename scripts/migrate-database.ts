@@ -291,6 +291,7 @@ async function removeDuplicateQuestions() {
 
 async function performDataAudit() {
   console.log('📊 Performing comprehensive data audit...');
+  console.log('⚠️ PROTECTING EXISTING PRODUCTION USERS - No user data will be modified');
   
   try {
     // Question counts by country and level
@@ -312,7 +313,7 @@ async function performDataAudit() {
       .where(sql`${schema.users.totalScore} > 0`);
     
     console.log('👥 User Statistics:');
-    console.log(`  Total Users: ${totalUsers[0]?.count || 0}`);
+    console.log(`  Total Users: ${totalUsers[0]?.count || 0} (PROTECTED - will not be modified)`);
     console.log(`  Users with Score: ${usersWithScore[0]?.count || 0}`);
     
     // Quiz session statistics
