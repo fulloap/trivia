@@ -201,7 +201,7 @@ async function migrateData() {
       await updateExistingTables(db);
     }
     
-    // Always check and populate questions to ensure we have all 3000 questions
+    // Check and populate questions only if database is empty or incomplete
     console.log('🔍 Checking question database completeness...');
     
     try {
@@ -209,13 +209,35 @@ async function migrateData() {
       const cubaCount = await db.select({ count: sql`count(*)` }).from(schema.questions).where(sql`country_code = 'cuba'`);
       const hondurasCount = await db.select({ count: sql`count(*)` }).from(schema.questions).where(sql`country_code = 'honduras'`);
       
-      console.log(`📊 Current questions: Total: ${questionCount[0]?.count || 0}, Cuba: ${cubaCount[0]?.count || 0}, Honduras: ${hondurasCount[0]?.count || 0}`);
+      const totalQuestions = questionCount[0]?.count || 0;
+      const cubaTotalQuestions = cubaCount[0]?.count || 0;
+      const hondurasTotalQuestions = hondurasCount[0]?.count || 0;
       
-      // Populate countries first
+      console.log(`📊 Current questions: Total: ${totalQuestions}, Cuba: ${cubaTotalQuestions}, Honduras: ${hondurasTotalQuestions}`);
+      
+      // Populate countries first (always safe to do)
       await populateDefaultCountries();
       
-      // Always try to populate questions to ensure completeness
-      await populateDefaultQuestions();
+      // Only populate questions if database is significantly incomplete
+      // Expected: 1500 per country = 3000 total
+      const expectedPerCountry = 1500;
+      const minimumThreshold = expectedPerCountry * 0.8; // 80% threshold
+      
+      if (totalQuestions < (expectedPerCountry * 2 * 0.5)) {
+        console.log(`🚀 Database has ${totalQuestions} questions (< 1500), populating...`);
+        await populateDefaultQuestions();
+      } else if (cubaTotalQuestions < minimumThreshold) {
+        console.log(`🇨🇺 Cuba has ${cubaTotalQuestions} questions (< ${minimumThreshold}), populating Cuba...`);
+        await populateCountryQuestions('cuba');
+      } else if (hondurasTotalQuestions < minimumThreshold) {
+        console.log(`🇭🇳 Honduras has ${hondurasTotalQuestions} questions (< ${minimumThreshold}), populating Honduras...`);
+        await populateCountryQuestions('honduras');
+      } else {
+        console.log(`✅ Questions complete: Cuba: ${cubaTotalQuestions}, Honduras: ${hondurasTotalQuestions} - Skipping population`);
+      }
+      
+      // Always check for and remove duplicates
+      await removeDuplicateQuestions();
       
       // Final count verification
       const finalCount = await db.select({ count: sql`count(*)` }).from(schema.questions);
@@ -231,6 +253,43 @@ async function migrateData() {
   } catch (error) {
     console.error('❌ Database migration failed:', error);
     throw error; // Re-throw to let the caller handle it
+  }
+}
+
+async function removeDuplicateQuestions() {
+  console.log('🧹 Checking for and removing duplicate questions...');
+  
+  try {
+    // Find duplicates based on question text, country, and level
+    const duplicatesResult = await db.execute(`
+      SELECT question, country_code, level, COUNT(*) as count
+      FROM questions 
+      GROUP BY question, country_code, level 
+      HAVING COUNT(*) > 1
+    `);
+    
+    const duplicateRows = Array.isArray(duplicatesResult) ? duplicatesResult : [];
+    console.log(`Found ${duplicateRows.length} sets of duplicate questions`);
+    
+    if (duplicateRows.length > 0) {
+      // Delete duplicates, keeping only the first occurrence (lowest ID)
+      await db.execute(`
+        DELETE FROM questions q1 
+        WHERE q1.id NOT IN (
+          SELECT DISTINCT ON (q2.question, q2.country_code, q2.level) q2.id 
+          FROM questions q2 
+          ORDER BY q2.question, q2.country_code, q2.level, q2.id ASC
+        )
+      `);
+      
+      const finalCount = await db.select({ count: sql`count(*)` }).from(schema.questions);
+      console.log(`✅ Duplicates removed. Final count: ${finalCount[0]?.count} unique questions`);
+    } else {
+      console.log(`✅ No duplicates found`);
+    }
+    
+  } catch (error) {
+    console.error('Error removing duplicates:', error);
   }
 }
 
@@ -337,8 +396,8 @@ async function populateDefaultQuestions() {
           .from(schema.questions)
           .where(sql`country_code = ${countryCode}`);
         
-        if (existingCount[0]?.count > 0) {
-          console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions, skipping`);
+        if (existingCount[0]?.count >= (expectedPerCountry * 0.8)) {
+          console.log(`✓ ${countryCode} already has ${existingCount[0].count} questions (>= 80% of expected), skipping`);
           continue;
         }
         
