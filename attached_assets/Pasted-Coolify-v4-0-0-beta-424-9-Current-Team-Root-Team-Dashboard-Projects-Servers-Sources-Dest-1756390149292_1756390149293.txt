@@ -1,0 +1,151 @@
+Coolify
+v4.0.0-beta.424
+9+
+Current Team
+
+Root Team
+Dashboard
+Projects
+Servers
+Sources
+Destinations
+S3 Storages
+Shared Variables
+Notifications
+Keys & Tokens
+Tags
+Terminal
+Profile
+Teams
+Settings
+Upgrade
+Sponsor us
+Feedback
+Logout
+Logs
+Trivia
+production
+fulloap/trivia:main-jkcg4wgows40k4kc00os0sk0
+Running
+
+Configuration
+Deployments
+Logs
+Terminal
+
+Links
+
+Advanced
+Redeploy
+Restart
+Stop
+Logs
+Server: localhost
+jkcg4wgows40k4kc00os0sk0-140657633977
+Only Show Number of Lines
+*
+100
+Refresh
+Stream Logs
+Include Timestamps
+
+⚠️ PROTECTING EXISTING PRODUCTION USERS - No user data will be modified
+✓ Batch 57: Inserted 25 questions for cuba
+✓ Batch 55: Inserted 25 questions for honduras
+✓ Batch 58: Inserted 25 questions for cuba
+📋 Question Distribution:
+  CUBA: 1575 questions
+  HONDURAS: 1375 questions
+📊 Total Questions: 2975
+✓ Batch 59: Inserted 25 questions for cuba
+✓ Batch 56: Inserted 25 questions for honduras
+✓ Batch 60: Inserted 25 questions for cuba
+✓ Successfully loaded 1500 unique questions for cuba
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+Loading questions for honduras...
+✓ Removed 0 duplicate questions for honduras
+✓ honduras difficulty distribution: Level 1: 375, Level 2: 375, Level 3: 375, Level 4: 375
+🔍 Sample question structure for honduras: {
+  question: "¿Qué significa 'catracho'?",
+  options: [ 'hondureño', 'salvadoreño', 'guatemalteco', 'costarricense' ],
+  optionsType: 'object',
+  isArray: true,
+  jsonified: '["hondureño","salvadoreño","guatemalteco","costarricense"]'
+}
+👥 User Statistics:
+  Total Users: 6 (PROTECTED - will not be modified)
+  Users with Score: 0
+✓ Batch 57: Inserted 25 questions for honduras
+✓ honduras already has 1425 questions, skipping to avoid duplicates
+🧹 Checking for and removing duplicate questions...
+✓ Batch 58: Inserted 25 questions for honduras
+🎮 Quiz Session Statistics:
+  Total Sessions: 5
+  Completed Sessions: 0
+Found 150 sets of duplicate questions
+🏆 Rankings Statistics:
+  Total Ranking Entries: 0
+  Cuba Rankings: 0
+  Honduras Rankings: 0
+📈 Progress Statistics:
+  Total Progress Entries: 0
+  Completed Progress: 0
+✅ Data audit completed successfully
+✓ Batch 59: Inserted 25 questions for honduras
+✅ Final question count: 3100 total questions loaded
+✅ Database migration completed successfully
+✓ Production database ready
+✅ Duplicates removed. Final count: 2975 unique questions
+📊 Performing comprehensive data audit...
+⚠️ PROTECTING EXISTING PRODUCTION USERS - No user data will be modified
+✓ Batch 60: Inserted 25 questions for honduras
+✓ Successfully loaded 1500 unique questions for honduras
+✓ Level distribution: {"1":375,"2":375,"3":375,"4":375}
+🧹 Checking for and removing duplicate questions...
+Found 0 sets of duplicate questions
+✅ No duplicates found
+📊 Performing comprehensive data audit...
+⚠️ PROTECTING EXISTING PRODUCTION USERS - No user data will be modified
+📋 Question Distribution:
+  CUBA: 1500 questions
+  HONDURAS: 1500 questions
+📊 Total Questions: 3000
+📋 Question Distribution:
+  CUBA: 1500 questions
+  HONDURAS: 1500 questions
+📊 Total Questions: 3000
+👥 User Statistics:
+  Total Users: 6 (PROTECTED - will not be modified)
+  Users with Score: 0
+👥 User Statistics:
+  Total Users: 6 (PROTECTED - will not be modified)
+  Users with Score: 0
+🎮 Quiz Session Statistics:
+  Total Sessions: 5
+  Completed Sessions: 0
+🎮 Quiz Session Statistics:
+  Total Sessions: 5
+  Completed Sessions: 0
+🏆 Rankings Statistics:
+  Total Ranking Entries: 0
+  Cuba Rankings: 0
+  Honduras Rankings: 0
+🏆 Rankings Statistics:
+  Total Ranking Entries: 0
+  Cuba Rankings: 0
+  Honduras Rankings: 0
+📈 Progress Statistics:
+  Total Progress Entries: 0
+  Completed Progress: 0
+✅ Data audit completed successfully
+✅ Final question count: 3000 total questions loaded
+✅ Database migration completed successfully
+📈 Progress Statistics:
+  Total Progress Entries: 0
+  Completed Progress: 0
+✅ Data audit completed successfully
+✅ Final question count: 3000 total questions loaded
+✅ Database migration completed successfully
+✅ Production migration completed
+2:08:17 PM [express] serving on port 3005
+2:08:19 PM [express] GET /api/health 200 in 7ms :: {"status":"ok","timestamp":"2025-08-28T14:08:19.6…
