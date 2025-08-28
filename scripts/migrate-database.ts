@@ -233,7 +233,9 @@ async function migrateData() {
       // Always check for and remove duplicates
       await removeDuplicateQuestions();
       
-      // Final count verification
+      // Final count verification and data audit
+      await performDataAudit();
+      
       const finalCount = await db.select({ count: sql`count(*)` }).from(schema.questions);
       console.log(`✅ Final question count: ${finalCount[0]?.count} total questions loaded`);
       
@@ -284,6 +286,77 @@ async function removeDuplicateQuestions() {
     
   } catch (error) {
     console.error('Error removing duplicates:', error);
+  }
+}
+
+async function performDataAudit() {
+  console.log('📊 Performing comprehensive data audit...');
+  
+  try {
+    // Question counts by country and level
+    const cubaQuestions = await db.select({ count: sql`count(*)` }).from(schema.questions)
+      .where(and(eq(schema.questions.countryCode, 'cuba'), eq(schema.questions.isActive, true)));
+    const hondurasQuestions = await db.select({ count: sql`count(*)` }).from(schema.questions)
+      .where(and(eq(schema.questions.countryCode, 'honduras'), eq(schema.questions.isActive, true)));
+    const totalQuestions = await db.select({ count: sql`count(*)` }).from(schema.questions)
+      .where(eq(schema.questions.isActive, true));
+    
+    console.log('📋 Question Distribution:');
+    console.log(`  CUBA: ${cubaQuestions[0]?.count || 0} questions`);
+    console.log(`  HONDURAS: ${hondurasQuestions[0]?.count || 0} questions`);
+    console.log(`📊 Total Questions: ${totalQuestions[0]?.count || 0}`);
+    
+    // User statistics
+    const totalUsers = await db.select({ count: sql`count(*)` }).from(schema.users);
+    const usersWithScore = await db.select({ count: sql`count(*)` }).from(schema.users)
+      .where(sql`${schema.users.totalScore} > 0`);
+    
+    console.log('👥 User Statistics:');
+    console.log(`  Total Users: ${totalUsers[0]?.count || 0}`);
+    console.log(`  Users with Score: ${usersWithScore[0]?.count || 0}`);
+    
+    // Quiz session statistics
+    const totalSessions = await db.select({ count: sql`count(*)` }).from(schema.quizSessions);
+    const completedSessions = await db.select({ count: sql`count(*)` }).from(schema.quizSessions)
+      .where(sql`${schema.quizSessions.completedAt} IS NOT NULL`);
+    
+    console.log('🎮 Quiz Session Statistics:');
+    console.log(`  Total Sessions: ${totalSessions[0]?.count || 0}`);
+    console.log(`  Completed Sessions: ${completedSessions[0]?.count || 0}`);
+    
+    // Rankings statistics
+    const totalRankings = await db.select({ count: sql`count(*)` }).from(schema.rankings);
+    const cubaRankings = await db.select({ count: sql`count(*)` }).from(schema.rankings)
+      .where(eq(schema.rankings.countryCode, 'cuba'));
+    const hondurasRankings = await db.select({ count: sql`count(*)` }).from(schema.rankings)
+      .where(eq(schema.rankings.countryCode, 'honduras'));
+    
+    console.log('🏆 Rankings Statistics:');
+    console.log(`  Total Ranking Entries: ${totalRankings[0]?.count || 0}`);
+    console.log(`  Cuba Rankings: ${cubaRankings[0]?.count || 0}`);
+    console.log(`  Honduras Rankings: ${hondurasRankings[0]?.count || 0}`);
+    
+    if ((totalRankings[0]?.count || 0) === 0) {
+      console.log('🏆 No ranking entries yet - users need to complete quizzes');
+    }
+    
+    // Progress tracking
+    const totalProgress = await db.select({ count: sql`count(*)` }).from(schema.userProgress);
+    const completedProgress = await db.select({ count: sql`count(*)` }).from(schema.userProgress)
+      .where(eq(schema.userProgress.isCompleted, true));
+    
+    console.log('📈 Progress Statistics:');
+    console.log(`  Total Progress Entries: ${totalProgress[0]?.count || 0}`);
+    console.log(`  Completed Progress: ${completedProgress[0]?.count || 0}`);
+    
+    if ((totalProgress[0]?.count || 0) === 0) {
+      console.log('📈 No progress data yet - users starting to play');
+    }
+    
+    console.log('✅ Data audit completed successfully');
+    
+  } catch (error) {
+    console.error('Error during data audit:', error);
   }
 }
 
